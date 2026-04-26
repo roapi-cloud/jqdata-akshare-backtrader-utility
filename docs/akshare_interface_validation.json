@@ -1,0 +1,710 @@
+{
+  "summary": {
+    "total_tests": 20,
+    "successful": 10,
+    "failed": 10,
+    "success_rate": 0.5,
+    "avg_response_time": 1.8488017916679382
+  },
+  "results": [
+    {
+      "interface_name": "ak.stock_zh_index_daily(sh000001)",
+      "success": true,
+      "response_time_seconds": 0.204,
+      "row_count": 8627,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_data": [
+        {
+          "date": "1990-12-19",
+          "open": 96.05,
+          "high": 99.98,
+          "low": 95.79,
+          "close": 99.98,
+          "volume": 126000
+        },
+        {
+          "date": "1990-12-20",
+          "open": 104.3,
+          "high": 104.39,
+          "low": 99.98,
+          "close": 104.39,
+          "volume": 19700
+        },
+        {
+          "date": "1990-12-21",
+          "open": 109.07,
+          "high": 109.13,
+          "low": 103.73,
+          "close": 109.13,
+          "volume": 2800
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:11.357955"
+    },
+    {
+      "interface_name": "ak.stock_zh_index_daily(sh000300)",
+      "success": true,
+      "response_time_seconds": 0.163,
+      "row_count": 5894,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_data": [
+        {
+          "date": "2002-01-04",
+          "open": 1316.455,
+          "high": 1316.455,
+          "low": 1316.455,
+          "close": 1316.455,
+          "volume": 0
+        },
+        {
+          "date": "2002-01-07",
+          "open": 1302.084,
+          "high": 1302.084,
+          "low": 1302.084,
+          "close": 1302.084,
+          "volume": 0
+        },
+        {
+          "date": "2002-01-08",
+          "open": 1292.714,
+          "high": 1292.714,
+          "low": 1292.714,
+          "close": 1292.714,
+          "volume": 0
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:14.571499"
+    },
+    {
+      "interface_name": "ak.stock_zh_index_daily(sz399006)",
+      "success": true,
+      "response_time_seconds": 0.125,
+      "row_count": 3858,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_data": [
+        {
+          "date": "2010-06-01",
+          "open": 986.015,
+          "high": 994.793,
+          "low": 948.118,
+          "close": 973.233,
+          "volume": 135628512
+        },
+        {
+          "date": "2010-06-02",
+          "open": 967.609,
+          "high": 997.119,
+          "low": 952.611,
+          "close": 997.119,
+          "volume": 107462760
+        },
+        {
+          "date": "2010-06-03",
+          "open": 1002.355,
+          "high": 1026.702,
+          "low": 997.775,
+          "close": 998.394,
+          "volume": 161680544
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:17.744728"
+    },
+    {
+      "interface_name": "ak.stock_zh_index_daily(sh000852)",
+      "success": true,
+      "response_time_seconds": 0.178,
+      "row_count": 2800,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "sample_data": [
+        {
+          "date": "2014-10-17",
+          "open": 6118.979,
+          "high": 6140.119,
+          "low": 5943.592,
+          "close": 6058.668,
+          "volume": 9712586400
+        },
+        {
+          "date": "2014-10-20",
+          "open": 6068.776,
+          "high": 6154.685,
+          "low": 6068.517,
+          "close": 6154.52,
+          "volume": 7902498400
+        },
+        {
+          "date": "2014-10-21",
+          "open": 6153.02,
+          "high": 6176.069,
+          "low": 6097.366,
+          "close": 6103.008,
+          "volume": 7954840800
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:20.880372"
+    },
+    {
+      "interface_name": "ak.stock_zt_pool_em(date=20260422)",
+      "success": true,
+      "response_time_seconds": 0.16,
+      "row_count": 55,
+      "columns": [
+        "序号",
+        "代码",
+        "名称",
+        "涨跌幅",
+        "最新价",
+        "成交额",
+        "流通市值",
+        "总市值",
+        "换手率",
+        "封板资金",
+        "首次封板时间",
+        "最后封板时间",
+        "炸板次数",
+        "涨停统计",
+        "连板数",
+        "所属行业"
+      ],
+      "sample_data": [
+        {
+          "序号": 1,
+          "代码": "002081",
+          "名称": "金 螳 螂",
+          "涨跌幅": 10.022271156311035,
+          "最新价": 4.94,
+          "成交额": 302975504,
+          "流通市值": 13064348151.660002,
+          "总市值": 13117299058.240002,
+          "换手率": 2.319101572036743,
+          "封板资金": 227115931,
+          "首次封板时间": "092500",
+          "最后封板时间": "092500",
+          "炸板次数": 0,
+          "涨停统计": "4/4",
+          "连板数": 4,
+          "所属行业": "装修装饰"
+        },
+        {
+          "序号": 2,
+          "代码": "300067",
+          "名称": "安诺其",
+          "涨跌幅": 20.0,
+          "最新价": 6.06,
+          "成交额": 108986949,
+          "流通市值": 5681151106.86,
+          "总市值": 6995509930.559999,
+          "换手率": 1.9183955192565918,
+          "封板资金": 584790333,
+          "首次封板时间": "092500",
+          "最后封板时间": "092500",
+          "炸板次数": 0,
+          "涨停统计": "2/2",
+          "连板数": 2,
+          "所属行业": "化学制品"
+        },
+        {
+          "序号": 3,
+          "代码": "002194",
+          "名称": "武汉凡谷",
+          "涨跌幅": 10.018552780151367,
+          "最新价": 11.86,
+          "成交额": 178942008,
+          "流通市值": 6059200171.5,
+          "总市值": 8103769682.879999,
+          "换手率": 2.953228235244751,
+          "封板资金": 148510267,
+          "首次封板时间": "092500",
+          "最后封板时间": "092500",
+          "炸板次数": 0,
+          "涨停统计": "1/1",
+          "连板数": 1,
+          "所属行业": "通信设备"
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:24.061766"
+    },
+    {
+      "interface_name": "ak.stock_zt_pool_dtgc_em(date=20260422)",
+      "success": true,
+      "response_time_seconds": 0.152,
+      "row_count": 3,
+      "columns": [
+        "序号",
+        "代码",
+        "名称",
+        "涨跌幅",
+        "最新价",
+        "成交额",
+        "流通市值",
+        "总市值",
+        "动态市盈率",
+        "换手率",
+        "封单资金",
+        "最后封板时间",
+        "板上成交额",
+        "连续跌停",
+        "开板次数",
+        "所属行业"
+      ],
+      "sample_data": [
+        {
+          "序号": 1,
+          "代码": "603272",
+          "名称": "联翔股份",
+          "涨跌幅": -10.004034042358398,
+          "最新价": 22.31,
+          "成交额": 338560592,
+          "流通市值": 2311918370.0,
+          "总市值": 2311918370.0,
+          "动态市盈率": 790.2374267578125,
+          "换手率": 14.608205795288086,
+          "封单资金": 11505267,
+          "最后封板时间": "111620",
+          "板上成交额": 1541819557,
+          "连续跌停": 3,
+          "开板次数": 10,
+          "所属行业": "家居用品"
+        },
+        {
+          "序号": 2,
+          "代码": "603959",
+          "名称": "百利科技",
+          "涨跌幅": -10.014947891235352,
+          "最新价": 6.02,
+          "成交额": 337112400,
+          "流通市值": 2951599931.8399997,
+          "总市值": 2951599931.8399997,
+          "动态市盈率": -19.183141708374023,
+          "换手率": 11.255837440490723,
+          "封单资金": 24122140,
+          "最后封板时间": "130645",
+          "板上成交额": 104802658,
+          "连续跌停": 1,
+          "开板次数": 25,
+          "所属行业": "专业工程"
+        },
+        {
+          "序号": 3,
+          "代码": "603778",
+          "名称": "国晟科技",
+          "涨跌幅": -10.0,
+          "最新价": 26.1,
+          "成交额": 2823682224,
+          "流通市值": 16778571406.2,
+          "总市值": 17227099540.8,
+          "动态市盈率": -85.5382308959961,
+          "换手率": 16.73355484008789,
+          "封单资金": 33840607,
+          "最后封板时间": "132054",
+          "板上成交额": 13784912075,
+          "连续跌停": 1,
+          "开板次数": 14,
+          "所属行业": "光伏设备"
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:27.224310"
+    },
+    {
+      "interface_name": "ak.stock_zh_a_spot_em()",
+      "success": false,
+      "response_time_seconds": 4.895,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "HTTPSConnectionPool(host='82.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A6%2Cm%3A0+t%3A80%2Cm%3A1+t%3A2%2Cm%3A1+t%3A23%2Cm%3A0+t%3A81+s%3A2048&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:30.385215"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_name_em()",
+      "success": false,
+      "response_time_seconds": 5.295,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "HTTPSConnectionPool(host='17.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90+t%3A2+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf26%2Cf22%2Cf33%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf124%2Cf107%2Cf104%2Cf105%2Cf140%2Cf141%2Cf207%2Cf208%2Cf209%2Cf222 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:38.289173"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_hist_em(symbol=BK0447, name=通信)",
+      "success": false,
+      "response_time_seconds": 0.082,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "Expecting value: line 1 column 1 (char 0)",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:46.591721"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_cons_em(symbol=BK0447, name=通信)",
+      "success": false,
+      "response_time_seconds": 5.859,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "HTTPSConnectionPool(host='29.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK0447+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf45 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:49.683129"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_hist_em(symbol=BK0437, name=医药生物)",
+      "success": false,
+      "response_time_seconds": 0.081,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "Expecting value: line 1 column 1 (char 0)",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:13:58.550329"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_cons_em(symbol=BK0437, name=医药生物)",
+      "success": false,
+      "response_time_seconds": 5.761,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "HTTPSConnectionPool(host='29.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK0437+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf45 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:14:01.637833"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_hist_em(symbol=BK0432, name=汽车)",
+      "success": false,
+      "response_time_seconds": 0.068,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "Expecting value: line 1 column 1 (char 0)",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:14:10.404067"
+    },
+    {
+      "interface_name": "ak.stock_board_industry_cons_em(symbol=BK0432, name=汽车)",
+      "success": false,
+      "response_time_seconds": 6.042,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "HTTPSConnectionPool(host='29.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK0432+f%3A%2150&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152%2Cf45 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:14:13.474595"
+    },
+    {
+      "interface_name": "ak.stock_sector_fund_flow_rank(indicator='今日')",
+      "success": false,
+      "response_time_seconds": 0.14,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=b2884a393a59ad64002292a3e90d46a5&fltt=2&invt=2&fid0=f62&fs=m%3A90+t%3A2&stat=1&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf184%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf204%2Cf205%2Cf124&rt=52975239&_=1776939262525 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:14:22.525283"
+    },
+    {
+      "interface_name": "ak.stock_hsgt_hist_em(symbol='沪股通')",
+      "success": true,
+      "response_time_seconds": 1.103,
+      "row_count": 2656,
+      "columns": [
+        "日期",
+        "当日成交净买额",
+        "买入成交额",
+        "卖出成交额",
+        "历史累计净买额",
+        "当日资金流入",
+        "当日余额",
+        "持股市值",
+        "领涨股",
+        "领涨股-涨跌幅",
+        "上证指数",
+        "上证指数-涨跌幅",
+        "领涨股-代码"
+      ],
+      "sample_data": [
+        {
+          "日期": "2014-11-17",
+          "当日成交净买额": 120.8233,
+          "买入成交额": 120.8233,
+          "卖出成交额": null,
+          "历史累计净买额": 120.8233,
+          "当日资金流入": 130.0,
+          "当日余额": null,
+          "持股市值": null,
+          "领涨股": "唐山港",
+          "领涨股-涨跌幅": 9.98,
+          "上证指数": 2474.01,
+          "上证指数-涨跌幅": -0.19,
+          "领涨股-代码": "601000.SH"
+        },
+        {
+          "日期": "2014-11-18",
+          "当日成交净买额": 47.1967,
+          "买入成交额": 49.4367,
+          "卖出成交额": 2.24,
+          "历史累计净买额": 168.02,
+          "当日资金流入": 48.45,
+          "当日余额": 81.55,
+          "持股市值": null,
+          "领涨股": "厦门国贸",
+          "领涨股-涨跌幅": 10.06,
+          "上证指数": 2456.37,
+          "上证指数-涨跌幅": -0.71,
+          "领涨股-代码": "600755.SH"
+        },
+        {
+          "日期": "2014-11-19",
+          "当日成交净买额": 24.9677,
+          "买入成交额": 26.695100000000004,
+          "卖出成交额": 1.7274,
+          "历史累计净买额": 192.98770000000002,
+          "当日资金流入": 26.12,
+          "当日余额": 103.88,
+          "持股市值": null,
+          "领涨股": "君正集团",
+          "领涨股-涨跌幅": 6.85,
+          "上证指数": 2450.99,
+          "上证指数-涨跌幅": -0.22,
+          "领涨股-代码": "601216.SH"
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:14:25.674521"
+    },
+    {
+      "interface_name": "ak.stock_margin_sse()",
+      "success": false,
+      "response_time_seconds": 0.209,
+      "row_count": 0,
+      "columns": [],
+      "sample_data": null,
+      "error_message": "Length mismatch: Expected axis has 0 elements, new values have 13 elements",
+      "data_quality_issues": [],
+      "timestamp": "2026-04-23T18:14:29.789676"
+    },
+    {
+      "interface_name": "ak.stock_zh_index_value_csindex(symbol='000300')",
+      "success": true,
+      "response_time_seconds": 2.665,
+      "row_count": 20,
+      "columns": [
+        "日期",
+        "指数代码",
+        "指数中文全称",
+        "指数中文简称",
+        "指数英文全称",
+        "指数英文简称",
+        "市盈率1",
+        "市盈率2",
+        "股息率1",
+        "股息率2"
+      ],
+      "sample_data": [
+        {
+          "日期": "2026-04-22",
+          "指数代码": 300,
+          "指数中文全称": "沪深300指数",
+          "指数中文简称": "沪深300",
+          "指数英文全称": "CSI 300 Index",
+          "指数英文简称": "CSI 300",
+          "市盈率1": 15.46,
+          "市盈率2": 18.12,
+          "股息率1": 2.59,
+          "股息率2": 2.3
+        },
+        {
+          "日期": "2026-04-21",
+          "指数代码": 300,
+          "指数中文全称": "沪深300指数",
+          "指数中文简称": "沪深300",
+          "指数英文全称": "CSI 300 Index",
+          "指数英文简称": "CSI 300",
+          "市盈率1": 15.41,
+          "市盈率2": 18.0,
+          "股息率1": 2.6,
+          "股息率2": 2.32
+        },
+        {
+          "日期": "2026-04-20",
+          "指数代码": 300,
+          "指数中文全称": "沪深300指数",
+          "指数中文简称": "沪深300",
+          "指数英文全称": "CSI 300 Index",
+          "指数英文简称": "CSI 300",
+          "市盈率1": 15.37,
+          "市盈率2": 17.95,
+          "股息率1": 2.61,
+          "股息率2": 2.32
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [
+        "Missing expected columns: {'市盈率', '市净率'}"
+      ],
+      "timestamp": "2026-04-23T18:14:33.011122"
+    },
+    {
+      "interface_name": "ak.bond_zh_us_rate()",
+      "success": true,
+      "response_time_seconds": 2.706,
+      "row_count": 9240,
+      "columns": [
+        "日期",
+        "中国国债收益率2年",
+        "中国国债收益率5年",
+        "中国国债收益率10年",
+        "中国国债收益率30年",
+        "中国国债收益率10年-2年",
+        "中国GDP年增率",
+        "美国国债收益率2年",
+        "美国国债收益率5年",
+        "美国国债收益率10年",
+        "美国国债收益率30年",
+        "美国国债收益率10年-2年",
+        "美国GDP年增率"
+      ],
+      "sample_data": [
+        {
+          "日期": "1990-12-19",
+          "中国国债收益率2年": null,
+          "中国国债收益率5年": null,
+          "中国国债收益率10年": null,
+          "中国国债收益率30年": null,
+          "中国国债收益率10年-2年": null,
+          "中国GDP年增率": null,
+          "美国国债收益率2年": 7.21,
+          "美国国债收益率5年": 7.64,
+          "美国国债收益率10年": 8.0,
+          "美国国债收益率30年": 8.19,
+          "美国国债收益率10年-2年": 0.79,
+          "美国GDP年增率": null
+        },
+        {
+          "日期": "1990-12-20",
+          "中国国债收益率2年": null,
+          "中国国债收益率5年": null,
+          "中国国债收益率10年": null,
+          "中国国债收益率30年": null,
+          "中国国债收益率10年-2年": null,
+          "中国GDP年增率": null,
+          "美国国债收益率2年": 7.25,
+          "美国国债收益率5年": 7.67,
+          "美国国债收益率10年": 8.05,
+          "美国国债收益率30年": 8.22,
+          "美国国债收益率10年-2年": 0.8,
+          "美国GDP年增率": null
+        },
+        {
+          "日期": "1990-12-21",
+          "中国国债收益率2年": null,
+          "中国国债收益率5年": null,
+          "中国国债收益率10年": null,
+          "中国国债收益率30年": null,
+          "中国国债收益率10年-2年": null,
+          "中国GDP年增率": null,
+          "美国国债收益率2年": 7.3,
+          "美国国债收益率5年": 7.75,
+          "美国国债收益率10年": 8.11,
+          "美国国债收益率30年": 8.28,
+          "美国国债收益率10年-2年": 0.81,
+          "美国GDP年增率": null
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [
+        "High null rate (>50%) in columns: ['中国GDP年增率', '美国GDP年增率']"
+      ],
+      "timestamp": "2026-04-23T18:14:38.687572"
+    },
+    {
+      "interface_name": "ak.currency_boc_sina()",
+      "success": true,
+      "response_time_seconds": 1.086,
+      "row_count": 180,
+      "columns": [
+        "日期",
+        "中行汇买价",
+        "中行钞买价",
+        "中行钞卖价/汇卖价",
+        "央行中间价",
+        "中行折算价"
+      ],
+      "sample_data": [
+        {
+          "日期": "2023-03-06",
+          "中行汇买价": 691.8,
+          "中行钞买价": 686.17,
+          "中行钞卖价/汇卖价": 694.73,
+          "央行中间价": 689.51,
+          "中行折算价": 689.51
+        },
+        {
+          "日期": "2023-03-07",
+          "中行汇买价": 694.49,
+          "中行钞买价": 688.84,
+          "中行钞卖价/汇卖价": 697.44,
+          "央行中间价": 691.56,
+          "中行折算价": 691.56
+        },
+        {
+          "日期": "2023-03-08",
+          "中行汇买价": 693.49,
+          "中行钞买价": 687.85,
+          "中行钞卖价/汇卖价": 696.43,
+          "央行中间价": 695.25,
+          "中行折算价": 695.25
+        }
+      ],
+      "error_message": null,
+      "data_quality_issues": [
+        "Missing expected columns: {'货币名称'}"
+      ],
+      "timestamp": "2026-04-23T18:14:44.404758"
+    }
+  ],
+  "timestamp": "2026-04-23T18:14:52.764288"
+}

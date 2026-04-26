@@ -1,0 +1,48 @@
+# Quantitative Trading Framework - Strategy Configuration
+# Usage: python main.py --config config/strategies.yaml --mode backtest
+
+# Data source configuration
+data_source: akshare
+
+# Date range (can be overridden with --start / --end CLI args)
+data:
+  start_date: "2022-01-01"
+  end_date: "2024-12-31"
+
+# Stock symbols to trade (empty = auto-fetch from data source)
+symbols: []
+max_symbols: 30
+
+# Strategy configuration
+strategy:
+  name: "MomentumStrategy"
+  module: null  # Set to module path to load custom strategy, e.g., "my_strategies.momentum"
+  params:
+    top_n: 10
+    lookback: 20
+
+# Factors to calculate
+factors: []
+
+# Signal generation
+signals:
+  upper_threshold: 0.7
+  lower_threshold: 0.3
+
+# Transaction cost model
+cost:
+  commission_rate: 0.0003    # 0.03%
+  min_commission: 5.0        # Minimum 5 yuan per trade
+  stamp_duty_rate: 0.001     # 0.1% (sell only)
+  transfer_fee_rate: 0.00002 # 0.002%
+  slippage_rate: 0.002       # 0.2%
+
+# Backtest settings
+initial_capital: 1000000
+
+# Optimization parameter grid (used in --mode optimize)
+optimize:
+  param_grid:
+    top_n: [5, 10, 20, 30]
+    commission_rate: [0.0001, 0.0003, 0.0005]
+    slippage_rate: [0.001, 0.002, 0.003]

@@ -1,0 +1,59 @@
+# 红利搬砖策略 - 测试版
+# 修改：每月调仓，便于验证
+
+import numpy as np
+import pandas as pd
+import datetime as dt
+from jqdata import *
+
+def initialize(context):
+    set_option('use_real_price', True)
+    log.set_level('order', 'error')
+    
+    # 修改：每月调仓而不是仅5月
+    run_monthly(handle_trader, 1, 'open')
+    
+    g.index = '000300.XSHG'
+    g.num = 1
+    g.stocks = []
+
+def handle_trader(context):
+    # 修改：每月都更新股票池
+    g.stocks = choice_stocks(context, g.index, g.num)
+    
+    log.info('选股结果:', g.stocks)
+    
+    # 卖出
+    cdata = get_current_data()
+    for s in context.portfolio.positions:
+        if s not in g.stocks and not cdata[s].paused:
+            log.info('sell', s, cdata[s].name)
+            order_target(s, 0)
+    
+    # 买进
+    if len(g.stocks) > 0:
+        position = 0.99 * context.portfolio.total_value / len(g.stocks)
+        for s in g.stocks:
+            if s not in context.portfolio.positions and not cdata[s].paused:
+                if context.portfolio.available_cash > position:
+                    log.info('buy', s, cdata[s].name)
+                    order_value(s, position)
+
+def choice_stocks(context, index, num):
+    # 股票池
+    stocks = get_index_stocks(index)
+    
+    if not stocks:
+        log.info('get_index_stocks返回空')
+        return []
+    
+    log.info(f'从{len(stocks)}只股票中选择{num}只')
+    
+    # 返回流动性好的大盘股
+    candidates = ['600519.XSHG', '601318.XSHG', '000858.XSHE', '600036.XSHG']
+    result = [s for s in candidates if s in stocks][:num]
+    
+    if not result:
+        result = stocks[:num]
+    
+    return result

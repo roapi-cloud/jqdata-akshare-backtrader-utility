@@ -1,0 +1,113 @@
+# V7: RSI择时策略
+# 技术指标择时策略，不依赖基本面
+# 用于验收测试：验证 get_price, attribute_history 等API
+# 注意：原策略使用ETF，因ETF数据缺失改为股票池中的股票
+
+from jqdata import *
+import pandas as pd
+import numpy as np
+
+def initialize(context):
+    # 设置参数 - 使用缓存中已有的股票
+    g.stocks = ['600519.XSHG', '000858.XSHE', '000333.XSHE']  # 贵州茅台、五粮液、美的集团
+    g.rsi_period = 14  # RSI计算周期
+    g.rsi_oversold = 30  # 超卖阈值
+    g.rsi_overbought = 70  # 超买阈值
+
+    log.info('RSI择时策略初始化')
+    log.info(f'股票池: {g.stocks}')
+    log.info(f'RSI参数: 周期{g.rsi_period}, 超卖<{g.rsi_oversold}, 超买>{g.rsi_overbought}')
+
+    # 设置基准
+    set_benchmark('000300.XSHG')
+
+    # 设置定时器：每日收盘运行
+    run_daily(rebalance, 'open')
+
+def calculate_rsi(prices: pd.Series, period: int = 14) -> float:
+    """
+    计算RSI指标（Relative Strength Index）
+
+    Args:
+        prices: 价格序列
+        period: RSI周期
+
+    Returns:
+        float: RSI值（0-100）
+    """
+    if len(prices) < period + 1:
+        return None
+
+    # 计算价格变化
+    deltas = prices.diff()
+
+    # 分离上涨和下跌
+    gains = deltas.where(deltas > 0, 0)
+    losses = -deltas.where(deltas < 0, 0)
+
+    # 计算平均上涨和下跌
+    avg_gain = gains[-period:].mean()
+    avg_loss = losses[-period:].mean()
+
+    if avg_loss == 0:
+        return 100
+
+    # 计算RS和RSI
+    rs = avg_gain / avg_loss
+    rsi = 100 - (100 / (1 + rs))
+
+    return rsi
+
+def rebalance(context):
+    """每日调仓：根据RSI指标判断买卖信号"""
+
+    current_data = get_current_data()
+
+    for stock in g.stocks:
+        if current_data[stock].paused:
+            continue
+
+        # 获取历史数据（使用get_price）
+        prices = get_price(
+            stock,
+            end_date=context.current_dt,
+            count=g.rsi_period + 5,
+            frequency='1d',
+            fields=['close'],
+            panel=False
+        )
+
+        if prices is None or len(prices) < g.rsi_period + 1:
+            log.warning(f'{stock} 历史数据不足')
+            continue
+
+        # 计算RSI
+        close_series = pd.Series(prices['close'].values)
+        rsi = calculate_rsi(close_series, g.rsi_period)
+
+        if rsi is None:
+            continue
+
+        current_position = context.portfolio.positions.get(stock)
+
+        log.info(f'{stock} {current_data[stock].name}: RSI={rsi:.2f}')
+
+        # RSI择时逻辑
+        if rsi < g.rsi_oversold:
+            # 超卖区：买入信号
+            if current_position is None or current_position.total_amount == 0:
+                log.info(f'买入信号: {stock} RSI超卖 ({rsi:.2f} < {g.rsi_oversold})')
+                order_target_percent(stock, 0.33)  # 每只股票 33%仓位
+
+        elif rsi > g.rsi_overbought:
+            # 超买区：卖出信号
+            if current_position and current_position.total_amount > 0:
+                log.info(f'卖出信号: {stock} RSI超买 ({rsi:.2f} > {g.rsi_overbought})')
+                order_target(stock, 0)  # 清仓
+
+        else:
+            # 正常区间：持有
+            if current_position and current_position.total_amount > 0:
+                log.info(f'持有: {stock} RSI正常 ({g.rsi_oversold} < {rsi:.2f} < {g.rsi_overbought})')
+
+# end

@@ -1,0 +1,68 @@
+# 多因子选股策略配置
+
+data:
+  source: "akshare"
+  index: "000905"  # 中证500
+  start_date: "2022-01-01"
+  end_date: ""
+  cache_dir: "./data_cache"
+
+factors:
+  factors:
+    - "momentum_20"
+    - "momentum_60"
+    - "volatility"
+    - "pe"
+    - "pb"
+    - "roe"
+    - "dividend_yield"
+  params: {}
+
+preprocess:
+  winsorize_method: "mad"
+  winsorize_n: 3.0
+  fill_na_method: "median"
+  standardize_method: "zscore"
+
+label:
+  method: "classification"
+  top_pct: 0.3
+  holding_period: 5
+
+model:
+  name: "lightgbm"
+  params:
+    n_estimators: 300
+    max_depth: 4
+    learning_rate: 0.05
+
+timing:
+  enabled: true
+  models:
+    - "ma_cross"
+    - "rsrs"
+    - "momentum"
+  fusion_method: "vote"
+  position_method: "strength"
+
+portfolio:
+  n_stocks: 15
+  weight_method: "score"
+  max_single_weight: 0.10
+  max_turnover: 0.4
+  min_stocks: 8
+
+backtest:
+  initial_capital: 1000000
+  commission: 0.0003
+  slippage: 0.002
+  benchmark: "000905"
+  rebalance_freq: "weekly"
+
+risk:
+  max_drawdown_limit: 0.25
+  stop_loss_pct: 0.10
+  max_position_pct: 0.10
+
+random_seed: 42
+log_level: "INFO"

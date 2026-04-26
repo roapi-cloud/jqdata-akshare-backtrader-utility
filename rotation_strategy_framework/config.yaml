@@ -1,0 +1,88 @@
+# 终极轮动策略框架 - 配置文件示例
+
+pipeline:
+  mode: research  # research / simulation / live
+
+data:
+  etf_pool:
+    - "510050"  # 上证50ETF
+    - "159928"  # 中证消费ETF
+    - "510300"  # 沪深300ETF
+    - "159949"  # 创业板50ETF
+    - "518880"  # 黄金ETF
+    - "513100"  # 纳指100ETF
+  start: "2020-01-01"
+  end: "2024-12-31"
+  cache_dir: "./cache"
+  cache_version: "v3"
+  force_update: false
+
+backtest:
+  initial_cash: 1000000
+  commission: 0.0003
+  slippage: 0.001
+  benchmark: "510300"
+  n_workers: 4
+
+strategies:
+  # 要回测的策略列表 (留空则回测全部14种预设策略)
+  # - etf_momentum_rsrs
+  # - multi_factor_epo
+  # - etf_core_asset
+  auto_select: true
+  top_k: 3
+
+evaluation:
+  optimization_methods:
+    - equal_weight
+    - risk_parity
+  walk_forward:
+    enabled: true
+    train_window: 252
+    test_window: 60
+  grid_search:
+    enabled: false
+    top_n: 5
+
+risk:
+  max_drawdown: 0.15
+  circuit_breaker:
+    enabled: true
+    warning_threshold: 0.05
+    reduce_threshold: 0.10
+    liquidate_threshold: 0.15
+    halt_threshold: 0.20
+  var_confidence: 0.95
+
+portfolio:
+  optimization_method: risk_parity  # equal_weight / risk_parity / mean_variance / black_litterman / hierarchical_risk_parity
+  rebalance_period: 20  # 交易日
+  max_single_strategy_weight: 0.4
+  min_strategy_weight: 0.05
+  turnover_penalty: 0.001
+
+live:
+  broker_type: simulated  # simulated / joinquant / custom
+  sync_interval: 60  # 秒
+  order_retry_limit: 3
+  order_retry_delay: 5  # 秒
+
+monitor:
+  log_level: INFO  # DEBUG / INFO / WARNING / ERROR
+  log_file: "./logs/rotation_strategy.log"
+  log_rotation_mb: 100
+  alerts:
+    enabled: true
+    channels:
+      - console
+      # - email
+      # - wechat
+    strategy_drawdown_threshold: 0.10
+    portfolio_drawdown_threshold: 0.15
+    daily_loss_threshold: 0.03
+
+output:
+  report_dir: "./reports"
+  save_equity_curve: true
+  save_trades: true
+  save_positions: true

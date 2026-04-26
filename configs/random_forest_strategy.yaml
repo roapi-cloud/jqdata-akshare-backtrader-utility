@@ -1,0 +1,56 @@
+# 随机森林因子选股策略
+
+data:
+  source: "jqdata"
+  index: "399905.XSHE"
+  start_date: "2015-01-01"
+  end_date: "2023-12-31"
+  frequency: "monthly"
+  list_days: 90
+
+preprocess:
+  winsorize_method: "mad"
+  winsorize_scale: 5.0
+  fill_method: "industry_mean"
+  neutralize_by: ["industry", "market_cap"]
+  standardize: true
+
+label:
+  method: "top_bottom"
+  top_pct: 0.3
+  bottom_pct: 0.3
+  holding_period: 20
+
+model:
+  name: "random_forest"
+  params:
+    n_estimators: 200
+    max_depth: 7
+    min_samples_split: 10
+    min_samples_leaf: 5
+  train_window: 60
+  retrain_frequency: "monthly"
+
+portfolio:
+  n_stocks: 5
+  weighting: "equal"
+  max_turnover: 1.0
+
+backtest:
+  initial_capital: 1000000
+  commission: 0.0003
+  slippage: 0.001
+  stamp_tax: 0.001
+  benchmark: "399905.XSHE"
+
+factors:
+  - "EP"
+  - "BP"
+  - "ROE"
+  - "ROA"
+  - "GPM"
+  - "Revenue_Growth"
+  - "RSI"
+  - "MACD_DIF"
+  - "Momentum"
+  - "Volatility"

@@ -1,0 +1,59 @@
+# ETF轮动策略配置
+
+data:
+  source: "akshare"
+  index: "000300"
+  start_date: "2020-01-01"
+  cache_dir: "./data_cache"
+
+factors:
+  factors:
+    - "momentum_20"
+    - "momentum_60"
+    - "volatility"
+  params: {}
+
+preprocess:
+  winsorize_method: "mad"
+  winsorize_n: 3.0
+  fill_na_method: "median"
+  standardize_method: "zscore"
+
+label:
+  method: "classification"
+  top_pct: 0.3
+  holding_period: 20
+
+model:
+  name: "rank_ensemble"
+  params: {}
+
+timing:
+  enabled: true
+  models:
+    - "ma_cross"
+    - "volatility"
+  fusion_method: "resonance"
+  position_method: "strength"
+
+portfolio:
+  n_stocks: 3
+  weight_method: "momentum"
+  max_single_weight: 0.50
+  max_turnover: 0.6
+  min_stocks: 1
+
+backtest:
+  initial_capital: 1000000
+  commission: 0.0002
+  slippage: 0.001
+  benchmark: "000300"
+  rebalance_freq: "weekly"
+
+risk:
+  max_drawdown_limit: 0.20
+  stop_loss_pct: 0.05
+  max_position_pct: 0.50
+
+random_seed: 42
+log_level: "INFO"

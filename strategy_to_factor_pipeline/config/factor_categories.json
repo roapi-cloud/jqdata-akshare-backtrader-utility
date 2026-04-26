@@ -1,0 +1,171 @@
+{
+  "factor_categories": {
+    "momentum": {
+      "name": "动量因子",
+      "description": "基于价格趋势和收益率的因子",
+      "patterns": [
+        "momentum",
+        "roc",
+        "rate_of_change",
+        "trend",
+        "ma_cross",
+        "price_breakout"
+      ],
+      "holding_period": "short_to_medium",
+      "rebalance_frequency": "weekly"
+    },
+    "mean_reversion": {
+      "name": "均值回归因子",
+      "description": "基于价格回归均值的因子",
+      "patterns": [
+        "mean_reversion",
+        "bollinger",
+        "rsi",
+        "kdj",
+        "oversold",
+        "overbought"
+      ],
+      "holding_period": "short",
+      "rebalance_frequency": "daily"
+    },
+    "value": {
+      "name": "价值因子",
+      "description": "基于估值指标的因子",
+      "patterns": [
+        "pe",
+        "pb",
+        "ps",
+        "pcf",
+        "dividend_yield",
+        "ev_ebitda",
+        "value"
+      ],
+      "holding_period": "long",
+      "rebalance_frequency": "monthly"
+    },
+    "quality": {
+      "name": "质量因子",
+      "description": "基于财务质量的因子",
+      "patterns": [
+        "roe",
+        "roa",
+        "profit_margin",
+        "debt_ratio",
+        "earnings_growth",
+        "quality"
+      ],
+      "holding_period": "long",
+      "rebalance_frequency": "quarterly"
+    },
+    "volatility": {
+      "name": "波动率因子",
+      "description": "基于价格波动特征的因子",
+      "patterns": [
+        "volatility",
+        "std",
+        "atr",
+        "beta",
+        "low_vol"
+      ],
+      "holding_period": "medium",
+      "rebalance_frequency": "weekly"
+    },
+    "volume": {
+      "name": "成交量因子",
+      "description": "基于成交量和换手率的因子",
+      "patterns": [
+        "volume",
+        "turnover",
+        "obv",
+        "volume_ratio",
+        "money_flow"
+      ],
+      "holding_period": "short",
+      "rebalance_frequency": "daily"
+    },
+    "sentiment": {
+      "name": "情绪因子",
+      "description": "基于市场情绪的因子",
+      "patterns": [
+        "sentiment",
+        "north_flow",
+        "margin_trading",
+        "short_ratio"
+      ],
+      "holding_period": "short",
+      "rebalance_frequency": "daily"
+    },
+    "technical": {
+      "name": "技术因子",
+      "description": "基于技术指标的因子",
+      "patterns": [
+        "macd",
+        "kdj",
+        "rsi",
+        "cci",
+        "wr",
+        "bias"
+      ],
+      "holding_period": "short_to_medium",
+      "rebalance_frequency": "daily"
+    },
+    "fundamental": {
+      "name": "基本面因子",
+      "description": "基于财务基本面的因子",
+      "patterns": [
+        "revenue_growth",
+        "net_profit",
+        "cash_flow",
+        "asset_turnover",
+        "fundamental"
+      ],
+      "holding_period": "long",
+      "rebalance_frequency": "quarterly"
+    },
+    "event_driven": {
+      "name": "事件驱动因子",
+      "description": "基于特定事件的因子",
+      "patterns": [
+        "earnings_surprise",
+        "analyst_upgrade",
+        "index_rebalance",
+        "dividend_announcement"
+      ],
+      "holding_period": "short_to_medium",
+      "rebalance_frequency": "event_based"
+    },
+    "machine_learning": {
+      "name": "机器学习因子",
+      "description": "基于机器学习模型生成的因子",
+      "patterns": [
+        "ml_model",
+        "neural_network",
+        "random_forest",
+        "xgboost",
+        "lstm"
+      ],
+      "holding_period": "variable",
+      "rebalance_frequency": "weekly"
+    },
+    "custom": {
+      "name": "自定义因子",
+      "description": "无法归类的自定义因子",
+      "patterns": [],
+      "holding_period": "variable",
+      "rebalance_frequency": "custom"
+    }
+  },
+  "signal_types": {
+    "long_only": "纯多头信号",
+    "long_short": "多空信号",
+    "ranking": "排名信号",
+    "threshold": "阈值信号",
+    "continuous": "连续信号"
+  },
+  "normalization_methods": [
+    "zscore",
+    "min_max",
+    "rank",
+    "winsorize_zscore"
+  ]
+}

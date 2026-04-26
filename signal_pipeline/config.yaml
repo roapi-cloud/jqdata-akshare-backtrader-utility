@@ -1,0 +1,38 @@
+data:
+  source: akshare
+  cache_dir: ./cache
+
+pipeline:
+  indicators:
+    - name: chan_theory
+      weight: 0.25
+      params:
+        min_bi_kbars: 4
+    - name: rsrs
+      weight: 0.25
+      params:
+        N: 18
+        M: 600
+    - name: mesa
+      weight: 0.2
+      params: {}
+    - name: trend_momentum
+      weight: 0.2
+      params: {}
+    - name: rounding_bottom
+      weight: 0.1
+      params: {}
+  fusion:
+    buy_threshold: 0.5
+    sell_threshold: -0.5
+    conflict_tolerance: 0.2
+
+backtest:
+  start: "2020-01-01"
+  end: "2023-12-31"
+  cash: 1000000
+  commission: 0.001
+
+live:
+  enabled: false
+  broker: simulated

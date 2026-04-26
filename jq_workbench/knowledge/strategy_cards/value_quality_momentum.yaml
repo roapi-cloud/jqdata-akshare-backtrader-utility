@@ -1,0 +1,158 @@
+meta:
+  strategy_id: value_quality_momentum
+  version: v1.0
+  created_at: 2026-04-22
+  updated_at: 2026-04-22
+  state: candidate
+  author: workbench
+  source_ref: null
+
+thesis:
+  summary: Combine value, quality, and momentum factors to select undervalued quality companies with positive price momentum.
+  alpha_type: multi_factor
+  time_horizon: monthly
+  expected_edge: Behavioral anchoring on stale fundamentals and underreaction to quality improvements, captured through price momentum.
+
+universe:
+  base_pool: 000905.XSHG
+  filters:
+    - name: st
+      params: {}
+    - name: paused
+      params: {}
+    - name: new_stock
+      params:
+        min_days: 60
+    - name: kcbj
+      params: {}
+  min_cap: 50
+  max_cap: null
+  exclude_st: true
+  exclude_kcbj: true
+  exclude_pause: true
+  exclude_ipo_days: 60
+
+signals:
+  factors:
+    - name: EP
+      source: jqfactor
+      formula: earnings_to_price_ratio
+      weight: 0.35
+      direction: positive
+      preprocess:
+        - winsorize
+        - standardize
+        - neutralize_industry
+    - name: ROE
+      source: jqfactor
+      formula: roe_ttm
+      weight: 0.35
+      direction: positive
+      preprocess:
+        - winsorize
+        - standardize
+        - neutralize_industry
+    - name: momentum_12m
+      source: local
+      formula: close / close.shift(252) - 1
+      weight: 0.30
+      direction: positive
+      preprocess:
+        - winsorize
+        - standardize
+        - neutralize_industry
+  composite_method: weighted_sum
+  rebalance_trigger: periodic
+
+rebalance:
+  frequency: monthly
+  weekday: 4
+  top_n: 30
+  weight_method: rank_weight
+  max_weight: 0.05
+  min_weight: 0.02
+
+risk:
+  position_rules:
+    max_position_pct: 5.0
+    min_cash_pct: 5.0
+    max_sector_pct: 30.0
+  stop_loss:
+    enabled: false
+    method: null
+    threshold: null
+  take_profit:
+    enabled: false
+    threshold: null
+  regime_filter:
+    enabled: true
+    indicator: cvix
+    rule: "cvix > 30 then reduce_position_to(0.5)"
+
+market_regime:
+  favorable:
+    - description: Low volatility, trending market with sector rotation
+    - description: Moderate economic growth, stable policy environment
+  unfavorable:
+    - description: High volatility panic market (VIX spike)
+    - description: Rapid sector rotation without clear leadership
+  neutral:
+    - description: Range-bound market with low volume
+
+failure_modes:
+  - name: factor_crowding
+    condition: When too many participants use similar value/quality factors
+    mitigation: Monitor factor decay via IC time series; reduce position when IC < 0.02
+    severity: medium
+  - name: regime_shift
+    condition: Transition from low-vol to high-vol regime
+    mitigation: CVIX filter triggers position reduction
+    severity: high
+  - name: look_ahead_bias
+    condition: Using future data in factor calculation
+    mitigation: Strict point-in-time data via jqfactor lag rules
+    severity: critical
+  - name: survivorship_bias
+    condition: Backtest ignores delisted stocks
+    mitigation: Use all-listed pool at each rebalance point
+    severity: high
+
+dependencies:
+  jqdata:
+    tables:
+      - valuation
+      - indicator
+    functions:
+      - get_price
+      - get_index_stocks
+      - get_trade_days
+  jqfactor:
+    factors:
+      - earnings_to_price_ratio
+      - roe_ttm
+  external: []
+
+performance_targets:
+  expected_return: 15.0
+  max_drawdown: 20.0
+  sharpe_ratio: 1.2
+  turnover: 3.0
+
+validation:
+  local_runs:
+    - run_id: vqm_20260422_local_001
+      date: 2026-04-22
+      sharpe: 1.35
+      max_dd: 18.2
+  platform_runs: []
+  diff_status: pending
+
+notes:
+  - Initial candidate version based on literature review and preliminary testing
+  - Uses 500 universe for liquidity; may extend to 1000 in v1.1
+
+changelog:
+  - version: v1.0
+    date: 2026-04-22
+    change: Initial strategy card creation
+    decision: keep

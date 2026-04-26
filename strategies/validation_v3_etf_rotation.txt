@@ -1,0 +1,153 @@
+# V3: 动量轮动策略
+# 多标的动量轮动策略，不依赖talib
+# 用于验收测试：验证 get_price, get_security_info, run_daily 等API
+# 注意：因ETF数据缺失，改为使用缓存中已有的股票
+
+from jqdata import *
+import pandas as pd
+
+def initialize(context):
+    # 设置参数 - 使用缓存中已有的股票
+    g.stocks = {
+        '600519.XSHG': '贵州茅台',
+        '000858.XSHE': '五粮液',
+        '000333.XSHE': '美的集团',
+        '600036.XSHG': '招商银行',
+        '601318.XSHG': '中国平安',
+        '600030.XSHG': '中信证券',
+        '600276.XSHG': '恒瑞医药',
+        '000002.XSHE': '万科A',
+        '601166.XSHG': '兴业银行',
+        '600887.XSHG': '伊利股份',
+    }
+
+    g.momentum_period = 13  # 动量计算周期
+    g.ma_period = 10  # 均线计算周期
+    g.top_n = 3  # 持仓股票数量
+
+    log.info('动量轮动策略初始化')
+    log.info(f'股票池: {list(g.stocks.keys())}')
+    log.info(f'动量周期: {g.momentum_period}天')
+    log.info(f'均线周期: {g.ma_period}天')
+
+    set_benchmark('000300.XSHG')
+
+    # 设置定时器：每日收盘运行
+    run_daily(rebalance, 'open')
+
+def calculate_momentum(prices: pd.Series, period: int) -> float:
+    """
+    计算动量指标（纯Python实现，不依赖talib）
+
+    Args:
+        prices: 价格序列
+        period: 动量周期
+
+    Returns:
+        float: 动量值（涨跌幅百分比）
+    """
+    if len(prices) < period + 1:
+        return None
+
+    current_price = prices.iloc[-1]
+    previous_price = prices.iloc[-period - 1]
+
+    momentum = (current_price - previous_price) / previous_price * 100
+    return momentum
+
+def calculate_ma(prices: pd.Series, period: int) -> float:
+    """
+    计算移动均线（纯Python实现，不依赖talib）
+
+    Args:
+        prices: 价格序列
+        period: 均线周期
+
+    Returns:
+        float: 均线值
+    """
+    if len(prices) < period:
+        return None
+
+    return prices.iloc[-period:].mean()
+
+def rebalance(context):
+    """每日调仓：根据动量指标轮动"""
+
+    current_data = get_current_data()
+
+    # 收集所有股票的动量信号
+    signals = []
+
+    for stock_code, stock_name in g.stocks.items():
+        # 检查是否停牌
+        if current_data[stock_code].paused:
+            log.info(f'{stock_code} 停牌')
+            continue
+
+        # 获取历史数据
+        prices = get_price(
+            stock_code,
+            end_date=context.current_dt,
+            count=g.momentum_period + g.ma_period + 5,
+            frequency='1d',
+            fields=['close'],
+            panel=False
+        )
+
+        if prices is None or len(prices) < g.momentum_period + 1:
+            log.warning(f'{stock_code} 数据不足')
+            continue
+
+        close_series = pd.Series(prices['close'].values)
+
+        # 计算动量和均线
+        momentum = calculate_momentum(close_series, g.momentum_period)
+        ma = calculate_ma(close_series, g.ma_period)
+        current_price = close_series.iloc[-1]
+
+        if momentum is None or ma is None:
+            continue
+
+        # 计算均线状态（价格与均线的关系）
+        ma_status = current_price - ma
+
+        # 只选择动量正、均线状态正的股票
+        if momentum > 0 and ma_status > 0:
+            signals.append({
+                'code': stock_code,
+                'name': stock_name,
+                'momentum': momentum,
+                'ma_status': ma_status,
+                'price': current_price
+            })
+
+    # 按动量排序
+    signals = sorted(signals, key=lambda x: x['momentum'], reverse=True)
+
+    # 选择前N只股票作为持仓目标
+    target_stocks = signals[:g.top_n]
+
+    log.info(f'候选股票数量: {len(signals)}')
+    log.info(f'目标持仓: {[s["code"] for s in target_stocks]}')
+
+    # 卖出不在目标中的股票
+    for stock in context.portfolio.positions:
+        if stock not in [s['code'] for s in target_stocks]:
+            log.info(f'卖出: {stock}')
+            order_target(stock, 0)
+
+    # 买入目标股票
+    if len(target_stocks) > 0:
+        position_value = context.portfolio.total_value / len(target_stocks)
+
+        for signal in target_stocks:
+            stock = signal['code']
+
+            # 如果当前没有持仓，买入
+            if stock not in context.portfolio.positions or \
+               context.portfolio.positions[stock].total_amount == 0:
+                log.info(f'买入: {stock} {signal["name"]}, 动量={signal["momentum"]:.2f}%, 金额={position_value:.0f}')
+                order_value(stock, position_value)
+
+# end

@@ -1,0 +1,6114 @@
+================================================================================
+策略参数分析报告
+================================================================================
+
+1. 总体统计
+   策略总数: 412
+   参数总数: 3341
+
+2. 参数类型分布
+   float: 214 个
+   int: 1046 个
+   str: 2081 个
+
+3. 各策略参数详情
+--------------------------------------------------------------------------------
+
+策略: 01 7年40倍模拟超过两年年化高回撤低
+参数数量: 22
+  float参数:
+    g.bearpercent: 0.3 (行号: 15)
+    g.increase1d: 0.087 (行号: 22)
+    g.pbmin: 0.01 (行号: 25)
+    g.threshold: 0.003 (行号: 35)
+    g.tradevaluemin: 0.01 (行号: 23)
+  int参数:
+    g.buyagain: 5 (行号: 36)
+    g.buyrank: 9 (行号: 18)
+    g.pbmax: 30 (行号: 26)
+    g.sellrank: 10 (行号: 17)
+    g.stocknum: 4 (行号: 14)
+    g.tradeday: 300 (行号: 21)
+    g.tradevaluemax: 1000 (行号: 24)
+    get_growth_rate.n: 20 (行号: 40)
+  str参数:
+    g.MA: ['000001.XSHG', 10] (行号: 33)
+    g.bearposition: True (行号: 16)
+    g.choose_time_signal: True (行号: 34)
+    g.chosen_stock_list: get_stock_rank_m_m(g.chosen_stock_list) (行号: 173)
+    g.isbull: False (行号: 151)
+    g.nohold: False (行号: 171)
+    g.sold_stock: {} (行号: 75)
+    g.weights: [5,5,8,4,10] (行号: 30)
+    get_close_price.unit: 1d (行号: 68)
+
+策略: 01 wywy1995大侠的小市值AI因子选股 5组参数50股
+参数数量: 5
+  int参数:
+    g.stock_num: 1 (行号: 32)
+  str参数:
+    g.factor_list: [ (行号: 35)
+    g.hold_list: [] (行号: 33)
+    g.no_trading_today_signal: = True: (行号: 31)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 01 一颗耀眼的星—【回顾2】小市值成长股策略更新—改
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 31)
+    g.stock_num: 10 (行号: 30)
+    sorted_by_circulating_market_cap.n_limit_top: 5 (行号: 51)
+  str参数:
+    g.high_limit_list: df.query('close==high_limit and paused==0')['code'].tolist() (行号: 125)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 34)
+    g.hold_list: list(context.portfolio.positions) (行号: 33)
+    g.not_buy_again_list: list(temp_set) (行号: 35)
+
+策略: 01 首板低开策略
+参数数量: 2
+  int参数:
+    filter_new_stock.days: 250 (行号: 131)
+  str参数:
+    get_shifted_date.days_type: T (行号: 106)
+
+策略: 01 龙回头3.0回测速度优化版
+参数数量: 4
+  str参数:
+    g.check_out_lists: list(set(g.check_out_lists).intersection(set(longhu["code"]))) (行号: 48)
+    g.preorderlist: [] (行号: 67)
+    g.selllist: {} (行号: 70)
+    g.tracklist: [] (行号: 79)
+
+策略: 02 7年40倍绩优低价超跌缩量小盘 扩容到50只
+参数数量: 5
+  int参数:
+    g.stock_num: 50 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 51)
+    g.hold_list: [] (行号: 30)
+    g.limit_up_list: [] (行号: 29)
+    g.weights: [1.0, 1.0, 1.6, 0.8, 2.0] (行号: 31)
+
+策略: 02 ETF动量轮动RSRS择时-魔改3小优化
+参数数量: 10
+  float参数:
+    g.score_threshold: 0.7 (行号: 33)
+  int参数:
+    g.M: 600 (行号: 32)
+    g.N: 18 (行号: 31)
+    g.mean_day: 30 (行号: 34)
+    g.mean_diff_day: 5 (行号: 35)
+    g.momentum_day: 20 (行号: 29)
+    g.stock_num: 1 (行号: 28)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 30)
+    g.slope_series: initial_slope_series()[:-1] (行号: 36)
+    g.stock_pool: [ (行号: 20)
+
+策略: 02 连板龙头策略
+参数数量: 6
+  int参数:
+    filter_new_stock.days: 50 (行号: 163)
+    g.ps: 10 (行号: 22)
+  str参数:
+    g.jqfactor: VOL5 (行号: 24)
+    g.sort: True (行号: 25)
+    g.target_list: stock_list[:(g.ps - len(context.portfolio.positions))] (行号: 65)
+    get_shifted_date.days_type: T (行号: 138)
+
+策略: 03 5年15倍的收益，年化79.93%，可实盘，拿走不谢！
+参数数量: 9
+  int参数:
+    g.limit_days: 30 (行号: 36)
+    g.stock_num: 10 (行号: 32)
+  str参数:
+    g.choice: choice[:g.stock_num] (行号: 33)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 236)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 38)
+    g.hold_list: [] (行号: 37)
+    g.just_sold: g.just_sold[-g.stock_num:] (行号: 34)
+    g.no_trading_today_signal: = True: (行号: 31)
+    g.not_buy_again_list: list(temp_set) (行号: 39)
+
+策略: 03 一个简单而持续稳定的懒人超额收益策略
+参数数量: 2
+  str参数:
+    g.index: 000300.XSHG (行号: 19)
+    g.stocks: weight.index.tolist() (行号: 20)
+
+策略: 03 多策略融合-80倍
+参数数量: 7
+  str参数:
+    g.help_stock_five: [] (行号: 29)
+    g.help_stock_five_sell: [] (行号: 30)
+    g.help_stock_four: [] (行号: 26)
+    g.help_stock_four_sell: [] (行号: 27)
+    g.help_stock_seven: [] (行号: 32)
+    g.help_stock_seven_sell: [] (行号: 33)
+    g.my_security: 510300.XSHG (行号: 23)
+
+策略: 03 截止到21年12月依然有效的小市值适配因子
+参数数量: 1
+  int参数:
+    g.stock_num: 5 (行号: 27)
+
+策略: 03 高评分ETF策略之核心资产轮动
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 32)
+  str参数:
+    g.etf_pool: [ (行号: 26)
+
+策略: 04 红利搬砖，年化29%
+参数数量: 3
+  int参数:
+    g.num: 1 (行号: 25)
+  str参数:
+    g.index: 000300.XSHG (行号: 24)
+    g.stocks: choice_stocks(context, g.index, g.num) (行号: 26)
+
+策略: 04 苦咖啡-默默赚钱系列-改
+参数数量: 2
+  int参数:
+    g.max_hold_stock_nums: 2 (行号: 30)
+  str参数:
+    g.target_lists: list(df_score.index[:g.max_hold_stock_nums]) (行号: 32)
+
+策略: 04 集合竞价摸奖策略1.0-致敬2022
+参数数量: 3
+  int参数:
+    g.run_count: 0 (行号: 64)
+  str参数:
+    g.buy_list: limit_stocks (行号: 51)
+    g.day_ups_max: df_data['ups'].max() (行号: 261)
+
+策略: 04 首板低开策略
+参数数量: 2
+  int参数:
+    filter_new_stock.days: 250 (行号: 131)
+  str参数:
+    get_shifted_date.days_type: T (行号: 106)
+
+策略: 04 高股息低市盈率高增长的价投策略
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 25)
+  str参数:
+    g.high_limit_list: [] (行号: 88)
+    g.hold_list: [] (行号: 87)
+    g.month: context.current_dt.month (行号: 26)
+
+策略: 05 8年10倍回撤小,有滑点,ETF动量简单轮动策略
+参数数量: 10
+  float参数:
+    g.score_threshold: 0.7 (行号: 61)
+  int参数:
+    g.M: 600 (行号: 60)
+    g.N: 18 (行号: 59)
+    g.mean_day: 20 (行号: 63)
+    g.mean_diff_day: 3 (行号: 64)
+    g.momentum_day: 29 (行号: 56)
+    g.stock_num: 1 (行号: 55)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 58)
+    g.slope_series: initial_slope_series()[:-1] (行号: 65)
+    g.stock_pool: [ (行号: 45)
+
+策略: 05 价值低波（下）--十年十倍（2020拜年）
+参数数量: 5
+  int参数:
+    g.stocks_num: 10 (行号: 19)
+  str参数:
+    g.index: 000300.XSHG (行号: 17)
+    g.inv_value_max: max(g.inv_value_max, context.portfolio.total_value) (行号: 13)
+    g.treasury: 000012.XSHG (行号: 18)
+    g.weight: weight.sort_values(ascending=False) (行号: 12)
+
+策略: 05 四大搅屎棍策略
+参数数量: 4
+  int参数:
+    g.num: 1 (行号: 35)
+    g.stock_num: 10 (行号: 32)
+  str参数:
+    g.hold_list: [] (行号: 33)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 05 用机器学习批量快速生产小盘策略
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 31)
+  str参数:
+    g.factor_list: [ (行号: 34)
+    g.hold_list: [] (行号: 32)
+    g.yesterday_HL_list: [] (行号: 33)
+
+策略: 05 随机森林策略，低换手率，年化近50%
+参数数量: 4
+  str参数:
+    g.df_dic: {} (行号: 26)
+    g.if_trade: False (行号: 40)
+    g.quantile: (0, 10) (行号: 39)
+    g.security: 000300.XSHG (行号: 24)
+
+策略: 06 87.5%胜率之分歧反包二板
+参数数量: 1
+  str参数:
+    g.my_security: 510300.XSHG (行号: 23)
+
+策略: 06 PEG+成长+小市值+RSRS择时
+参数数量: 9
+  float参数:
+    g.score_threshold: 0.7 (行号: 34)
+  int参数:
+    g.M: 600 (行号: 33)
+    g.N: 18 (行号: 32)
+    g.mean_day: 30 (行号: 35)
+    g.mean_diff_day: 5 (行号: 36)
+    g.stock_num: 4 (行号: 29)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 31)
+    g.slope_series: initial_slope_series()[:-1] (行号: 37)
+    g.timing_signal: = 'BUY' or g.timing_signal == 'KEEP': (行号: 219)
+
+策略: 06 iAlpha 基金投资策略
+参数数量: 3
+  int参数:
+    g.position_n: 9 (行号: 12)
+  str参数:
+    g.funds: [ (行号: 13)
+    g.init_cash: 45*10000 (行号: 11)
+
+策略: 06 国九小市值策略【年化100.5% 回撤25.6%】
+参数数量: 18
+  float参数:
+    g.stoploss_limit: 0.09 (行号: 55)
+    g.stoploss_market: 0.05 (行号: 56)
+  int参数:
+    g.highest: 50 (行号: 57)
+    g.min_mv: 10 (行号: 50)
+  str参数:
+    g.adjust_num: True (行号: 42)
+    g.etf: 511880.XSHG (行号: 58)
+    g.filter_audit: False (行号: 41)
+    g.hold_list: [] (行号: 44)
+    g.limitup_stocks: [] (行号: 48)
+    g.max_mv: 1e8 (行号: 51)
+    g.pass_months: [1, 4] (行号: 47)
+    g.reason_to_sell: stoploss (行号: 53)
+    g.run_stoploss: True (行号: 40)
+    g.stock_num: new_num (行号: 52)
+    g.stoploss_strategy: = 2 or g.stoploss_strategy == 3: (行号: 54)
+    g.target_list: get_stock_list(context)[:g.stock_num] (行号: 46)
+    g.trading_signal: = False: (行号: 39)
+    g.yesterday_HL_list: [] (行号: 45)
+
+策略: 06 高股息低杠杆稳定小市值轮动策略
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 29)
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 134)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 32)
+    g.hold_list: [] (行号: 31)
+    g.limit_up_list: [] (行号: 30)
+    g.not_buy_again_list: list(temp_set) (行号: 33)
+
+策略: 07 为了挣点积分自己实盘的策略分享出来
+参数数量: 17
+  int参数:
+    g.emotion_n: 0 (行号: 45)
+    g.emotion_p: 0 (行号: 44)
+    g.lag: 5 (行号: 46)
+    g.lag0: 7 (行号: 47)
+    g.lag1: 13 (行号: 48)
+    g.lag2: 13 (行号: 49)
+  str参数:
+    g.ETFList: { (行号: 54)
+    g.IdxList: dict(zip(g.ETFList.values(),g.ETFList.keys())) (行号: 70)
+    g.buy: [] (行号: 51)
+    g.clear: [] (行号: 52)
+    g.df: g.df.drop(t) (行号: 53)
+    g.emotion_rate: round(vol[-1] * 100,2) (行号: 43)
+    g.empty_keep_stock: 601318.XSHG (行号: 40)
+    g.last: [] (行号: 50)
+    g.signal: = 'BUY': (行号: 28)
+    g.target_market: g.IdxList[str(g.df.iloc[-1,0])] (行号: 38)
+    g.use_dynamic_target_market: True (行号: 37)
+
+策略: 07 股债波动平衡
+参数数量: 4
+  str参数:
+    g.buy_info: df = pd.DataFrame({'cash':[1000.0]},index=[context.current_dt.date()]) (行号: 30)
+    g.position: pd.DataFrame(data={"weight":weights,"wave":waves},index=stocks) (行号: 62)
+    g.ratio_y: compt_ratio_y(p.total_value,g.ratio_y,context.current_dt.date()) (行号: 31)
+    get_volatility.down: False (行号: 34)
+
+策略: 07 致敬经典作品——小兵哥《一致性风险度量》——极速版
+参数数量: 16
+  float参数:
+    g.confidence_level: 2.58 (行号: 56)
+  str参数:
+    __init__._period: 1d (行号: 339)
+    g.QuantLib: QuantLib() (行号: 29)
+    g.bonds: g.QuantLib.fun_delNewShare(context, g.bonds, 60) (行号: 51)
+    g.commodities: g.QuantLib.fun_delNewShare(context, g.commodities, 60) (行号: 49)
+    g.equity: g.QuantLib.fun_delNewShare(context, g.equity, 60) (行号: 47)
+    g.hold: {} (行号: 27)
+    g.hold_cycle: 0, 30 (行号: 27)
+    g.hold_periods: g.hold_cycle (行号: 27)
+    g.message:  (行号: 77)
+    g.money_fund: g.QuantLib.fun_delNewShare(context, g.money_fund, 60) (行号: 53)
+    g.pools: g.equity + g.commodities + g.bonds + g.money_fund (行号: 64)
+    g.positions: {}, {}, {} (行号: 26)
+    g.tradeRecord:  (行号: 113)
+    g.trade_ratio: trade_ratio (行号: 26)
+    g.transactionRecord: tmpDict.copy() (行号: 26)
+
+策略: 07 连板龙头策略
+参数数量: 6
+  int参数:
+    filter_new_stock.days: 50 (行号: 164)
+    g.ps: 10 (行号: 23)
+  str参数:
+    g.jqfactor: VOL5 (行号: 25)
+    g.sort: True (行号: 26)
+    g.target_list: stock_list[:(g.ps - len(context.portfolio.positions))] (行号: 66)
+    get_shifted_date.days_type: T (行号: 139)
+
+策略: 07 追首板涨停 过去两年年化304%
+参数数量: 2
+  int参数:
+    filter_new_stock.days: 50 (行号: 147)
+  str参数:
+    g.n_days_limit_up_list: [] (行号: 24)
+
+策略: 08 14个月200%，超短线实盘交易策略！无未来函数
+参数数量: 2
+  int参数:
+    g.buy_stock_limit: 1 (行号: 27)
+  str参数:
+    g.buy_list: [] (行号: 106)
+
+策略: 08 ETF动量轮动RSRS择时-魔改3小优化
+参数数量: 10
+  float参数:
+    g.score_threshold: 0.7 (行号: 33)
+  int参数:
+    g.M: 600 (行号: 32)
+    g.N: 18 (行号: 31)
+    g.mean_day: 30 (行号: 34)
+    g.mean_diff_day: 5 (行号: 35)
+    g.momentum_day: 20 (行号: 29)
+    g.stock_num: 1 (行号: 28)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 30)
+    g.slope_series: initial_slope_series()[:-1] (行号: 36)
+    g.stock_pool: [ (行号: 20)
+
+策略: 08 因子分析 营业利润TTM
+参数数量: 17
+  int参数:
+    g.days: 0 (行号: 54)
+    g.pool_num: 1000 (行号: 53)
+    g.refresh_rate: 20 (行号: 55)
+    get_trade_dates.count: 250 (行号: 78)
+    get_trade_dates.interval: 20 (行号: 78)
+  str参数:
+    g.all_stocks: get_all_securities(types=['stock'], date=fdate).index.tolist() (行号: 72)
+    g.facName: operating_profit_ttm (行号: 50)
+    g.index: = 'all': (行号: 51)
+    g.indu_code: 801140 (行号: 64)
+    g.isRefresh: g.days % g.refresh_rate == 0 (行号: 67)
+    g.neutralize: True (行号: 62)
+    g.reciprocal: False (行号: 60)
+    g.stocknum: len(stock_list) //10 (行号: 56)
+    g.stocks_to_have: g.stocks_to_have[:g.stocknum] (行号: 57)
+    get_universe_factor.idx: None (行号: 253)
+    get_universe_factor.univ: None (行号: 253)
+    pretreat_factor.neu: True (行号: 342)
+
+策略: 08 国九条后中小板微盘小改，年化135.40%
+参数数量: 19
+  float参数:
+    g.stoploss_limit: 0.09 (行号: 52)
+    g.stoploss_market: 0.05 (行号: 53)
+  int参数:
+    g.highest: 50 (行号: 54)
+    g.max_mv: 100 (行号: 46)
+    g.min_mv: 10 (行号: 45)
+  str参数:
+    g.adjust_num: True (行号: 37)
+    g.filter_audit: False (行号: 36)
+    g.hold_list: context.portfolio.positions (行号: 39)
+    g.limitup_stocks: [] (行号: 43)
+    g.money_etf: 511880.XSHG (行号: 55)
+    g.other_sale: [] (行号: 50)
+    g.pass_months: [1, 4] (行号: 42)
+    g.run_stoploss: True (行号: 35)
+    g.stock_num: new_num (行号: 47)
+    g.stoploss_list: [] (行号: 49)
+    g.stoploss_strategy: = 2 or g.stoploss_strategy == 3: (行号: 51)
+    g.target_list: get_stock_list(context)[:g.stock_num] (行号: 41)
+    g.trading_signal: today_is_between(context) (行号: 34)
+    g.yesterday_HL_list: [] (行号: 40)
+
+策略: 08 科技与狠活 纯粹的数据挖掘策略
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 29)
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 107)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 32)
+    g.hold_list: [] (行号: 31)
+    g.limit_up_list: [] (行号: 30)
+    g.not_buy_again_list: list(temp_set) (行号: 33)
+
+策略: 09 iAlpha 基金投资策略
+参数数量: 1
+  str参数:
+    g.funds: [ (行号: 11)
+
+策略: 09 大容量小市值持仓95只，媲美金元顺安元启
+参数数量: 2
+  int参数:
+    g.stock_num: 95 (行号: 17)
+  str参数:
+    g.high_limit_list: df.query('close==high_limit and paused==0')['code'].tolist() (行号: 47)
+
+策略: 09 干积分-量化策略简易框架
+参数数量: 5
+  int参数:
+    g.stock_num: 3 (行号: 33)
+  str参数:
+    g.foreign_ETF: [ (行号: 36)
+    g.hold_list: [] (行号: 34)
+    g.no_trading_today_signal: False (行号: 32)
+    g.yesterday_HL_list: [] (行号: 35)
+
+策略: 09 持续跑赢大盘-真蓝筹v2(资金容量千万以上)
+参数数量: 12
+  float参数:
+    g.buy: 0.7 (行号: 51)
+    g.sell: -0.7 (行号: 52)
+  int参数:
+    g.M: 600 (行号: 42)
+    g.N: 18 (行号: 40)
+    g.period: 22 (行号: 28)
+  str参数:
+    g.ans: [] (行号: 54)
+    g.ans_rightdev: [] (行号: 56)
+    g.day_count: g.day_count+1 (行号: 27)
+    g.init: False (行号: 45)
+    g.security: 000300.XSHG (行号: 47)
+    g.trend: ='down': (行号: 26)
+    g.zscore_rightdev: zscore*beta*r2 (行号: 107)
+
+策略: 10 10倍-二板排板战法优化
+参数数量: 2
+  str参数:
+    g.my_security: 510300.XSHG (行号: 29)
+    g.yest_df_panel: get_price(help_stock, count = 1,end_date=end_date, frequency='daily', fields=['open', 'high', 'close','low', 'high_limit','money','pre_close']) (行号: 79)
+
+策略: 10 10年52倍，年化59%，全新因子方法超稳定
+参数数量: 7
+  int参数:
+    g.month_day: 1 (行号: 43)
+    g.stock_num: 3 (行号: 33)
+  str参数:
+    g.chosen_factor: ['ARBR'] (行号: 42)
+    g.factor_list: [ (行号: 38)
+    g.hold_list: [] (行号: 34)
+    g.no_trading_today_signal: = True: (行号: 32)
+    g.yesterday_HL_list: [] (行号: 35)
+
+策略: 10 多因子宽基ETF择时轮动改进版-高收益大资金低回撤
+参数数量: 21
+  float参数:
+    g.SwitchFactor: 1.04 (行号: 57)
+    g.lossFactor: 1.005 (行号: 56)
+    g.raiser_thr: 4.8 (行号: 59)
+    g.score_fall_thr: -0.43 (行号: 62)
+    g.score_thr: -0.68 (行号: 61)
+  int参数:
+    g.K: 8 (行号: 53)
+    g.M: 600 (行号: 52)
+    g.Motion_1diff: 19 (行号: 58)
+    g.N: 18 (行号: 51)
+    g.biasN: 90 (行号: 54)
+    g.idex_slope_raise_thr: 12 (行号: 63)
+    g.lossN: 20 (行号: 55)
+    g.momentum_day: 20 (行号: 49)
+    g.stock_num: 1 (行号: 48)
+  str参数:
+    g.check_out_list: get_rank(context,g.stock_pool) (行号: 264)
+    g.hold_stock: stock (行号: 60)
+    g.ref_stock: 000300.XSHG (行号: 50)
+    g.rsrs_score_history: initial_slope_series() (行号: 64)
+    g.stock_motion: initial_stock_motion(g.stock_pool) (行号: 65)
+    g.stock_pool: [ (行号: 31)
+    g.timing_signal: = 'BUY' or g.timing_signal == 'KEEP': (行号: 265)
+
+策略: 10 龙头首阴战法改版二
+参数数量: 3
+  str参数:
+    g.help_stock: [] (行号: 26)
+    g.help_stock_sell: [] (行号: 27)
+    g.my_security: 510300.XSHG (行号: 23)
+
+策略: 100 全市场选股？7年5倍不择时，回撤30%左右
+参数数量: 3
+  int参数:
+    g.position: 1 (行号: 36)
+    g.stock_num: 10 (行号: 35)
+  str参数:
+    g.bond: 511880.XSHG (行号: 37)
+
+策略: 11 一个简单而持续稳定的懒人超额收益策略
+参数数量: 2
+  str参数:
+    g.index: 000300.XSHG (行号: 19)
+    g.stocks: weight.index.tolist() (行号: 20)
+
+策略: 11 低价小盘简单有效
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 83)
+    g.hold_list: [] (行号: 30)
+    g.limit_up_list: [] (行号: 29)
+
+策略: 11 低风险中等收益策略
+参数数量: 4
+  str参数:
+    g.days: g.days + 1 (行号: 20)
+    g.funds: _choice_funds(context) (行号: 29)
+    g.position_size: 1.0/nposition * context.portfolio.total_value (行号: 30)
+    g.stocks: _choice_small(context, nchoice) (行号: 28)
+
+策略: 11 缠论交易策略
+参数数量: 13
+  int参数:
+    EMA.timeperiod: 5 (行号: 48)
+    MACD.fastperiod: 12 (行号: 68)
+    MACD.signalperiod: 9 (行号: 68)
+    MACD.slowperiod: 26 (行号: 68)
+    SMA.timeperiod: 5 (行号: 27)
+    __init__.close_price: 0 (行号: 17)
+    __init__.open_interest: 0 (行号: 17)
+    __init__.open_price: 0 (行号: 17)
+    __init__.volume: 0 (行号: 17)
+  str参数:
+    __init__.build_pivot: False (行号: 17)
+    __init__.include: True (行号: 17)
+    g.security: 300354.XSHE (行号: 497)
+    on_buy_sell.valid: True (行号: 487)
+
+策略: 12 全市场选股？7年5倍不择时，回撤30%左右
+参数数量: 3
+  int参数:
+    g.position: 1 (行号: 36)
+    g.stock_num: 10 (行号: 35)
+  str参数:
+    g.bond: 511880.XSHG (行号: 37)
+
+策略: 12 用子账户模拟多策略分仓
+参数数量: 3
+  int参数:
+    stockpool.pool_id: 1 (行号: 235)
+  str参数:
+    g.portfolio_value_proportion: [0.2,0.2,0.3,0.3] (行号: 42)
+    g.strategys: {} (行号: 41)
+
+策略: 12 致敬聚宽： 机器学习多因子，50只持仓，14年37倍
+参数数量: 2
+  str参数:
+    g.choice: choice (行号: 30)
+    g.psize: 1.0/n_position * context.portfolio.total_value (行号: 31)
+
+策略: 13 5年15倍的收益，年化79.93%，可实盘策略，拿走不谢！
+参数数量: 9
+  int参数:
+    g.limit_days: 30 (行号: 35)
+    g.stock_num: 10 (行号: 31)
+  str参数:
+    g.choice: choice[:g.stock_num] (行号: 32)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 235)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 37)
+    g.hold_list: [] (行号: 36)
+    g.just_sold: g.just_sold[-g.stock_num:] (行号: 33)
+    g.no_trading_today_signal: = True: (行号: 30)
+    g.not_buy_again_list: list(temp_set) (行号: 38)
+
+策略: 13 7年40倍模拟超过两年年化高回撤低
+参数数量: 22
+  float参数:
+    g.bearpercent: 0.3 (行号: 15)
+    g.increase1d: 0.087 (行号: 22)
+    g.pbmin: 0.01 (行号: 25)
+    g.threshold: 0.003 (行号: 35)
+    g.tradevaluemin: 0.01 (行号: 23)
+  int参数:
+    g.buyagain: 5 (行号: 36)
+    g.buyrank: 9 (行号: 18)
+    g.pbmax: 30 (行号: 26)
+    g.sellrank: 10 (行号: 17)
+    g.stocknum: 4 (行号: 14)
+    g.tradeday: 300 (行号: 21)
+    g.tradevaluemax: 1000 (行号: 24)
+    get_growth_rate.n: 20 (行号: 40)
+  str参数:
+    g.MA: ['000001.XSHG', 10] (行号: 33)
+    g.bearposition: True (行号: 16)
+    g.choose_time_signal: True (行号: 34)
+    g.chosen_stock_list: get_stock_rank_m_m(g.chosen_stock_list) (行号: 173)
+    g.isbull: False (行号: 151)
+    g.nohold: False (行号: 171)
+    g.sold_stock: {} (行号: 75)
+    g.weights: [5,5,8,4,10] (行号: 30)
+    get_close_price.unit: 1d (行号: 68)
+
+策略: 13 【涨停研究三】连板股票收益统计与回测
+参数数量: 9
+  float参数:
+    g.p: 0.8 (行号: 33)
+  int参数:
+    g.buy_stock: 0 (行号: 26)
+    g.count_days: 0 (行号: 27)
+    g.emo_cycle: 3 (行号: 32)
+    g.fn: 250 (行号: 28)
+    g.watch_days: 10 (行号: 29)
+  str参数:
+    g.code_list: ['None'] (行号: 30)
+    g.count_list: [] (行号: 31)
+    g.initial_cash: context.portfolio.available_cash / 2 (行号: 34)
+
+策略: 13 不含未来宽基etf轮动8年50倍年化60%
+参数数量: 14
+  int参数:
+    g.dapan_threshold: 0 (行号: 46)
+    g.decrease_days: 0 (行号: 52)
+    g.increase_days: 0 (行号: 53)
+    g.lag1: 20 (行号: 51)
+    g.niu_signal: 1 (行号: 48)
+    g.position: 1 (行号: 49)
+  str参数:
+    g.ETF_list: { (行号: 65)
+    g.available_indexs: [] (行号: 85)
+    g.bond: 511880.XSHG (行号: 56)
+    g.not_ipo_list: g.ETF_list.copy() (行号: 84)
+    g.signal: = 'CLEAR'): (行号: 47)
+    g.unit: 30m (行号: 55)
+    g.zs_list: [ (行号: 57)
+    get_before_after_trade_days.is_before: True (行号: 179)
+
+策略: 13 首板高开-低开-弱转强混合策略（今年收益1138.61%）
+参数数量: 3
+  int参数:
+    filter_new_stock.days: 50 (行号: 245)
+    get_hl_stock.days: 1 (行号: 221)
+  str参数:
+    g.n_days_limit_up_list: [] (行号: 26)
+
+策略: 14 FOF养老成长基金-v2.0
+参数数量: 4
+  int参数:
+    getGrowthRate.n: 21 (行号: 398)
+    stopLoss.lag: 2 (行号: 367)
+    stopLoss.loss: 2 (行号: 367)
+    stopLoss.more: 4 (行号: 367)
+
+策略: 14 为实盘做的更新： 分钟级别和盘中止损
+参数数量: 24
+  float参数:
+    g.bearpercent: 0.3 (行号: 24)
+    g.increase1d: 0.087 (行号: 31)
+    g.pbmax: 3.5 (行号: 35)
+    g.pbmin: 0.5 (行号: 34)
+    g.threshold: 0.003 (行号: 44)
+    g.tradevaluemin: 0.01 (行号: 32)
+  int参数:
+    g.buyagain: 5 (行号: 45)
+    g.buyrank: 9 (行号: 27)
+    g.sellrank: 10 (行号: 26)
+    g.stocknum: 4 (行号: 23)
+    g.tradeday: 300 (行号: 30)
+    g.tradevaluemax: 1000 (行号: 33)
+    get_growth_rate.n: 20 (行号: 49)
+  str参数:
+    g.MA: ['000001.XSHG', 10] (行号: 42)
+    g.bearposition: True (行号: 25)
+    g.choose_time_signal: True (行号: 43)
+    g.chosen_stock_list: get_stock_rank_m_m(g.chosen_stock_list) (行号: 216)
+    g.isbull: False (行号: 189)
+    g.nohold: False (行号: 214)
+    g.sold_stock: {} (行号: 85)
+    g.stop_run: True (行号: 211)
+    g.value: [context.portfolio.total_value]*100 (行号: 257)
+    g.weights: [5,5,8,4,10] (行号: 39)
+    get_close_price.unit: 1d (行号: 78)
+
+策略: 14 四年多翻9倍，年化73%，成长因子评分筛选
+参数数量: 3
+  int参数:
+    g.stock_num: 5 (行号: 29)
+  str参数:
+    g.hold_list: list(context.portfolio.positions.keys()) (行号: 32)
+    g.no_trading_today_signal: = True: (行号: 31)
+
+策略: 14 安全摸狗策略
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 37)
+  str参数:
+    g.etf_pool: [ (行号: 31)
+
+策略: 14 胜率65%之缩量分歧反包战法
+参数数量: 2
+  str参数:
+    g.help_stock: [] (行号: 25)
+    g.my_security: 510300.XSHG (行号: 23)
+
+策略: 15 10年52倍，年化59%，全新因子方法超稳定
+参数数量: 7
+  int参数:
+    g.month_day: 1 (行号: 42)
+    g.stock_num: 3 (行号: 32)
+  str参数:
+    g.chosen_factor: ['ARBR'] (行号: 41)
+    g.factor_list: [ (行号: 37)
+    g.hold_list: [] (行号: 33)
+    g.no_trading_today_signal: = True: (行号: 31)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 15 2020年 267%年化 13%回撤 上涨趋势策略修改版
+参数数量: 32
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 278)
+    g.buy_refresh_rate: 10 (行号: 43)
+    g.buy_trade_days: 0 (行号: 55)
+    g.check_stocks_refresh_rate: 120 (行号: 39)
+    g.max_hold_stocknum: 2 (行号: 47)
+    g.order_style_value: 100 (行号: 125)
+    g.security_max_proportion: 1 (行号: 37)
+    g.sell_refresh_rate: 10 (行号: 45)
+    g.sell_trade_days: 0 (行号: 56)
+  str参数:
+    g.avg_hold: g.avg_hold + len(g.check_out_lists) (行号: 49)
+    g.check_out_lists: g.check_out_lists[:g.max_hold_stocknum] (行号: 106)
+    g.check_out_lists_ascending: desc (行号: 106)
+    g.concept_list: [] (行号: 101)
+    g.daily_risk_management: True (行号: 135)
+    g.day_check: g.day_check + 1 (行号: 51)
+    g.filter_delisted: True (行号: 90)
+    g.filter_holded: False (行号: 120)
+    g.filter_paused: True (行号: 88)
+    g.filter_st: True (行号: 94)
+    g.industry_list: ["801010","801020","801030","801040","801050","801080","801110","801120","801130","801140","801150","801160","801170","801180","801200","801210","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790","801880","801890"] (行号: 99)
+    g.max_buy_amount: None (行号: 139)
+    g.max_buy_value: None (行号: 138)
+    g.only_st: False (行号: 92)
+    g.open_sell_securities: [] (行号: 58)
+    g.order_style_str: by_cap_mean (行号: 124)
+    g.risk_management_signal: True (行号: 132)
+    g.security_universe_index: ["all_a_securities"] (行号: 96)
+    g.security_universe_user_securities: [] (行号: 97)
+    g.sell_by_amount: None (行号: 114)
+    g.sell_by_percent: None (行号: 115)
+    g.sell_will_buy: True (行号: 111)
+    g.selled_security_list: {} (行号: 60)
+
+策略: 15 小市值排除3个bug版，22年至今收益506%回撤11%
+参数数量: 18
+  float参数:
+    g.stoploss_limit: 0.09 (行号: 59)
+    g.stoploss_market: 0.05 (行号: 60)
+  int参数:
+    g.highest: 50 (行号: 61)
+    g.max_mv: 100 (行号: 55)
+    g.min_mv: 10 (行号: 54)
+  str参数:
+    g.adjust_num: True (行号: 46)
+    g.etf: 511880.XSHG (行号: 62)
+    g.filter_audit: False (行号: 45)
+    g.hold_list: context.portfolio.positions (行号: 48)
+    g.limitup_stocks: [] (行号: 52)
+    g.pass_months: [1, 4] (行号: 51)
+    g.reason_to_sell: {} (行号: 57)
+    g.run_stoploss: True (行号: 44)
+    g.stock_num: new_num (行号: 56)
+    g.stoploss_strategy: = 2 or g.stoploss_strategy == 3: (行号: 58)
+    g.target_list: get_stock_list(context)[:g.stock_num] (行号: 50)
+    g.trading_signal: = False: (行号: 43)
+    g.yesterday_HL_list: [] (行号: 49)
+
+策略: 15 小市值策略之再优化，年化接近翻倍
+参数数量: 4
+  int参数:
+    g.buy_stock_count: 3 (行号: 29)
+    g.ma_period: 5 (行号: 30)
+    g.sell_ma_period: 1 (行号: 31)
+  str参数:
+    g.security_universe_index: 399101.XSHE (行号: 28)
+
+策略: 15 高股息低杠杆小市值轮动策略
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 29)
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 134)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 32)
+    g.hold_list: [] (行号: 31)
+    g.limit_up_list: [] (行号: 30)
+    g.not_buy_again_list: list(temp_set) (行号: 33)
+
+策略: 16 ETF轮动策略升级-多类别-低回撤
+参数数量: 23
+  int参数:
+    g.ma_period: 10 (行号: 52)
+    g.moment_period: 13 (行号: 51)
+    g.type_num: 5 (行号: 54)
+  str参数:
+    g.ETFList: {} (行号: 151)
+    g.ETF_targets: { (行号: 56)
+    g.REITs: [ (行号: 112)
+    g.df_etf: g.df_etf.append({'基金代码': security, (行号: 177)
+    g.df_etf_buy: g.df_etf_buy[g.df_etf_buy['均线状态']  > 0] (行号: 240)
+    g.df_global_futures: g.df_etf_buy.loc[g.df_etf_buy['基金代码'].isin(g.global_futures)] (行号: 187)
+    g.df_global_stocks: g.df_etf_buy.loc[g.df_etf_buy['基金代码'].isin(g.global_stocks)] (行号: 185)
+    g.df_local_futures: g.df_etf_buy.loc[g.df_etf_buy['基金代码'].isin(g.local_futures)] (行号: 186)
+    g.df_local_stocks: g.df_etf_buy.loc[g.df_etf_buy['基金代码'].isin(g.local_stocks)] (行号: 184)
+    g.df_reits: g.df_etf_buy.loc[g.df_etf_buy['基金代码'].isin(g.REITs)] (行号: 188)
+    g.global_futures: [ (行号: 105)
+    g.global_stocks: [ (行号: 91)
+    g.holdings: set(context.portfolio.positions.keys()) (行号: 251)
+    g.local_futures: [ (行号: 98)
+    g.local_stocks: [ (行号: 85)
+    g.purchases: [i for i in g.targets if i not in (list(g.holdings))] (行号: 20)
+    g.sells: [i for i in g.holdings if i not in (g.targets)] (行号: 21)
+    g.target_market: 000300.XSHG (行号: 49)
+    g.targets: [] (行号: 252)
+    get_before_after_trade_days.is_before: True (行号: 127)
+
+策略: 16 动量ETF轮动RSRS择时-升级
+参数数量: 11
+  float参数:
+    g.score_threshold: 0.7 (行号: 47)
+  int参数:
+    g.M: 1100 (行号: 46)
+    g.N: 18 (行号: 45)
+    g.momentum_day: 10 (行号: 43)
+    g.stock_num: 1 (行号: 42)
+  str参数:
+    g.checktime: 13:00 (行号: 49)
+    g.checktime2: 13:50 (行号: 50)
+    g.hold: stk (行号: 51)
+    g.ref_stock: 000300.XSHG (行号: 44)
+    g.slope_series: initial_slope_series() (行号: 48)
+    g.stock_pool: [ (行号: 21)
+
+策略: 16 大市值价值投资，从2005年至今超额稳定
+参数数量: 2
+  int参数:
+    g.buy_stock_count: 5 (行号: 24)
+  str参数:
+    g.check_out_lists: check_out_lists (行号: 25)
+
+策略: 16 集合竞价三合一，今年收益1067%，年化198%
+参数数量: 5
+  int参数:
+    filter_new_stock.days: 50 (行号: 271)
+    filter_new_stock2.days: 250 (行号: 445)
+  str参数:
+    g.target_list: hl_list (行号: 67)
+    g.target_list2: all_list (行号: 77)
+    get_shifted_date.days_type: T (行号: 246)
+
+策略: 17 5年多因子超额收益1055%，K线风险过滤，无未来函数
+参数数量: 8
+  int参数:
+    g.limit_days: 20 (行号: 25)
+    g.stock_num: 5 (行号: 24)
+    sorted_by_circulating_market_cap.n_limit_top: 5 (行号: 51)
+  str参数:
+    g.high_limit_list: df.query('close==high_limit and paused==0')['code'].tolist() (行号: 33)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 28)
+    g.hold_list: list(context.portfolio.positions) (行号: 27)
+    g.not_buy_again_list: list(temp_set) (行号: 29)
+    g.switch: g.switch+1 (行号: 30)
+
+策略: 17 8年13倍的ETF动量轮动策略,有滑点,无未来函数,回撤小
+参数数量: 10
+  float参数:
+    g.score_threshold: 0.7 (行号: 61)
+  int参数:
+    g.M: 600 (行号: 60)
+    g.N: 18 (行号: 59)
+    g.mean_day: 20 (行号: 63)
+    g.mean_diff_day: 3 (行号: 64)
+    g.momentum_day: 29 (行号: 56)
+    g.stock_num: 1 (行号: 55)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 58)
+    g.slope_series: initial_slope_series()[:-1] (行号: 65)
+    g.stock_pool: [ (行号: 45)
+
+策略: 17 基金跟随策略，19年年化60%
+参数数量: 32
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 372)
+    g.buy_trade_days: 1 (行号: 42)
+    g.check_stocks_days: 1 (行号: 40)
+    g.check_stocks_refresh_rate: 1 (行号: 31)
+    g.max_hold_stocknum: 5 (行号: 37)
+    g.order_style_value: 100 (行号: 113)
+    g.security_max_proportion: 1 (行号: 29)
+    g.sell_refresh_rate: 1 (行号: 35)
+    g.sell_trade_days: 1 (行号: 43)
+  str参数:
+    check_stocks_sort.ascending: desc (行号: 93)
+    g.buy_refresh_rate: = 0: (行号: 33)
+    g.check_out_lists: fund50(context,g.check_out_lists) (行号: 95)
+    g.check_out_lists_ascending: desc (行号: 95)
+    g.concept_list: [] (行号: 90)
+    g.daily_risk_management: True (行号: 121)
+    g.filter_delisted: True (行号: 79)
+    g.filter_holded: False (行号: 109)
+    g.filter_paused: True (行号: 77)
+    g.filter_st: True (行号: 83)
+    g.industry_list: ["801010","801020","801030","801040","801050","801080","801110","801120","801130","801140","801150","801160","801170","801180","801200","801210","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790","801880","801890"] (行号: 88)
+    g.max_buy_amount: None (行号: 125)
+    g.max_buy_value: None (行号: 124)
+    g.only_st: False (行号: 81)
+    g.open_sell_securities: [s for s in g.open_sell_securities if s in context.portfolio.positions.keys()] (行号: 45)
+    g.order_style_str: by_cap_mean (行号: 112)
+    g.risk_management_signal: True (行号: 118)
+    g.security_universe_index: ["all_a_securities"] (行号: 85)
+    g.security_universe_user_securities: [] (行号: 86)
+    g.sell_by_amount: None (行号: 103)
+    g.sell_by_percent: None (行号: 104)
+    g.sell_will_buy: False (行号: 100)
+    g.selled_security_list: {} (行号: 47)
+
+策略: 17 多品种ETF动量轮动+EPO优化
+参数数量: 10
+  float参数:
+    g.w: 0.2 (行号: 37)
+  int参数:
+    g._lambda: 10 (行号: 36)
+    g.m_days: 34 (行号: 62)
+    g.stock_num: 3 (行号: 35)
+  str参数:
+    epo.anchor: None (行号: 86)
+    epo.endogenous: True (行号: 86)
+    epo.method: simple (行号: 86)
+    epo.normalize: True (行号: 86)
+    epo.w: None (行号: 86)
+    g.etf_pool: [ (行号: 41)
+
+策略: 17 科技与狠活
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 29)
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 107)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 32)
+    g.hold_list: [] (行号: 31)
+    g.limit_up_list: [] (行号: 30)
+    g.not_buy_again_list: list(temp_set) (行号: 33)
+
+策略: 18 20行代码8年高胜率躲过了牛年第一场大跌
+参数数量: 2
+  str参数:
+    g.my: 511010.XSHG (行号: 10)
+    g.st: 510300.XSHG (行号: 9)
+
+策略: 18 6年17倍的etf+分级b的轮动趋势策略跟随感悟
+参数数量: 13
+  int参数:
+    g.lag: 6 (行号: 70)
+    g.lag0: 7 (行号: 71)
+    g.lag1: 13 (行号: 72)
+    g.lag2: 13 (行号: 73)
+  str参数:
+    g.ETFList: {} (行号: 130)
+    g.ETF_targets: { (行号: 77)
+    g.buy: [df_etf['基金代码'].iloc[0],] (行号: 75)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 69)
+    g.empty_keep_stock: 601318.XSHG (行号: 66)
+    g.signal: BUY (行号: 68)
+    g.target_market: df_etf['对应指数'].iloc[-1] (行号: 64)
+    g.use_dynamic_target_market: True (行号: 63)
+    get_before_after_trade_days.is_before: True (行号: 106)
+
+策略: 18 动量ETF轮动-RSRS择时-卡尔曼滤波
+参数数量: 9
+  float参数:
+    g.score_threshold: 0.7 (行号: 39)
+  int参数:
+    g.M: 600 (行号: 38)
+    g.N: 18 (行号: 37)
+    g.momentum_day: 20 (行号: 35)
+    g.stock_num: 1 (行号: 34)
+    kalman_filter.damping: 1 (行号: 46)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 36)
+    g.slope_series: initial_slope_series()[:-1] (行号: 40)
+    g.stock_pool: [ (行号: 20)
+
+策略: 18 国庆节献礼：实例说明白马股攻防转换策略
+参数数量: 3
+  int参数:
+    g.buy_stock_count: 5 (行号: 30)
+  str参数:
+    g.check_out_lists: check_out_lists (行号: 31)
+    g.market_temperature: = "hot": (行号: 32)
+
+策略: 18 微盘股400多角度深入研究
+参数数量: 3
+  str参数:
+    g.choice: df.index.tolist() (行号: 45)
+    g.days: g.days + 1 (行号: 15)
+    g.position_size: 1.0/nposition * context.portfolio.total_value (行号: 46)
+
+策略: 19 【复现】高频价量相关性，意想不到的选股因子
+参数数量: 4
+  int参数:
+    g.hold_num: 200 (行号: 31)
+  str参数:
+    g.factor_df: pd.read_csv(BytesIO(read_file('cpv.csv')), (行号: 41)
+    g.factor_name: = 'pca_pv': (行号: 35)
+    g.is_in_index: None (行号: 36)
+
+策略: 19 复现FFScore财务模型
+参数数量: 1
+  str参数:
+    g.sel_fields: ['DELTA_ROE', 'ROA2', 'DELTA_MARGIN', 'DELTA_CATURN', 'DELTA_ROA2','DLTA_LIQUID'] (行号: 30)
+
+策略: 19 机器学习线性回归小市值
+参数数量: 5
+  int参数:
+    g.stock_num: 1 (行号: 41)
+  str参数:
+    g.factor_list: [ (行号: 44)
+    g.hold_list: [] (行号: 42)
+    g.no_trading_today_signal: = True: (行号: 40)
+    g.yesterday_HL_list: [] (行号: 43)
+
+策略: 19 简单到发指的股指策略(2013到现在收益10949%)
+参数数量: 2
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 22)
+    g.code: IF (行号: 21)
+
+策略: 19 高股息低市盈率稳健增长的价投策略
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 25)
+  str参数:
+    g.high_limit_list: [] (行号: 88)
+    g.hold_list: [] (行号: 87)
+    g.month: context.current_dt.month (行号: 26)
+
+策略: 20 【复现】因子择时？？？
+参数数量: 8
+  int参数:
+    g.N: 50 (行号: 58)
+  str参数:
+    g.Ret_mat: pd.read_csv(BytesIO(read_file('Data/Ret_mat.csv')),index_col=[0],parse_dates=True) (行号: 74)
+    g.datas: pd.read_csv(BytesIO(read_file('Data/datas.csv')),index_col=[0,1],parse_dates=True) (行号: 75)
+    g.df_m_shifted_: pd.read_csv(BytesIO(read_file('Data/df_m_shifted_.csv')),index_col=[0],parse_dates=True) (行号: 76)
+    g.index_symbol: 000300.XSHG (行号: 57)
+    g.method: = 'not_timing': (行号: 67)
+    g.stocks_df: get_portfolio(weight_new,g.datas,number=g.N) (行号: 68)
+    g.weight_in: pd.read_csv(BytesIO(read_file('Data/weight_in.csv')),index_col=[0],parse_dates=True) (行号: 77)
+
+策略: 20 冲天炮最高板策略，收益惊呆了我
+参数数量: 4
+  int参数:
+    g.daily_buy_count: 1 (行号: 25)
+  str参数:
+    g.buy_list: df[(df.day_count == review_days) & (df.ups == g.max_zt_days)]['code'].tolist() (行号: 56)
+    g.max_zt_days: df[df.day_count == review_days].ups.max() (行号: 53)
+    g.today_bought_stocks: set() (行号: 50)
+
+策略: 20 小市值高频交易法有赚就好 2年3.86%低回撤
+参数数量: 5
+  int参数:
+    g.amount: 7 (行号: 19)
+    g.choice: 500 (行号: 18)
+  str参数:
+    g.bucket: [] (行号: 21)
+    g.muster: filter_limitdown_stock(context, g.muster) (行号: 20)
+    g.summit: {} (行号: 22)
+
+策略: 21 【原创】年化123%最大回撤14%涨停弱转强竞价战法
+参数数量: 3
+  int参数:
+    filter_new_stock.days: 50 (行号: 222)
+  str参数:
+    g.target_list: hl_list (行号: 50)
+    get_shifted_date.days_type: T (行号: 197)
+
+策略: 21 以“网红”ETF轮动为例
+参数数量: 13
+  int参数:
+    g.lag: 6 (行号: 69)
+    g.lag0: 7 (行号: 70)
+    g.lag1: 13 (行号: 71)
+    g.lag2: 13 (行号: 72)
+  str参数:
+    g.ETFList: {} (行号: 123)
+    g.ETF_targets: { (行号: 76)
+    g.buy: [df_etf['基金代码'].iloc[0],] (行号: 74)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 68)
+    g.empty_keep_stock: 601318.XSHG (行号: 65)
+    g.signal: BUY (行号: 67)
+    g.target_market: df_etf['对应指数'].iloc[-1] (行号: 63)
+    g.use_dynamic_target_market: True (行号: 62)
+    get_before_after_trade_days.is_before: True (行号: 99)
+
+策略: 21 利用宏观经济数据的中长线策略深度研究
+参数数量: 9
+  float参数:
+    g.order_amount: 0.04 (行号: 24)
+    g.yearMa10: 0.0 (行号: 29)
+  int参数:
+    g.mode: 0 (行号: 21)
+    g.times: -1 (行号: 23)
+  str参数:
+    g.begin_date: 2013-01 (行号: 25)
+    g.bond_security: 511010.XSHG (行号: 27)
+    g.over_hot: False (行号: 28)
+    g.record: float(np.array(get_bars('000300.XSHG', 1, '1d', fields = ['close'], include_now=True, df = True))[0]) (行号: 22)
+    g.stock_security: 510300.XSHG (行号: 26)
+
+策略: 21 北向资金股票轮动-优质策略可直接实盘
+参数数量: 7
+  int参数:
+    g.max_stock_count: 15 (行号: 39)
+  str参数:
+    g.buy: result (行号: 41)
+    g.empty_keep_stock: 601318.XSHG (行号: 35)
+    g.north_money: total_net_in (行号: 38)
+    g.signal: BUY (行号: 37)
+    g.target_market: 000300.XSHG (行号: 33)
+    g.use_dynamic_target_market: True (行号: 32)
+
+策略: 21 行业ETF轮动+择时，15年至今年化收益35%，回撤16%
+参数数量: 14
+  int参数:
+    g.dapan_threshold: 0 (行号: 61)
+    g.decrease_days: 0 (行号: 68)
+    g.increase_days: 0 (行号: 69)
+    g.lag1: 20 (行号: 67)
+    g.niu_signal: 1 (行号: 63)
+    g.position: 1 (行号: 64)
+  str参数:
+    g.ETF_list: { (行号: 92)
+    g.available_indexs: [] (行号: 115)
+    g.bond: 511880.XSHG (行号: 72)
+    g.not_ipo_list: g.ETF_list.copy() (行号: 112)
+    g.signal: = 'CLEAR'): (行号: 62)
+    g.unit: 30m (行号: 71)
+    g.zs_list: [ (行号: 78)
+    get_before_after_trade_days.is_before: True (行号: 229)
+
+策略: 22 “开弓”ETF轮动模型——改
+参数数量: 4
+  int参数:
+    g.num_to_buy: 1 (行号: 32)
+    g.ordertype: 1 (行号: 126)
+  str参数:
+    g.codes: pd.Series(jz_pj).sort_values(ascending=False).index[0] (行号: 33)
+    g.stocks: ['510050.XSHG', '510500.XSHG', '159901.XSHE', '159902.XSHE', '159915.XSHE'] (行号: 31)
+
+策略: 22 带上止损的核心资产轮动才更安心，低回撤，高收益率
+参数数量: 6
+  int参数:
+    evaluate_etf_worth.is_hold: 1 (行号: 57)
+    g.m_days: 25 (行号: 37)
+    initial_etf_info.ndays: 100 (行号: 44)
+  str参数:
+    g.etf_info: initial_etf_info(g.etf_pool, 100) (行号: 38)
+    g.etf_pool: [ (行号: 31)
+    g.etf_pre: hold_etf (行号: 39)
+
+策略: 22 截止到21年12月依然有效的小市值适配因子
+参数数量: 1
+  int参数:
+    g.stock_num: 5 (行号: 27)
+
+策略: 22 菜场大妈选股法
+参数数量: 2
+  int参数:
+    g.stock_num: 10 (行号: 21)
+  str参数:
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 106)
+
+策略: 22 菜场大妈高质低价法策略
+参数数量: 6
+  int参数:
+    g.stock_num: 10 (行号: 62)
+  str参数:
+    g.buylist: choice (行号: 63)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 236)
+    g.maxdown: max_down if max_down > g.maxdown else g.maxdown (行号: 66)
+    g.new_high_value: g.total_value (行号: 65)
+    g.total_value: context.portfolio.total_value (行号: 342)
+
+策略: 23 wywy1995大神机器学习策略年化提升版
+参数数量: 6
+  int参数:
+    g.stock_num: 10 (行号: 32)
+  str参数:
+    g.factor_list: [ (行号: 37)
+    g.hold_list: [] (行号: 33)
+    g.not_buy_again: [] (行号: 36)
+    g.target_list: get_stock_list(context) (行号: 34)
+    g.yesterday_HL_list: [] (行号: 35)
+
+策略: 23 低价小盘简单有效
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: [] (行号: 83)
+    g.hold_list: [] (行号: 30)
+    g.limit_up_list: [] (行号: 29)
+
+策略: 23 大盘择时，逻辑简单
+参数数量: 6
+  float参数:
+    g.beta: 0.7 (行号: 32)
+  int参数:
+    g.stock_num: 5 (行号: 26)
+  str参数:
+    g.etf_A: 511880.XSHG (行号: 28)
+    g.etf_B: 510300.XSHG (行号: 30)
+    g.high_limit_list: [] (行号: 143)
+    g.no_trading_today_signal: = False: (行号: 34)
+
+策略: 23 简单到发指的股指策略(2013到现在收益10949%)
+参数数量: 2
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 22)
+    g.code: IF (行号: 21)
+
+策略: 24 低AH溢价选股
+参数数量: 1
+  int参数:
+    g.stocknum: 5 (行号: 21)
+
+策略: 24 多因子线性回归组合策略
+参数数量: 5
+  int参数:
+    g.stock_num: 1 (行号: 39)
+  str参数:
+    g.factor_list: [ (行号: 43)
+    g.hold_list: [] (行号: 40)
+    g.no_trading_today_signal: = True: (行号: 38)
+    g.yesterday_HL_list: [] (行号: 41)
+
+策略: 24 大容量低回撤价值投资-排除小市值因子
+参数数量: 8
+  int参数:
+    g.limit_days: 20 (行号: 39)
+    g.stock_num: 40 (行号: 34)
+  str参数:
+    g.high_limit_list: [] (行号: 97)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 37)
+    g.hold_list: [] (行号: 36)
+    g.limit_up_list: [] (行号: 35)
+    g.not_buy_again_list: list(temp_set) (行号: 38)
+    g.target_list: g.target_list[:min(g.stock_num, len(g.target_list))] (行号: 40)
+
+策略: 24 宽基ETF动量轮动钝化RSRS择时-回撤小
+参数数量: 10
+  int参数:
+    g.momentum_day: 29 (行号: 38)
+  str参数:
+    g.M: {'000300.XSHG':700, '000905.XSHG':800, '399006.XSHE':500} (行号: 40)
+    g.N: {'000300.XSHG':18, '000905.XSHG':18, '399006.XSHE':18} (行号: 39)
+    g.check_out_list: get_rank(context,g.stock_pool) (行号: 44)
+    g.last_value: context.portfolio.total_value (行号: 43)
+    g.max_value: context.portfolio.total_value (行号: 42)
+    g.score_threshold: {'000300.XSHG':0.7, '000905.XSHG':1, '399006.XSHE':0.4} (行号: 41)
+    g.slope_series: initial_slope_series() (行号: 40)
+    g.stock_pool: [ (行号: 29)
+    g.timing_signal: = 'BUY' and g.check_out_list != security: (行号: 45)
+
+策略: 24 现在便宜的300就是最好的，收益惊人
+参数数量: 2
+  int参数:
+    g.buy_stock_count: 3 (行号: 25)
+  str参数:
+    g.security_universe_index: 399102.XSHE (行号: 24)
+
+策略: 25 ROE-PB模型的优化
+参数数量: 2
+  int参数:
+    g.stock_num: 10 (行号: 27)
+  str参数:
+    g.stock_pool: 000300.XSHG (行号: 14)
+
+策略: 25 低价股优化，18年至今10625.40%，加入防未来函数
+参数数量: 11
+  float参数:
+    g.price_before_close: 0.0 (行号: 108)
+  int参数:
+    g.not_buy_flg: 1 (行号: 100)
+  str参数:
+    g.last_buy_orderid: new_order.order_id (行号: 103)
+    g.last_buy_price: now_buy_price (行号: 105)
+    g.last_sell_orderid: new_order.order_id (行号: 104)
+    g.last_sell_price: now_sell_price (行号: 106)
+    g.not_sell_flg: =0 (行号: 101)
+    g.price_50m: {'open':0.000,'close':0.000,'high':0.000,'low':0.000} (行号: 107)
+    g.sel_stock: security (行号: 37)
+    g.strategy_endtime: time(14, 55) (行号: 42)
+    g.strategy_starttime: time(10, 20) (行号: 40)
+
+策略: 25 冷饭热吃之三，14年至今年华99.99%
+参数数量: 17
+  float参数:
+    g.HV_ratio: 0.9 (行号: 65)
+    g.stoploss_limit: 0.88 (行号: 60)
+    g.stoploss_market: 0.94 (行号: 61)
+  int参数:
+    g.HV_duration: 120 (行号: 64)
+    g.m_days: 7 (行号: 56)
+    g.stock_num: 7 (行号: 55)
+    g.up_price: 100 (行号: 57)
+  str参数:
+    g.HV_control: = True: (行号: 63)
+    g.hold_list: [] (行号: 50)
+    g.no_trading_today_signal: = True: (行号: 46)
+    g.not_buy_again: [] (行号: 53)
+    g.pass_april: True (行号: 47)
+    g.reason_to_sell: stoploss (行号: 58)
+    g.run_stoploss: = True: (行号: 48)
+    g.stoploss_strategy: = 3: (行号: 59)
+    g.target_list: get_stock_list(context) (行号: 52)
+    g.yesterday_HL_list: [] (行号: 51)
+
+策略: 25 基本不耍六毛的ETF轮动策略
+参数数量: 10
+  int参数:
+    g.lag: 6 (行号: 58)
+    g.lag0: 7 (行号: 59)
+    g.lag1: 13 (行号: 60)
+    g.lag2: 13 (行号: 61)
+  str参数:
+    g.ETFList: ret_val (行号: 52)
+    g.buy: list(df_etf['基金代码']) (行号: 56)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 54)
+    g.empty_keep_stock: ret_val (行号: 51)
+    g.signal: BUY (行号: 55)
+    g.target_market: 399001.XSHE (行号: 50)
+
+策略: 25 年初至今4倍，极致的Day Trading，56.8%胜率
+参数数量: 13
+  float参数:
+    g.score_threshold: 0.7 (行号: 62)
+    g.take_profit: 0.12 (行号: 65)
+  int参数:
+    g.M: 600 (行号: 61)
+    g.N: 14 (行号: 60)
+    g.mean_day: 7 (行号: 67)
+    g.mean_diff_day: 10 (行号: 69)
+    g.momentum_day: 29 (行号: 56)
+    g.num_days: 5 (行号: 57)
+    g.sec_data_num: 5 (行号: 64)
+    g.stock_num: 5 (行号: 54)
+    g.stock_tobuy: 1 (行号: 55)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 59)
+    g.slope_series: initial_slope_series()[:-1] (行号: 70)
+
+策略: 26 【深度解析 六】高股息率-低PEG-低股价-市值序列模型
+参数数量: 3
+  int参数:
+    g.stock_num: 20 (行号: 60)
+  str参数:
+    g.buylist: stocks[:g.stock_num] (行号: 63)
+    g.high_limit_list: list(df[df['close'] == df['high_limit']].index) (行号: 66)
+
+策略: 26 波动率过滤后相关性最小etf轮动
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 19)
+  str参数:
+    g.etf_pool: ['512660.XSHG', '511010.XSHG', '510880.XSHG', '159915.XSHE', '513050.XSHG', '510050.XSHG', '588100.XSHG', '512100.XSHG', '518800.XSHG', '513060.XSHG', '512980.XSHG', '512010.XSHG', '513100.XSHG', '512720.XSHG', (行号: 16)
+
+策略: 26 稳定高回报周期股策略2
+参数数量: 4
+  int参数:
+    g.stock_num: 5 (行号: 102)
+  str参数:
+    g.bfive: [] (行号: 103)
+    g.bten: [] (行号: 102)
+    g.fin: pd.DataFrame() (行号: 133)
+
+策略: 26 近几年一直有效的股票BOLL择时策略
+参数数量: 6
+  int参数:
+    g.max_cash: 200000 (行号: 15)
+  str参数:
+    g.limit_price: [1, 100] (行号: 33)
+    g.loss_price: {} (行号: 14)
+    g.stock_list: list(all_stock) (行号: 32)
+    g.strat_name:  (行号: 30)
+    g.yesterday_list: [] (行号: 31)
+
+策略: 26 这个可入得了你们法眼
+参数数量: 6
+  str参数:
+    g.check_out_lists: list(set(g.check_out_lists).intersection(set(longhu["code"]))) (行号: 44)
+    g.dapan_yesterday_close: df.close[-1] (行号: 353)
+    g.dapan_yesterday_rise: dapan_rise (行号: 354)
+    g.preorderlist: [] (行号: 63)
+    g.selllist: {} (行号: 66)
+    g.tracklist: [] (行号: 75)
+
+策略: 27 中证500指增+CTA，胜率52%盈亏比1.9。不输顶尖私募
+参数数量: 25
+  float参数:
+    g.future_position: 0.35 (行号: 32)
+    g.future_share: 0.3 (行号: 31)
+    g.futures_margin_rate: 0.15 (行号: 47)
+    g.stock_share: 0.7 (行号: 30)
+  int参数:
+    g.ATRdays: 20 (行号: 53)
+    g.boundrydays: 5 (行号: 54)
+    g.day: 20 (行号: 70)
+    g.day_count: 0 (行号: 71)
+    g.long_days: 6 (行号: 49)
+    g.longdays: 50 (行号: 59)
+    g.para: 1 (行号: 60)
+    g.short_days: 2 (行号: 50)
+    g.shortdays: 20 (行号: 58)
+    g.stock_num: 20 (行号: 41)
+    g.stop: 5 (行号: 55)
+    g.unitprice: 200 (行号: 48)
+  str参数:
+    g.benchmark: 000905.XSHG (行号: 19)
+    g.code_1: get_future_contracts(g.future_type)[0] (行号: 329)
+    g.de_day: = 0: (行号: 336)
+    g.future_type: IC (行号: 46)
+    g.k: min(int(value / margin),100) (行号: 72)
+    g.loss_stop: = 1): (行号: 358)
+    g.position: get_stock_list(context) (行号: 115)
+    g.sign: = 0): (行号: 357)
+    g.volatility: = 1: (行号: 359)
+
+策略: 27 基于RSRS的趋势交易与网格交易相结合的尝试
+参数数量: 21
+  float参数:
+    g.buy: 0.7 (行号: 50)
+    g.sell: -0.7 (行号: 51)
+    g.slippage: 0.02 (行号: 21)
+  int参数:
+    g.ATR_period: 20 (行号: 33)
+    g.M: 1100 (行号: 46)
+    g.N: 18 (行号: 32)
+    g.NATRstop: 2 (行号: 32)
+    g.gear: 2 (行号: 31)
+  str参数:
+    g.ATR_buy: ATR(context,security) (行号: 122)
+    g.Buy_tag: [0]*(g.gear+1) (行号: 36)
+    g.LastRealPrice: history(1, '1m', 'close', security, df=False,skip_paused=True).get(security)[0]/10 (行号: 77)
+    g.Price_list: [round(x,2) for x in g.Price_list] (行号: 124)
+    g.Stop_price: g.buy_price+g.NATRstop*g.ATR_buy (行号: 123)
+    g.ans: [] (行号: 53)
+    g.ans_rightdev: [] (行号: 55)
+    g.buy_price: current_data[security].last_price (行号: 121)
+    g.cash: context.portfolio.available_cash*g.position (行号: 35)
+    g.init: False (行号: 48)
+    g.last_buy_tag: n (行号: 37)
+    g.position: 1/(g.gear+1) (行号: 34)
+    g.security: 000300.XSHG (行号: 39)
+
+策略: 27 根据动量模型切换大小盘板块选股策略
+参数数量: 8
+  int参数:
+    g.momentum_day: 89 (行号: 47)
+    g.position: 1 (行号: 48)
+    g.stock_num_small: 30 (行号: 51)
+  str参数:
+    g.index_pool: [ (行号: 42)
+    g.length: len(get_stock_list_before_open(context)[0]) (行号: 52)
+    g.stock_list: stock_list (行号: 324)
+    g.stock_num: stock_num (行号: 50)
+    get_close_price.unit: 1d (行号: 81)
+
+策略: 27 追涨大师（超额142）
+参数数量: 3
+  int参数:
+    g.stocknum: 1 (行号: 26)
+  str参数:
+    g.buy_price: get_current_data()[stock_name].last_price (行号: 28)
+    g.day: {} (行号: 30)
+
+策略: 28 XGBoost模型多因子策略分享
+参数数量: 13
+  int参数:
+    g.F_score_limit: 6 (行号: 66)
+    g.buy_stock_count: 20 (行号: 59)
+    g.count_days: 100 (行号: 64)
+    g.day_count: 0 (行号: 60)
+    g.trade_hour: 14 (行号: 62)
+    g.trade_minute: 30 (行号: 63)
+    get_growth_rate.n: 10 (行号: 489)
+    linreg.columns: 3 (行号: 167)
+  str参数:
+    delect_stop.n: 30*3 (行号: 138)
+    g.index: 399906.XSHE (行号: 55)
+    g.period: = 0: (行号: 61)
+    g.pre_date: context.previous_date (行号: 65)
+    get_close_price.unit: 1d (行号: 501)
+
+策略: 28 从相关系数角度探讨etf轮动高评分
+参数数量: 3
+  int参数:
+    g.momentum_day: 29 (行号: 40)
+    g.stock_num: 1 (行号: 39)
+  str参数:
+    g.stock_pool: [ (行号: 28)
+
+策略: 28 正黄旗大妈策略V3.0修改版
+参数数量: 3
+  int参数:
+    g.stock_num: 10 (行号: 34)
+  str参数:
+    g.buylist: choice (行号: 39)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 179)
+
+策略: 28 韶华研究之十九，一致性用在微盘控制回撤
+参数数量: 21
+  float参数:
+    g.HV_ratio: 0.9 (行号: 44)
+  int参数:
+    g.HV_duration: 60 (行号: 43)
+    g.limit_days: 5 (行号: 40)
+    g.mini_livelevel: 1 (行号: 52)
+    g.mini_prehigh: 1 (行号: 53)
+    g.mini_prelow: 1 (行号: 54)
+    g.stock_num: 5 (行号: 34)
+    g.stock_proportion: 0 (行号: 33)
+  str参数:
+    g.HV_control: = True: (行号: 42)
+    g.consistency_control: =1: (行号: 50)
+    g.consistency_signal: = True: (行号: 51)
+    g.high_limit_list: [] (行号: 126)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 37)
+    g.hold_list: [] (行号: 36)
+    g.limit_up_list: [] (行号: 35)
+    g.mini_cosi_list: [] (行号: 55)
+    g.mini_crowd_list: [] (行号: 56)
+    g.new_stock_control: = True: (行号: 47)
+    g.no_trading_today_signal: = True or g.consistency_signal == True: (行号: 59)
+    g.not_buy_again_list: list(temp_set) (行号: 38)
+    g.target_list: filter_limitdown_stock(context, g.target_list) (行号: 46)
+
+策略: 29 F_Score 选股，年化80%+
+参数数量: 3
+  str参数:
+    g.is_danger: False (行号: 63)
+    g.security: 000001.XSHE (行号: 45)
+    g.stock_index: 000300.XSHG (行号: 20)
+
+策略: 29 北上资金（北向资金港资外资）因子分析与策略分享
+参数数量: 9
+  int参数:
+    g.buy_stock_count: 10 (行号: 37)
+    g.day_count: 0 (行号: 38)
+    g.trade_hour: 10 (行号: 39)
+    g.trade_minute: 0 (行号: 40)
+    get_growth_rate.n: 10 (行号: 155)
+  str参数:
+    g.index: 000300.XSHG (行号: 33)
+    g.pre_date: context.previous_date (行号: 43)
+    get_close_price.unit: 1d (行号: 167)
+    get_portfolio_info_text.op_sfs: [0] (行号: 189)
+
+策略: 29 穿越牛熊2.0（非小市值）年化50%的cta策略
+参数数量: 2
+  int参数:
+    g.flag: 1 (行号: 30)
+  str参数:
+    g.tradecode: ="": (行号: 29)
+
+策略: 29 高增长业绩股池小市值成长型策略
+参数数量: 9
+  int参数:
+    g.limit_days: 20 (行号: 47)
+    g.total_stock_num: 10 (行号: 37)
+  str参数:
+    g.buy_list: filter_limitup_stock(context, g.buy_list)[:min(g.total_stock_num,len(g.buy_list))] (行号: 41)
+    g.high_limit_list: [] (行号: 43)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 45)
+    g.hold_list: [] (行号: 39)
+    g.is_empty_position: = True: (行号: 49)
+    g.limit_up_list: [] (行号: 44)
+    g.not_buy_again_list: list(temp_set) (行号: 46)
+
+策略: 30 ETF宽基轮动修改版-1.0
+参数数量: 8
+  float参数:
+    g.ma_threshold: 0.9 (行号: 15)
+  int参数:
+    g.lag1: 20 (行号: 13)
+    g.lag2: 10 (行号: 14)
+    g.mtm_threshold: 2 (行号: 16)
+  str参数:
+    g.ETFList: np.array([ (行号: 17)
+    g.buy_list: list(buy_list) (行号: 65)
+    g.buy_list_weights: get_signal(context) (行号: 65)
+    g.everyStock: context.portfolio.portfolio_value/len(buy_list) (行号: 136)
+
+策略: 30 【超跌反弹v1.0】3年2.3倍的超跌反弹小牛股
+参数数量: 3
+  int参数:
+    g.buy_stock_num: 5 (行号: 42)
+  str参数:
+    g.security_universe_index: 000300.XSHG (行号: 27)
+    g.stock_list: get_stocks(context) (行号: 41)
+
+策略: 30 价值成长轮动策略
+参数数量: 9
+  float参数:
+    g.score_threshold: 0.7 (行号: 39)
+  int参数:
+    g.M: 600 (行号: 38)
+    g.N: 18 (行号: 37)
+    g.mean_day: 20 (行号: 42)
+    g.mean_diff_day: 3 (行号: 43)
+    g.momentum_day: 30 (行号: 34)
+  str参数:
+    g.index_pool: [ (行号: 29)
+    g.ref_stock: 000300.XSHG (行号: 36)
+    g.slope_series: initial_slope_series()[:-1] (行号: 40)
+
+策略: 30 挖掘特色估值体系因子，把握投资机会，年化150%+
+参数数量: 6
+  int参数:
+    g.limit_days: 20 (行号: 35)
+    g.stock_num: 4 (行号: 32)
+  str参数:
+    g.high_limit_list: list(df.code) (行号: 110)
+    g.hold_list: list(context.portfolio.positions.keys()) (行号: 34)
+    g.limit_up_list: [] (行号: 33)
+    g.target_list: [stock for stock in g.target_list if stock not in black_list] (行号: 36)
+
+策略: 30 错杀反弹，掌握人性规律，开启投资新纪元
+参数数量: 12
+  int参数:
+    g.hold_days: 0 (行号: 38)
+    g.stock_num: 5 (行号: 32)
+    has_risk_sig.is_append: 1 (行号: 199)
+    initial_stock_series.ndays: 100 (行号: 68)
+  str参数:
+    g.high_limit_list: [] (行号: 63)
+    g.hold_list: [] (行号: 36)
+    g.limit_up_list: [] (行号: 34)
+    g.panic_today_signal: False (行号: 40)
+    g.security_universe_index: 399101.XSHE (行号: 31)
+    g.small_stock_index: stock_index_tmp (行号: 33)
+    g.stock_index_list: [] (行号: 37)
+    g.target_list: target_list[:min(g.stock_num, len(target_list))] (行号: 35)
+
+策略: 31 ETF核心资产轮动动量因子加RSRS择时每日策略
+参数数量: 11
+  float参数:
+    g.score_threshold: 0.7 (行号: 55)
+  int参数:
+    g.M: 600 (行号: 52)
+    g.N: 18 (行号: 51)
+    g.mean_day: 20 (行号: 53)
+    g.mean_diff_day: 3 (行号: 54)
+    g.momentum_day: 25 (行号: 49)
+    g.stock_num: 1 (行号: 48)
+  str参数:
+    g.index_pool: [ (行号: 37)
+    g.slope_series: initial_slope_series()[:-1] (行号: 56)
+    g.stock: 000300.XSHG (行号: 48)
+    g.stock_number: g.stock_num if (len(stock_pool) > g.stock_num) else len(stock_pool) (行号: 64)
+
+策略: 31 RSRS择时+货币基金--6年8倍行业周期股策略
+参数数量: 15
+  float参数:
+    g.buy: 0.7 (行号: 57)
+    g.sell: -0.7 (行号: 65)
+  int参数:
+    g.M: 1100 (行号: 48)
+    g.N: 18 (行号: 37)
+    g.days: 0 (行号: 268)
+    g.stock_num: 5 (行号: 200)
+  str参数:
+    g.ans: [] (行号: 43)
+    g.ans_rightdev: [] (行号: 46)
+    g.bfive: [] (行号: 201)
+    g.blacklist: [ (行号: 276)
+    g.bten: [] (行号: 200)
+    g.etf_list: ['511880.XSHG'] (行号: 70)
+    g.fin: pd.DataFrame() (行号: 234)
+    g.init: False (行号: 33)
+    g.security: 000300.XSHG (行号: 29)
+
+策略: 31 《趋势永存》持续16年跑赢大盘的真正靠谱策略
+参数数量: 11
+  float参数:
+    g.gap_threshold: 0.15 (行号: 45)
+    g.position_threshold: 0.1 (行号: 48)
+    g.risk_factor: 0.001 (行号: 47)
+  int参数:
+    g.ATR_day: 20 (行号: 44)
+    g.cash_threshold: 500 (行号: 49)
+    g.index_mean_day: 200 (行号: 43)
+    g.rank_threshold: 60 (行号: 46)
+    g.stock_mean_day: 100 (行号: 42)
+    g.stock_momentum_day: 90 (行号: 41)
+  str参数:
+    g.index: 399300.XSHE (行号: 40)
+    g.two_weekly: True (行号: 50)
+
+策略: 31 蛇皮走位小市值策略V1.0
+参数数量: 2
+  int参数:
+    g.stock_num: 10 (行号: 24)
+  str参数:
+    g.high_limit_list: get_price( (行号: 92)
+
+策略: 31 跟着基金报团！！！174%  回撤  7.33%
+参数数量: 12
+  float参数:
+    g.buy: 0.7 (行号: 51)
+    g.sell: -0.7 (行号: 52)
+  int参数:
+    g.M: 480 (行号: 49)
+    g.N: 18 (行号: 47)
+    g.north: 0 (行号: 111)
+    g.stocknum: 10 (行号: 46)
+  str参数:
+    g.ans: [] (行号: 55)
+    g.ans_rightdev: [] (行号: 57)
+    g.buy_list: the_best_list[:g.stocknum] (行号: 165)
+    g.judge_date: datetime.datetime.strftime(context.current_dt, "%Y%m%d") (行号: 125)
+    g.signalrss: = 0: (行号: 59)
+    g.trade_day_list: [trade_day_1, trade_day_2, trade_day_3, trade_day_4] (行号: 124)
+
+策略: 32 EPO优化低相关etf组合
+参数数量: 6
+  str参数:
+    epo.anchor: None (行号: 24)
+    epo.endogenous: True (行号: 24)
+    epo.method: simple (行号: 24)
+    epo.normalize: True (行号: 24)
+    epo.w: None (行号: 24)
+    g.etf_pool: ['159985.XSHE', '518800.XSHG', '513000.XSHG', '513100.XSHG', '513030.XSHG', '159930.XSHE', '159981.XSHE', '159980.XSHE', '510880.XSHG', '510230.XSHG'] (行号: 20)
+
+策略: 32 北向Boll带_ETF组合宝付费策略
+参数数量: 17
+  int参数:
+    g.lag: 6 (行号: 64)
+    g.lag0: 7 (行号: 65)
+    g.lag1: 15 (行号: 66)
+    g.lag2: 15 (行号: 67)
+  str参数:
+    g.ETFList: [] (行号: 71)
+    g.boll150: [] (行号: 74)
+    g.boll20: [] (行号: 76)
+    g.boll252: [] (行号: 73)
+    g.boll80: [] (行号: 75)
+    g.buy: df_etf['基金代码'].iloc[0:index] (行号: 70)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 63)
+    g.empty_keep_stock: 601318.XSHG (行号: 60)
+    g.north_money: money_north[0] (行号: 68)
+    g.signal: BUY (行号: 62)
+    g.target_market: df_etf['对应指数'].iloc[-1] (行号: 58)
+    g.use_dynamic_target_market: True (行号: 57)
+    get_before_after_trade_days.is_before: True (行号: 78)
+
+策略: 32 北向资金A股择时策略（5年16倍）
+参数数量: 7
+  float参数:
+    g.cash_rate: 0.5 (行号: 36)
+    g.margin_rate: 0.1 (行号: 19)
+    g.stdev_n: 1.5 (行号: 34)
+  int参数:
+    g.window: 252 (行号: 33)
+  str参数:
+    g.future_symbol: IF (行号: 29)
+    g.hold_future: dom_future (行号: 39)
+    g.lower: get_boll(pre_date) (行号: 38)
+
+策略: 32 追高概率涨停策略, 2022年化350%
+参数数量: 13
+  float参数:
+    add_hold_stock.fall_r: 0.96 (行号: 273)
+    get_available_auction_stock.raise_r: 1.05 (行号: 251)
+    get_available_price_stock.bottom_up_r: 1.4 (行号: 226)
+    get_available_price_stock.up_low_r: 1.2 (行号: 226)
+    get_available_price_stock.yes_price_r: -0.05 (行号: 226)
+  int参数:
+    g.buy_stock_count: 3 (行号: 30)
+    get_available_volume_stock.up_volume_r: 2 (行号: 240)
+    get_recent_limit_low_stock.limit_num: 0 (行号: 214)
+    get_recent_limit_low_stock.recent_days: 1 (行号: 214)
+    get_recent_limit_up_stock.limit_num: 0 (行号: 202)
+    get_recent_limit_up_stock.recent_days: 1 (行号: 202)
+  str参数:
+    g.check_out_lists: check_out_lists (行号: 29)
+    g.prepare_lists: get_recent_limit_up_stock(context, check_out_lists, 120) (行号: 28)
+
+策略: 32 非线性关系市值（不是小市值）4只绩优股组合
+参数数量: 14
+  float参数:
+    g.increase1d: 0.06 (行号: 19)
+    g.stock_selection_percent: 0.7 (行号: 25)
+  int参数:
+    g.buyagain: 31 (行号: 21)
+    g.increase_days: 60 (行号: 27)
+    g.score: 7 (行号: 22)
+    g.tradeday: 12 (行号: 20)
+    g.volume_days: 5 (行号: 26)
+  str参数:
+    g.buy_stock_count: len(hold_stocks) (行号: 18)
+    g.buyrank: g.buy_stock_count * 2 (行号: 23)
+    g.chosen_stock_list: get_stock_rank_m_m(g.chosen_stock_list) (行号: 16)
+    g.score_weights: [2,1,1,4,4] (行号: 28)
+    g.sellrank: g.buy_stock_count * 2 (行号: 24)
+    g.sold_stock: {} (行号: 17)
+    get_close_price.unit: 1d (行号: 198)
+
+策略: 33 alpha191短周期价量特征因子选股，年化46.77
+参数数量: 6
+  int参数:
+    g.days: 0 (行号: 22)
+    g.stocknum: 3 (行号: 24)
+  str参数:
+    fisher_transform.period: period (行号: 93)
+    g.each_stock_cash: context.portfolio.cash/num (行号: 236)
+    g.factors: ['alpha_006', 'alpha_015', 'alpha_026'] (行号: 20)
+    g.refresh_rate: = 0: (行号: 23)
+
+策略: 33 回馈社区顺便搞积分《一个完整的机器学习pipeline》
+参数数量: 6
+  int参数:
+    g.stock_num: 5 (行号: 33)
+  str参数:
+    g.factor_list: [ (行号: 42)
+    g.hold_list: [] (行号: 34)
+    g.model: pickle.loads(read_file('model_baseline.pkl')) (行号: 38)
+    g.no_trading_today_signal: = True: (行号: 32)
+    g.yesterday_HL_list: [] (行号: 35)
+
+策略: 33 最适合上班族的策略-神奇公式策略
+参数数量: 32
+  float参数:
+    g.security_max_proportion: 0.5 (行号: 33)
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 377)
+    g.buy_trade_days: 1 (行号: 46)
+    g.check_stocks_days: 1 (行号: 44)
+    g.check_stocks_refresh_rate: 240 (行号: 35)
+    g.max_hold_stocknum: 10 (行号: 41)
+    g.order_style_value: 100 (行号: 115)
+    g.sell_refresh_rate: 240 (行号: 39)
+    g.sell_trade_days: 1 (行号: 47)
+  str参数:
+    check_stocks_sort.ascending: desc (行号: 94)
+    g.buy_refresh_rate: = 0: (行号: 37)
+    g.check_out_lists: check_stocks_sort(context,g.check_out_lists,input_dict,g.check_out_lists_ascending) (行号: 96)
+    g.check_out_lists_ascending: desc (行号: 96)
+    g.concept_list: [] (行号: 91)
+    g.daily_risk_management: True (行号: 125)
+    g.filter_delisted: True (行号: 80)
+    g.filter_holded: False (行号: 110)
+    g.filter_paused: True (行号: 78)
+    g.filter_st: True (行号: 84)
+    g.industry_list: ["801010","801020","801030","801040","801050","801080","801110","801120","801130","801140","801150","801160","801170","801180","801200","801210","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790","801880","801890"] (行号: 89)
+    g.max_buy_amount: None (行号: 129)
+    g.max_buy_value: None (行号: 128)
+    g.only_st: False (行号: 82)
+    g.open_sell_securities: [s for s in g.open_sell_securities if s in context.portfolio.positions.keys()] (行号: 49)
+    g.order_style_str: by_cap_mean (行号: 114)
+    g.risk_management_signal: True (行号: 122)
+    g.security_universe_index: ["all_a_securities"] (行号: 86)
+    g.security_universe_user_securities: [] (行号: 87)
+    g.sell_by_amount: None (行号: 104)
+    g.sell_by_percent: None (行号: 105)
+    g.sell_will_buy: True (行号: 101)
+    g.selled_security_list: {} (行号: 51)
+
+策略: 33 胜率88.9%之君正集团策略-大阳分歧反包
+参数数量: 2
+  str参数:
+    g.help_stock: [] (行号: 24)
+    g.my_security: 510300.XSHG (行号: 25)
+
+策略: 34 【回撤二波2.0】透过一次过拟合的机器学习摸底策略的收益上限
+参数数量: 8
+  int参数:
+    g.buy_stock_num: 5 (行号: 33)
+  str参数:
+    g.model_cyb: pickle.loads(read_file(g.model_cyb_path)) (行号: 38)
+    g.model_cyb_path: ./gbm_fit_model_v1_cyb.pkl (行号: 38)
+    g.model_path: ./gbm_model_v1_unbalanced.pkl (行号: 35)
+    g.model_zb: pickle.loads(read_file(g.model_zb_path)) (行号: 37)
+    g.model_zb_path: ./gbm_fit_model_v1_zb.pkl (行号: 37)
+    g.my_security: 000300.XSHG (行号: 29)
+    g.stock_list: [] (行号: 31)
+
+策略: 34 十年回测 年化103.32% 最大回撤23.89%
+参数数量: 15
+  float参数:
+    g.stoploss_limit: 0.07 (行号: 48)
+    g.stoploss_market: 0.05 (行号: 49)
+  int参数:
+    g.c: 0 (行号: 50)
+    g.m_days: 5 (行号: 44)
+    g.stock_num: 5 (行号: 43)
+    g.up_price: 80 (行号: 45)
+  str参数:
+    g.hold_list: list(context.portfolio.positions.keys()) (行号: 38)
+    g.no_trading_today_signal: = True: (行号: 34)
+    g.not_buy_again: [] (行号: 41)
+    g.pass_april: True (行号: 35)
+    g.reason_to_sell:  (行号: 46)
+    g.run_stoploss: = True: (行号: 36)
+    g.stoploss_strategy: = 3: (行号: 47)
+    g.target_list: get_stock_list(context) (行号: 40)
+    g.yesterday_HL_list: [] (行号: 39)
+
+策略: 34 趋势交易5.0 无择时-2年5倍不是梦
+参数数量: 1
+  str参数:
+    g.buy_list: stocks[:5] (行号: 41)
+
+策略: 34 韶华研究之十八 首板低开201系列
+参数数量: 15
+  float参数:
+    g.auction_open_highlimit: 0.985 (行号: 65)
+    g.auction_open_lowlimit: 0.945 (行号: 66)
+    g.profit_line: 1.05 (行号: 67)
+    g.sell_vol_ratio: 0.9 (行号: 77)
+  int参数:
+    g.sell_mode: 0 (行号: 75)
+    g.sell_vol_period: 120 (行号: 76)
+    g.stocknum: 0 (行号: 81)
+    g.volume_control: 2 (行号: 70)
+    g.volume_period: 20 (行号: 71)
+    g.volume_ratio: 5 (行号: 72)
+  str参数:
+    g.index: = 'zz': (行号: 64)
+    g.poolist: [] (行号: 110)
+    g.poollist: get_highvolume_filter(context,g.poollist,g.volume_control,g.volume_period,g.volume_ratio) (行号: 140)
+    g.poolnum: 1*g.stocknum (行号: 82)
+    g.sell_list: get_highvolume_filter(context,stocklist,g.sell_mode,g.sell_vol_period,g.sell_vol_ratio) (行号: 111)
+
+策略: 35 【菜场大妈】股息率小市值策略,10年206倍,5年10.8倍
+参数数量: 5
+  int参数:
+    g.stock_num: 5 (行号: 31)
+  str参数:
+    g.choice: choice[:g.stock_num] (行号: 32)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 164)
+    g.just_sold: [] (行号: 33)
+    g.no_trading_today_signal: = True: (行号: 30)
+
+策略: 35 小市值市场轮动版 5年12倍
+参数数量: 10
+  int参数:
+    g.limit_days: 10 (行号: 38)
+    g.stock_num: 9 (行号: 33)
+    get_hot_industry_stock.count: 10 (行号: 257)
+    get_hot_industry_stock.number: 24 (行号: 257)
+  str参数:
+    g.high_limit_list: [] (行号: 130)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 36)
+    g.hold_list: [] (行号: 35)
+    g.limit_up_list: [] (行号: 34)
+    g.not_buy_again_list: list(temp_set) (行号: 37)
+    g.target_list: g.target_list[:min(g.stock_num, len(g.target_list))] (行号: 39)
+
+策略: 35 精选价值策略
+参数数量: 8
+  float参数:
+    g.security_max_proportion: 0.2 (行号: 43)
+  int参数:
+    g.max_hold_stocknum: 10 (行号: 45)
+    g.order_style_value: 100 (行号: 51)
+  str参数:
+    g.buy_list: get_check_stocks_sort(context,temp_list) (行号: 36)
+    g.industry_list: ["801010","801040","801050","801080","801110","801120","801130","801150","801160","801200","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790"] (行号: 63)
+    g.max_buy_amount: None (行号: 48)
+    g.max_buy_value: None (行号: 47)
+    g.order_style_str: by_cap_mean (行号: 50)
+
+策略: 35 自适应量化终极算法2.0 （全新升级）
+参数数量: 6
+  int参数:
+    g.count: 0 (行号: 37)
+    g.position: 1 (行号: 38)
+    g.stock_num: 5 (行号: 39)
+    get_dtw_centers.K: 5 (行号: 256)
+    k_means_clust.w: 5 (行号: 166)
+  str参数:
+    g.freq: = 0: (行号: 36)
+
+策略: 35 超稳+翻倍，贝塔值只有0.048的期指策略
+参数数量: 29
+  float参数:
+    g.margin: 0.1 (行号: 29)
+  int参数:
+    g.d: 20 (行号: 39)
+    g.hold_days: 0 (行号: 31)
+    g.leverage: 5 (行号: 23)
+    g.max_hold_days: 3 (行号: 28)
+    g.multiplier: 300 (行号: 27)
+    g.thresh: 2 (行号: 43)
+    position_auto_switch.pindex: 0 (行号: 339)
+  str参数:
+    g.code: 510050.XSHG (行号: 38)
+    g.corr: a.corr(b)<-0.65 (行号: 33)
+    g.corr_: a.corr(b_)<-0.65 (行号: 34)
+    g.hands: min(calc_hands(context),20) (行号: 72)
+    g.hold_ins:  (行号: 37)
+    g.ih: get_future_contracts('IH')[0] (行号: 70)
+    g.ind: np.nan (行号: 35)
+    g.ind_: np.nan (行号: 36)
+    g.lc: True (行号: 77)
+    g.main: get_dominant_future('IF') (行号: 71)
+    g.max_net: context.portfolio.total_value (行号: 24)
+    g.pcr_flag: = 0: (行号: 30)
+    g.pcr_list: g.pcr_list[-20:] (行号: 25)
+    g.pcr_list_: g.pcr_list_[-20:] (行号: 26)
+    g.skip: True if (nextday-today).days>5 else False (行号: 76)
+    g.spread: pd.Series(etf_return)*100 - pd.Series(g.pcr_list) (行号: 196)
+    g.spread_: pd.Series(etf_return)*100 - pd.Series(g.pcr_list_) (行号: 197)
+    g.trade_days: list(get_all_trade_days()) (行号: 42)
+    g.volume_thresh: True if sorted(vol,reverse=True).index(vol[-1])<2 else False (行号: 32)
+    position_auto_switch.callback: None (行号: 339)
+    position_auto_switch.switch_func: None (行号: 339)
+
+策略: 36 【菜场大妈】股息率小市值策略,10年206倍,5年10.8倍
+参数数量: 5
+  int参数:
+    g.stock_num: 5 (行号: 32)
+  str参数:
+    g.choice: choice[:g.stock_num] (行号: 33)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 165)
+    g.just_sold: [] (行号: 34)
+    g.no_trading_today_signal: = True: (行号: 31)
+
+策略: 36 快过年了。不想呆在小市值的，可以拿这个策略躲一躲
+参数数量: 3
+  int参数:
+    g.stock_num: 5 (行号: 37)
+  str参数:
+    g.hold_list: [] (行号: 35)
+    g.yesterday_HL_list: [] (行号: 36)
+
+策略: 36 最简强者恒强策略
+参数数量: 3
+  str参数:
+    g.allstocks: df.index.values.tolist() (行号: 28)
+    g.cnt: len(hys) (行号: 45)
+    g.stocks: stocks[:] (行号: 57)
+
+策略: 36 致敬市场(6) ，指数期货贴水
+参数数量: 3
+  float参数:
+    g.leverage: 1.0 (行号: 26)
+  str参数:
+    g.future_contract: fc (行号: 25)
+    g.index_futures: pd.DataFrame(data={ (行号: 27)
+
+策略: 37 PEG+EBIT对小市值因子的优化
+参数数量: 1
+  int参数:
+    g.stock_num: 5 (行号: 27)
+
+策略: 37 微盘股扩散指数双均线择时
+参数数量: 7
+  int参数:
+    g.stock_num: 5 (行号: 45)
+    g.watch_day: 20 (行号: 48)
+  str参数:
+    g.base: pd.read_csv(BytesIO(read_file('wp_ks_index.csv')),encoding='utf_8_sig') (行号: 49)
+    g.factor_list: [ (行号: 50)
+    g.hold_list: [] (行号: 46)
+    g.no_trading_today_signal: = True: (行号: 44)
+    g.yesterday_HL_list: [] (行号: 47)
+
+策略: 37 择时模块加风控的实际效果
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 36)
+    g.stock_num: 10 (行号: 35)
+  str参数:
+    g.high_limit_list: [] (行号: 114)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 39)
+    g.hold_list: [] (行号: 38)
+    g.limit_up_list: [] (行号: 37)
+    g.not_buy_again_list: list(temp_set) (行号: 40)
+
+策略: 38 ETF动量轮动RSRS择时-魔改3-北向资金择时-再优化
+参数数量: 12
+  float参数:
+    g.score_threshold: 0.7 (行号: 38)
+  int参数:
+    g.M: 600 (行号: 37)
+    g.N: 18 (行号: 36)
+    g.mean_day: 30 (行号: 39)
+    g.mean_diff_day: 5 (行号: 40)
+    g.momentum_day: 20 (行号: 33)
+    g.momentum_day_t: 5 (行号: 34)
+    g.stock_num: 1 (行号: 32)
+  str参数:
+    g.north_money: total_net_in (行号: 31)
+    g.ref_stock: 000300.XSHG (行号: 35)
+    g.slope_series: initial_slope_series()[:-1] (行号: 41)
+    g.stock_pool: [ (行号: 23)
+
+策略: 38 ETF动量轮动RSRS择时-魔改4-低通滤波
+参数数量: 8
+  float参数:
+    g.score_threshold: 0.7 (行号: 38)
+  int参数:
+    g.M: 600 (行号: 37)
+    g.N: 18 (行号: 36)
+    g.momentum_day: 20 (行号: 34)
+    g.stock_num: 1 (行号: 33)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 35)
+    g.slope_series: initial_slope_series()[:-1] (行号: 39)
+    g.stock_pool: [ (行号: 19)
+
+策略: 38 ETF策略之核心资产轮动（线性增加权重）
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 37)
+  str参数:
+    g.etf_pool: [ (行号: 31)
+
+策略: 38 【回顾3】ETF策略之核心资产轮动-增强版
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 37)
+  str参数:
+    g.etf_pool: [ (行号: 31)
+
+策略: 39 多因子策略（多元线性回归）
+参数数量: 5
+  int参数:
+    g.stocknum: 20 (行号: 35)
+    g.t: 0 (行号: 34)
+  str参数:
+    g.each_stock_cash: 10000000/num (行号: 339)
+    g.if_trade: False (行号: 41)
+    g.tc: =0: (行号: 34)
+
+策略: 39 大资金强基本面优质股组合策略 收益1217% 无小市值因子
+参数数量: 4
+  int参数:
+    g.limit_days: 20 (行号: 30)
+    g.stock_num: 8 (行号: 29)
+  str参数:
+    g.high_limit_list: df.query('close==high_limit and paused==0')['code'].tolist() (行号: 95)
+    g.hold_list: list(context.portfolio.positions) (行号: 31)
+
+策略: 39 干积分-大小盘反复横跳V2.0
+参数数量: 4
+  int参数:
+    g.stock_num: 5 (行号: 33)
+  str参数:
+    g.hold_list: [] (行号: 34)
+    g.no_trading_today_signal: = True: (行号: 32)
+    g.yesterday_HL_list: [] (行号: 35)
+
+策略: 39 绩优小市值量化君也-模拟交易年化333.75%
+参数数量: 1
+  int参数:
+    g.stock_num: 5 (行号: 27)
+
+策略: 39 随机森林策略，低换手率，年化近50%
+参数数量: 4
+  str参数:
+    g.df_dic: {} (行号: 26)
+    g.if_trade: False (行号: 40)
+    g.quantile: (0, 10) (行号: 39)
+    g.security: 000300.XSHG (行号: 24)
+
+策略: 40 RSI学习贴
+参数数量: 4
+  int参数:
+    g.stock_num: 9 (行号: 114)
+  str参数:
+    g.buy: [] (行号: 77)
+    g.pool: ['603799.XSHG','300750.XSHE','601633.XSHG','603659.XSHG','002594.XSHE','603259.XSHG', (行号: 48)
+    g.sell: [] (行号: 81)
+
+策略: 40 低风险高收益的期货策略
+参数数量: 13
+  str参数:
+    g.AG: get_dominant_future('AG') (行号: 68)
+    g.AP: get_dominant_future('AP') (行号: 62)
+    g.AU: get_dominant_future('AU') (行号: 72)
+    g.BU: get_dominant_future('BU') (行号: 63)
+    g.CU: get_dominant_future('CU') (行号: 73)
+    g.FG: get_dominant_future('FG') (行号: 64)
+    g.J: get_dominant_future('J') (行号: 75)
+    g.P: get_dominant_future('P') (行号: 69)
+    g.RB: get_dominant_future('RB') (行号: 65)
+    g.RU: get_dominant_future('RU') (行号: 74)
+    g.TA: get_dominant_future('TA') (行号: 70)
+    g.Y: get_dominant_future('Y') (行号: 66)
+    g.ZC: get_dominant_future('ZC') (行号: 67)
+
+策略: 40 穿越牛熊 稳健高收益 年化37
+参数数量: 2
+  str参数:
+    g.q: query(valuation,indicator).filter(valuation.code.in_(g.security)) (行号: 20)
+    g.security: get_index_stocks('000985.XSHG') (行号: 19)
+
+策略: 40 高股息策略
+参数数量: 3
+  int参数:
+    g.days: 0 (行号: 23)
+    g.stock_num: 10 (行号: 26)
+  str参数:
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 127)
+
+策略: 41 SVR机器学习上证综指择时中小板财务选股策略
+参数数量: 13
+  float参数:
+    g.score_fall_thr: -0.5 (行号: 33)
+  int参数:
+    g.K: 8 (行号: 29)
+    g.M: 600 (行号: 28)
+    g.N: 18 (行号: 27)
+    g.curstaut: 0 (行号: 24)
+    g.idex_slope_raise_thr: 10 (行号: 34)
+    g.score_thr: -1 (行号: 32)
+    g.stock_num: 10 (行号: 23)
+  str参数:
+    g.check_out_list: choice (行号: 176)
+    g.hold_stock: stock (行号: 31)
+    g.ref_stock: 000001.XSHG (行号: 25)
+    g.rsrs_score_history: initial_slope_series() (行号: 36)
+    g.timing_signal: = "SELL": (行号: 169)
+
+策略: 41 再改进可实盘-默默赚钱系列-风险控制-增强版本-V5.0
+参数数量: 6
+  float参数:
+    g.threshold: 0.005 (行号: 25)
+  int参数:
+    g.max_hold_stock_nums: 2 (行号: 38)
+  str参数:
+    g.MA: ['000001.XSHG', 10] (行号: 23)
+    g.choose_time_signal: True (行号: 24)
+    g.is_bull: True (行号: 26)
+    g.target_lists: list(df_score.index[:g.max_hold_stock_nums]) (行号: 40)
+
+策略: 41 均线黏合，突破前三十个交易日最高点选股法
+参数数量: 4
+  str参数:
+    g.datapd: g.datapd[g.datapd['页数']>=20] (行号: 176)
+    g.my_stock_today: [] (行号: 133)
+    g.previous_buylist: {} (行号: 98)
+    g.stock_tosell: [] (行号: 165)
+
+策略: 42 国九条：三年分红5千万以下且占净利润30%以下将被ST
+参数数量: 15
+  float参数:
+    g.stoploss_limit: 0.07 (行号: 55)
+    g.stoploss_market: 0.05 (行号: 56)
+  int参数:
+    g.c: 0 (行号: 57)
+    g.m_days: 5 (行号: 51)
+    g.stock_num: 10 (行号: 35)
+    g.up_price: 80 (行号: 52)
+  str参数:
+    g.hold_list: list(context.portfolio.positions.keys()) (行号: 46)
+    g.no_trading_today_signal: = True: (行号: 42)
+    g.not_buy_again: [] (行号: 49)
+    g.pass_april: True (行号: 43)
+    g.reason_to_sell:  (行号: 53)
+    g.run_stoploss: = True: (行号: 44)
+    g.stoploss_strategy: = 3: (行号: 54)
+    g.target_list: get_stock_list(context) (行号: 48)
+    g.yesterday_HL_list: [] (行号: 47)
+
+策略: 42 大盘ETF动量轮动 RSRS择时策略-无纳指（5年半861%）
+参数数量: 21
+  float参数:
+    g.SwitchFactor: 1.04 (行号: 39)
+    g.lossFactor: 1.005 (行号: 38)
+    g.raiser_thr: 4.8 (行号: 41)
+    g.score_fall_thr: -0.43 (行号: 44)
+    g.score_thr: -0.68 (行号: 43)
+  int参数:
+    g.K: 8 (行号: 35)
+    g.M: 600 (行号: 34)
+    g.Motion_1diff: 19 (行号: 40)
+    g.N: 18 (行号: 33)
+    g.biasN: 90 (行号: 36)
+    g.idex_slope_raise_thr: 12 (行号: 45)
+    g.lossN: 20 (行号: 37)
+    g.momentum_day: 20 (行号: 31)
+    g.stock_num: 1 (行号: 30)
+  str参数:
+    g.check_out_list: get_rank(context,g.stock_pool) (行号: 246)
+    g.hold_stock: stock (行号: 42)
+    g.ref_stock: 000300.XSHG (行号: 32)
+    g.rsrs_score_history: initial_slope_series() (行号: 46)
+    g.stock_motion: initial_stock_motion(g.stock_pool) (行号: 47)
+    g.stock_pool: [ (行号: 22)
+    g.timing_signal: = 'BUY' or g.timing_signal == 'KEEP': (行号: 247)
+
+策略: 42 市值，研发支出，roe，三因子，跑赢大盘
+参数数量: 19
+  int参数:
+    g.N: 9 (行号: 34)
+    g.lag: 5 (行号: 47)
+    g.lag0: 7 (行号: 48)
+    g.lag1: 13 (行号: 49)
+    g.lag2: 13 (行号: 50)
+    g.t: 0 (行号: 32)
+    g.yb: 63 (行号: 33)
+  str参数:
+    g.all_stocks: set_feasible_stocks(get_index_stocks('000300.XSHG'),g.yb,context) (行号: 96)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 46)
+    g.empty_keep_stock: 601318.XSHG (行号: 43)
+    g.everyStock: context.portfolio.portfolio_value/g.N (行号: 156)
+    g.factors: ["market_cap","development_expenditure","roe"] (行号: 57)
+    g.if_trade: False (行号: 69)
+    g.q: query(valuation,balance,cash_flow,income,indicator).filter(valuation.code.in_(g.all_stocks)) (行号: 98)
+    g.signal: BUY (行号: 45)
+    g.target_market: 399001.XSHE (行号: 41)
+    g.tc: =0: (行号: 32)
+    g.use_dynamic_target_market: True (行号: 40)
+    g.weights: [[-1],[-1],[-1]] (行号: 59)
+
+策略: 43 小市值再优化【年化98% 胜率69% 回撤27%】无未来函数
+参数数量: 13
+  float参数:
+    g.stoploss_limit: 0.1 (行号: 45)
+    g.stoploss_market: 0.05 (行号: 46)
+  int参数:
+    g.stock_num: 9 (行号: 42)
+  str参数:
+    g.etf: 511880.XSHG (行号: 47)
+    g.hold_list: [] (行号: 36)
+    g.limitup_stocks: [] (行号: 40)
+    g.pass_months: [1,4] (行号: 39)
+    g.reason_to_sell: stoploss (行号: 43)
+    g.run_stoploss: True (行号: 34)
+    g.stoploss_strategy: = 2 or g.stoploss_strategy == 3: (行号: 44)
+    g.target_list: get_stock_list(context)[:g.stock_num] (行号: 38)
+    g.trading_signal: = False: (行号: 33)
+    g.yesterday_HL_list: [] (行号: 37)
+
+策略: 43 窄基ETF轮动：年化收益82.68%，最大回撤13.54%
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 47)
+  str参数:
+    g.etf_pool: [ (行号: 31)
+
+策略: 44 兼顾业绩增长和PEG指标的5因子股票策略
+参数数量: 15
+  float参数:
+    g.score_threshold: 0.7 (行号: 35)
+  int参数:
+    g.M: 600 (行号: 34)
+    g.N: 18 (行号: 33)
+    g.buyrank: 9 (行号: 43)
+    g.fzts: 22 (行号: 39)
+    g.mean_day: 30 (行号: 36)
+    g.mean_diff_day: 5 (行号: 37)
+    g.rate: 1 (行号: 40)
+    g.sellrank: 10 (行号: 42)
+    g.stock_num: 4 (行号: 30)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 32)
+    g.slope_series: initial_slope_series()[:-1] (行号: 38)
+    g.timing_signal: = 'BUY' or g.timing_signal == 'KEEP': (行号: 241)
+    g.weights: [3,9,8,4,10] (行号: 41)
+    get_close_price.unit: 1d (行号: 337)
+
+策略: 44 国九条 年化130.74% 回撤11% 众神Debug版
+参数数量: 21
+  float参数:
+    g.stoploss_limit: 0.09 (行号: 65)
+    g.stoploss_market: 0.05 (行号: 66)
+  int参数:
+    g.highest: 50 (行号: 67)
+    g.max_mv: 10000 (行号: 59)
+    g.min_mv: 10 (行号: 58)
+  str参数:
+    g.Expected_bonus: [5] (行号: 55)
+    g.adjust_num: True (行号: 47)
+    g.filter_audit: True (行号: 45)
+    g.filter_bonus: True (行号: 46)
+    g.hold_list: context.portfolio.positions (行号: 50)
+    g.limitup_stocks: [] (行号: 54)
+    g.money_etf: 511880.XSHG (行号: 68)
+    g.other_sale: [] (行号: 63)
+    g.pass_months: [1,4] (行号: 53)
+    g.run_stoploss: True (行号: 44)
+    g.stock_num: new_num (行号: 60)
+    g.stoploss_list: [] (行号: 62)
+    g.stoploss_strategy: = 2 or g.stoploss_strategy == 3: (行号: 64)
+    g.target_list: get_stock_list(context)[:g.stock_num] (行号: 52)
+    g.trading_signal: today_is_between(context) (行号: 43)
+    g.yesterday_HL_list: [] (行号: 51)
+
+策略: 44 最易上手的网格策略v2.0，设置几个参数就可以直接使用
+参数数量: 12
+  float参数:
+    g.down: 0.2 (行号: 42)
+    g.net_range: 0.05 (行号: 36)
+    g.up: 0.2 (行号: 42)
+  int参数:
+    g.days: 60 (行号: 42)
+    g.per_share: 20000 (行号: 39)
+  str参数:
+    g.ETF: ['510500.XSHG'] (行号: 33)
+    g.adj_rate: {} (行号: 86)
+    g.base_price: {} (行号: 56)
+    g.buy_amount: {} (行号: 59)
+    g.max_net: int(context.portfolio.available_cash/g.per_share) (行号: 62)
+    g.net: {} (行号: 36)
+    g.pre_date_avg: {} (行号: 76)
+
+策略: 44 集合竞价摸奖策略1.0-致敬2022
+参数数量: 3
+  int参数:
+    g.run_count: 0 (行号: 62)
+  str参数:
+    g.buy_list: limit_stocks (行号: 49)
+    g.day_ups_max: df_data['ups'].max() (行号: 259)
+
+策略: 45 价值投资+期货对冲V4.0,无惧市场大跌
+参数数量: 26
+  float参数:
+    g.future_position: 0.35 (行号: 36)
+    g.future_share: 0.3 (行号: 35)
+    g.futures_margin_rate: 0.15 (行号: 50)
+    g.stock_share: 0.7 (行号: 34)
+  int参数:
+    g.ATRdays: 20 (行号: 56)
+    g.boundrydays: 5 (行号: 57)
+    g.day: 20 (行号: 73)
+    g.day_count: 0 (行号: 74)
+    g.long_days: 5 (行号: 52)
+    g.longdays: 50 (行号: 62)
+    g.num: 5 (行号: 45)
+    g.para: 1 (行号: 63)
+    g.short_days: 2 (行号: 53)
+    g.shortdays: 20 (行号: 61)
+    g.stop: 5 (行号: 58)
+    g.unitprice: 200 (行号: 51)
+  str参数:
+    g.benchmark: 000905.XSHG (行号: 24)
+    g.code_1: get_future_contracts(g.future_type)[0] (行号: 212)
+    g.de_day: = 0: (行号: 219)
+    g.future_type: IC (行号: 49)
+    g.index: 399317.XSHE (行号: 44)
+    g.k: min(int(value / margin),100) (行号: 75)
+    g.loss_stop: = 1): (行号: 241)
+    g.sign: = 0): (行号: 240)
+    g.stocks: choice_stocks(context, g.index, g.num) (行号: 46)
+    g.volatility: = 1: (行号: 242)
+
+策略: 45 此消彼长
+参数数量: 6
+  int参数:
+    g.big_stock_num: 5 (行号: 32)
+    g.small_stock_num: 5 (行号: 31)
+  str参数:
+    g.coef_list: [-1.3651516084272432e-13, -3.673549665003535e-14, -0.006872269236387061, -3.922028093095638e-12] (行号: 36)
+    g.factor_list: ['non_recurring_gain_loss', 'non_operating_net_profit_ttm', 'roe_ttm_8y', 'sharpe_ratio_20'] (行号: 35)
+    g.hold_list: [] (行号: 33)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 45 海龟突破系统，19-21年化150，无未来函数和过拟合
+参数数量: 2
+  int参数:
+    g.p55: 81 (行号: 28)
+  str参数:
+    g.security: get_index_stocks('000300.XSHG') (行号: 22)
+
+策略: 45 真真正正的诚意之作-2021超十倍
+参数数量: 9
+  float参数:
+    g.cdh: 1.35 (行号: 45)
+    g.go_up_r: 1.05 (行号: 43)
+    g.ratio: 0.85 (行号: 42)
+    g.up_line: 0.4 (行号: 44)
+  int参数:
+    g.weeks: 48 (行号: 41)
+  str参数:
+    g.already_list: [] (行号: 57)
+    g.nb_list: [] (行号: 46)
+    g.security: some_filter(codes) (行号: 56)
+    g.trade_days: get_trade_days(end_date=now_time,count=5) (行号: 52)
+
+策略: 46 【深度解析 四】聚宽三因子基本面周线模型策略
+参数数量: 6
+  int参数:
+    g.limit_days: 20 (行号: 66)
+    g.stock_num: 10 (行号: 62)
+  str参数:
+    g.high_limit_list: [] (行号: 70)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 77)
+    g.hold_list: [] (行号: 73)
+    g.not_buy_again_list: list(temp_set) (行号: 80)
+
+策略: 46 大盘股也能穿越牛熊市
+参数数量: 4
+  str参数:
+    check_stocks_sort.ascending: desc (行号: 373)
+    g.risk_control: RiskControl() (行号: 56)
+    g.stock_selector: StockSelector() (行号: 57)
+    g.strategy_manager: StrategyManager() (行号: 55)
+
+策略: 46 敢于直接实盘的—八仙过海V2
+参数数量: 12
+  int参数:
+    g.allCang: 0 (行号: 43)
+    g.lag: 60 (行号: 38)
+  str参数:
+    GetKDJ.isIncludNow: True (行号: 255)
+    GetMACD.isIncludNow: True (行号: 236)
+    g.ETFList: [] (行号: 41)
+    g.buy: [] (行号: 40)
+    g.cang: {} (行号: 42)
+    g.empty_keep_stock: 601318.XSHG (行号: 35)
+    g.signal: BUY (行号: 37)
+    g.target_market: 000300.XSHG (行号: 33)
+    g.use_dynamic_target_market: True (行号: 32)
+    get_before_after_trade_days.is_before: True (行号: 45)
+
+策略: 46 韶华研究之十二--还算可以的竞价研究
+参数数量: 16
+  float参数:
+    g.rps_ratio: 0.1 (行号: 52)
+  int参数:
+    g.day_count: 0 (行号: 61)
+    g.long_dura: 88 (行号: 49)
+    g.medium_dura: 44 (行号: 50)
+    g.short_dura: 22 (行号: 51)
+    g.stocknum: 4 (行号: 57)
+  str参数:
+    g.adjustpositions: False (行号: 94)
+    g.buy_list: list(get_score_filter(context,g.list_B).keys())[:g.stocknum] (行号: 151)
+    g.index: = 'zz': (行号: 48)
+    g.list_A: list(set(list_rps_s).intersection(list_rps_m,list_rps_l)) (行号: 127)
+    g.list_B: get_auction_filter(context,g.list_B,1000000) (行号: 133)
+    g.list_classA: [] (行号: 87)
+    g.list_classB: [] (行号: 88)
+    g.list_classC: [] (行号: 89)
+    g.poolnum: 1*g.stocknum (行号: 58)
+    g.shiftdays: =0): (行号: 60)
+
+策略: 46 高增股池小市值轮动
+参数数量: 6
+  int参数:
+    g.big_stock_num: 5 (行号: 32)
+    g.small_stock_num: 5 (行号: 31)
+  str参数:
+    g.coef_list: [-1.3651516084272432e-13, -3.673549665003535e-14, -0.006872269236387061, -3.922028093095638e-12] (行号: 36)
+    g.factor_list: ['non_recurring_gain_loss', 'non_operating_net_profit_ttm', 'roe_ttm_8y', 'sharpe_ratio_20'] (行号: 35)
+    g.hold_list: [] (行号: 33)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 47 别人恐惧我贪婪——重视大盘择时
+参数数量: 4
+  int参数:
+    g.buttun: 0 (行号: 43)
+    g.day: 1 (行号: 44)
+    g.stock_num: 50 (行号: 42)
+  str参数:
+    g.pool: shizhi_list (行号: 41)
+
+策略: 47 多策略整合大E小十年百倍（年化64%回撤28%）
+参数数量: 12
+  int参数:
+    __calculate_RSI.period: 14 (行号: 483)
+    __calculate_bollinger_width.nbdev: 2 (行号: 493)
+    __calculate_bollinger_width.period: 20 (行号: 493)
+    g.m_days: 25 (行号: 43)
+    stockpool_index.pool_id: 1 (行号: 184)
+  str参数:
+    g.bmzh_strategy: BMZH_Strategy(context, subportfolio_index=0, name='大白马股攻防转换策略', params=params_bmzh) (行号: 57)
+    g.etf_pool: [ (行号: 44)
+    g.portfolio_value_proportion: [0.15,0.35,0.50] (行号: 20)
+    g.risks: [] (行号: 42)
+    g.sells: [] (行号: 41)
+    g.wpetf_strategy: WPETF_Strategy(context, subportfolio_index=1, name='ETF轮动策略', params=params_wpetf, (行号: 64)
+    g.xszgjt_strategy: XSZ_GJT_Strategy(context, subportfolio_index=2, name='小市值国九条策略', params=params_xszgjt) (行号: 75)
+
+策略: 47 年化46%的北向资金+20日涨幅的创业板策略
+参数数量: 2
+  str参数:
+    g.df: df (行号: 51)
+    g.funds: ['159915.XSHE'] (行号: 117)
+
+策略: 47 随机森林量价多因子选股短线交易机器学习
+参数数量: 6
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 102)
+    g.buy: pd.Series(dtype=float) (行号: 81)
+    g.d: context.previous_date (行号: 145)
+    g.sell: pd.Series(dtype=float) (行号: 141)
+    g.stock_pool: paused_series[paused_series==False].index.tolist() (行号: 134)
+    g.wait_list: [] (行号: 63)
+
+策略: 47 高收益低回撤的小市值策略
+参数数量: 3
+  int参数:
+    g.buy_stock_count: 5 (行号: 24)
+  str参数:
+    g.risk_control: RiskControl('000300.XSHG') (行号: 26)
+    g.security_universe_index: 399101.XSHE (行号: 23)
+
+策略: 48 一种宏观数据的中长线策略，年化15%，最大回撤9%
+参数数量: 9
+  float参数:
+    g.order_amount: 0.04 (行号: 23)
+    g.yearMa10: 0.0 (行号: 28)
+  int参数:
+    g.mode: 0 (行号: 20)
+    g.times: -1 (行号: 22)
+  str参数:
+    g.begin_date: 2013-01 (行号: 24)
+    g.bond_security: 511010.XSHG (行号: 26)
+    g.over_hot: False (行号: 27)
+    g.record: float(np.array(get_bars('000300.XSHG', 1, '1d', fields = ['close'], include_now=True, df = True))[0]) (行号: 21)
+    g.stock_security: 510300.XSHG (行号: 25)
+
+策略: 48 低代码迁移成本的实盘方案：jqtrade+one quant
+参数数量: 2
+  int参数:
+    g.stock_num: 5 (行号: 40)
+  str参数:
+    g.security_universe_index: 399101.XSHE (行号: 39)
+
+策略: 48 动量ETF轮动-RSRS择时-卡尔曼滤波
+参数数量: 9
+  float参数:
+    g.score_threshold: 0.7 (行号: 39)
+  int参数:
+    g.M: 600 (行号: 38)
+    g.N: 18 (行号: 37)
+    g.momentum_day: 20 (行号: 35)
+    g.stock_num: 1 (行号: 34)
+    kalman_filter.damping: 1 (行号: 46)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 36)
+    g.slope_series: initial_slope_series()[:-1] (行号: 40)
+    g.stock_pool: [ (行号: 20)
+
+策略: 48 投资回报率ROIC中等市值
+参数数量: 2
+  int参数:
+    g.stock_num: 10 (行号: 24)
+  str参数:
+    g.hold_list: [] (行号: 25)
+
+策略: 49 【漂亮50 2.0止损版本】为了降低回撤，加入择时止损模块
+参数数量: 4
+  int参数:
+    g.day_count: 0 (行号: 33)
+    g.stock_num: 10 (行号: 30)
+  str参数:
+    g.adjustpositions: False (行号: 58)
+    g.shiftdays: =0) or len(g.selllist) !=0: (行号: 32)
+
+策略: 49 修改成一创版本
+参数数量: 13
+  int参数:
+    g.limit_days: 20 (行号: 46)
+    g.stock_num: 5 (行号: 41)
+  str参数:
+    filter_industry.level: sw_l1 (行号: 307)
+    filter_industry.method: industry_name (行号: 307)
+    g.high_limit_list: [] (行号: 242)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 44)
+    g.hold_list: [] (行号: 43)
+    g.limit_up_list: [] (行号: 42)
+    g.not_buy_again_list: list(temp_set) (行号: 45)
+    g.target_list: [stock for stock in g.target_list if stock not in black_list] (行号: 47)
+    g.target_list0: g.target_list[:min(g.stock_num, len(g.target_list))] (行号: 265)
+    get_stock_industry.level: sw_l1 (行号: 301)
+    get_stock_industry.method: industry_name (行号: 301)
+
+策略: 49 动量策略年化62%
+参数数量: 5
+  int参数:
+    g.day_count: 91 (行号: 31)
+    g.stock_num: 10 (行号: 30)
+    g.stock_price: 5 (行号: 32)
+  str参数:
+    g.security1: [x for x in holding_codes if x not in next_holding_codes] (行号: 55)
+    g.security2: [y for y in next_holding_codes if y not in holding_codes] (行号: 57)
+
+策略: 49 根据北上资金买股票的最佳持股时间探讨
+参数数量: 7
+  int参数:
+    g.buy_stock_count: 3 (行号: 23)
+    g.days: 0 (行号: 26)
+    g.hour: 9 (行号: 24)
+    g.minute: 30 (行号: 25)
+    g.nday: 2 (行号: 28)
+  str参数:
+    g.refresh_rate: =0: (行号: 27)
+    get_portfolio_info_text.op_sfs: [0] (行号: 143)
+
+策略: 50 ETF动量轮动RSRS择时-V2.1
+参数数量: 11
+  float参数:
+    g.score_threshold: 0.7 (行号: 53)
+  int参数:
+    g.K: 8 (行号: 52)
+    g.M: 600 (行号: 51)
+    g.N: 18 (行号: 50)
+    g.momentum_day: 20 (行号: 48)
+    g.stock_num: 1 (行号: 47)
+  str参数:
+    g.checktime: 13:00 (行号: 55)
+    g.checktime2: 13:50 (行号: 56)
+    g.ref_stock: 000300.XSHG (行号: 49)
+    g.rsrs_score_hisitory: initial_slope_series() (行号: 54)
+    g.stock_pool: [ (行号: 32)
+
+策略: 50 【7日趋势】短线交易策略
+参数数量: 9
+  float参数:
+    stop_loss.lose: 0.07 (行号: 365)
+    stop_loss.profit: 0.2 (行号: 365)
+  int参数:
+    count_multiple_stocks.days: 5 (行号: 95)
+    count_multiple_stocks.n: 2 (行号: 95)
+    g.max_hold_stocknum: 3 (行号: 310)
+    get_ma.timeperiod: 5 (行号: 51)
+    is_multiple_stocks.days: 5 (行号: 84)
+  str参数:
+    g.security: get_open_high_history(context, g.security_first); (行号: 323)
+    g.security_first: select_ticks(p_date) (行号: 323)
+
+策略: 50 分享一种K线小碎步后突破的分钟级打法
+参数数量: 12
+  int参数:
+    filter_new_stock.days: 100 (行号: 389)
+    g.holdable_days: 6 (行号: 27)
+    g.max_hold_num: 5 (行号: 23)
+    get_hl_stock.watch_days: 1 (行号: 362)
+    get_no_hl_stock.watch_days: 1 (行号: 370)
+    scream_sell.down_range: 3 (行号: 78)
+  str参数:
+    g.chosen_stocks: [] (行号: 26)
+    g.hold_days: {} (行号: 29)
+    g.industry_stocks: ={} or len(g.industry_stocks)<1: (行号: 234)
+    g.need_sell: set() (行号: 31)
+    g.prepare_stocks: lst (行号: 24)
+    get_shifted_date.days_type: T (行号: 413)
+
+策略: 50 基本面策略，一种新思路，超额376%
+参数数量: 7
+  int参数:
+    g.limit_days: 20 (行号: 26)
+    g.stock_num: 8 (行号: 25)
+    sorted_by_circulating_market_cap.n_limit_top: 25 (行号: 51)
+  str参数:
+    g.high_limit_list: df.query('close==high_limit and paused==0')['code'].tolist() (行号: 33)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 29)
+    g.hold_list: list(context.portfolio.positions) (行号: 28)
+    g.not_buy_again_list: list(temp_set) (行号: 30)
+
+策略: 50 昨日炸板股策略
+参数数量: 9
+  int参数:
+    g.max_hold: 3 (行号: 30)
+  str参数:
+    g.df_high_limit: g.df_high_limit[g.df_high_limit.open < g.df_high_limit.close] (行号: 34)
+    g.hold_info: g.hold_info.append(df.loc[stock]) (行号: 28)
+    g.pre_close_index: dict() (行号: 38)
+    g.run_time: context.current_dt (行号: 26)
+    g.stock_cache: df_tmp.set_index(['time', 'code'], drop=True) (行号: 24)
+    g.stock_pool: list(g.df_high_limit.index) (行号: 22)
+    g.stop_loss_index: ['000001.XSHG','399001.XSHE','399005.XSHE'] (行号: 36)
+    g.trade_signal: False (行号: 32)
+
+策略: 51 “四大搅屎棍策略”学习笔记-有魔改
+参数数量: 5
+  int参数:
+    g.max_hold_stocknum: 1 (行号: 37)
+    g.num: 1 (行号: 40)
+    g.stock_num: 5 (行号: 36)
+  str参数:
+    g.hold_list: [] (行号: 38)
+    g.yesterday_HL_list: [] (行号: 39)
+
+策略: 51 北上资金持股比选股策略（北向港资外资）
+参数数量: 15
+  float参数:
+    g.security_max_proportion: 0.2 (行号: 34)
+    g.security_min_proportion: 0.05 (行号: 35)
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 164)
+    g.check_out_ranking: 30 (行号: 32)
+    g.max_hold_stocknum: 10 (行号: 30)
+    g.n_tradeday_not_buy: 10 (行号: 37)
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 14)
+    g.prev_hk_hold_df: hk_hold_df (行号: 39)
+    g.selled_security_dict: {} (行号: 40)
+    g.universe_index: 000902.XSHG (行号: 28)
+    get_hk_hold_ratio.count: None (行号: 120)
+    get_hk_hold_ratio.sorted_by_circulation: False (行号: 120)
+    get_hk_hold_ratio.start_date: None (行号: 120)
+    trade.security_max_proportion: None (行号: 73)
+    trade.security_min_proportion: None (行号: 73)
+
+策略: 51 缠论交易策略
+参数数量: 13
+  int参数:
+    EMA.timeperiod: 5 (行号: 47)
+    MACD.fastperiod: 12 (行号: 67)
+    MACD.signalperiod: 9 (行号: 67)
+    MACD.slowperiod: 26 (行号: 67)
+    SMA.timeperiod: 5 (行号: 26)
+    __init__.close_price: 0 (行号: 16)
+    __init__.open_interest: 0 (行号: 16)
+    __init__.open_price: 0 (行号: 16)
+    __init__.volume: 0 (行号: 16)
+  str参数:
+    __init__.build_pivot: False (行号: 16)
+    __init__.include: True (行号: 16)
+    g.security: 300354.XSHE (行号: 496)
+    on_buy_sell.valid: True (行号: 486)
+
+策略: 51 行业反转效应（年化32%，回撤8%）
+参数数量: 7
+  int参数:
+    g.m: 6 (行号: 24)
+    g.rolling: 36 (行号: 22)
+    g.s: 3 (行号: 23)
+  str参数:
+    g.buy_dict: {} (行号: 222)
+    g.data: pd.concat([g.data, data], axis = 0) (行号: 137)
+    g.industry_list: [] (行号: 182)
+    g.initial: False (行号: 27)
+
+策略: 52 增强型投资组合优化（EPO）方法研究
+参数数量: 6
+  str参数:
+    epo.anchor: None (行号: 44)
+    epo.endogenous: True (行号: 44)
+    epo.method: simple (行号: 44)
+    epo.normalize: True (行号: 44)
+    epo.w: None (行号: 44)
+    g.etf_pool: [ (行号: 19)
+
+策略: 52 机器学习滚动训练价投策略
+参数数量: 5
+  int参数:
+    g.stock_num: 20 (行号: 35)
+  str参数:
+    g.factor_list: [ (行号: 39)
+    g.hold_list: [] (行号: 36)
+    g.no_trading_today_signal: False (行号: 34)
+    g.yesterday_HL_list: [] (行号: 37)
+
+策略: 52 根据北上资金买A股策略Python3版（北向港资外资）
+参数数量: 5
+  int参数:
+    g.buy_stock_count: 4 (行号: 32)
+    g.days: 0 (行号: 33)
+    g.nday: 2 (行号: 35)
+  str参数:
+    g.refresh_rate: = 0: (行号: 34)
+    get_portfolio_info_text.op_sfs: [0] (行号: 117)
+
+策略: 52 龙头战法之单阳不破
+参数数量: 3
+  str参数:
+    g.cash: context.portfolio.available_cash (行号: 37)
+    g.help_stock: [] (行号: 36)
+    g.my_security: 510300.XSHG (行号: 30)
+
+策略: 53 TSmall-100, 微盘三正
+参数数量: 3
+  str参数:
+    g.position_size: 1.0/nposition * context.portfolio.total_value (行号: 30)
+    g.stocks: _choice_small(context, nchoice) (行号: 29)
+    g.values: pd.DataFrame(columns=['Value']) (行号: 20)
+
+策略: 53 基于大盘PE标准差偏离度的聪明基金定投策略
+参数数量: 12
+  float参数:
+    g.stdpeH: 1.5 (行号: 42)
+  int参数:
+    g.weeks: 50 (行号: 61)
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 33)
+    g.date: date = context.previous_date (行号: 85)
+    g.ema_speed: qtt.ema_speed() (行号: 107)
+    g.last_pe: g.now_pe (行号: 148)
+    g.now_pe: qtt.now() (行号: 44)
+    g.pe_status: 合理 (行号: 142)
+    g.security: 510300.XSHG (行号: 58)
+    g.stdH: g.stdpeH (行号: 141)
+    g.stdL: g.stdpeL (行号: 143)
+    g.stdpeL: qtt.std() (行号: 43)
+
+策略: 53 微盘股400每日轮动再平衡
+参数数量: 1
+  int参数:
+    g.stock_num: 400 (行号: 16)
+
+策略: 53 筹码选股
+参数数量: 8
+  int参数:
+    g.max_num: 20 (行号: 41)
+  str参数:
+    g.delay_buy: [] (行号: 38)
+    g.delay_sell: [] (行号: 40)
+    g.institutional_table: [] (行号: 24)
+    g.shareholder_table: [] (行号: 22)
+    g.stock: [] (行号: 36)
+    g.stocks: tx_filter(g.stocks) (行号: 60)
+    g.tiao: [5,9,11] (行号: 35)
+
+策略: 53 超跌网格交易大法V1.2：稳健跑赢大盘-年化13%回撤7%
+参数数量: 10
+  int参数:
+    g.KDJ_J: 0 (行号: 73)
+  str参数:
+    g.buy_dict: {} (行号: 60)
+    g.last_buy_price: {} (行号: 62)
+    g.last_opt_price: {} (行号: 64)
+    g.last_sell_price: {} (行号: 63)
+    g.origin_param_list: {} (行号: 66)
+    g.origin_param_list_all: {} (行号: 67)
+    g.security: get_all_securities(types=['stock'],date=previous_day).index.tolist() (行号: 106)
+    g.sell_dict: {} (行号: 61)
+    g.traceDisaster: {} (行号: 65)
+
+策略: 54 sales_growth今年最优版
+参数数量: 2
+  int参数:
+    g.stock_num: 5 (行号: 32)
+  str参数:
+    g.un_hold_days: g.un_hold_days+1 (行号: 33)
+
+策略: 54 价值投资策略-大盘择时
+参数数量: 6
+  int参数:
+    g.buy_stock_count: 5 (行号: 34)
+  str参数:
+    g.base: 000300.XSHG (行号: 22)
+    g.index: thing.code.values (行号: 374)
+    g.risk_control: RiskControl(g.base) (行号: 36)
+    g.security_universe_index: 399101.XSHE (行号: 33)
+    g.stock_list: get_check_stocks_sort(context,check_out_lists) (行号: 59)
+
+策略: 54 养花大哥 追市场热点策略
+参数数量: 6
+  int参数:
+    g.stock_num: 3 (行号: 25)
+  str参数:
+    g.buy1_stock_lists: [] (行号: 29)
+    g.buy2_stock_lists: [] (行号: 30)
+    g.candidate_list: candidate_list[:candidate_num] (行号: 28)
+    g.hold_list: [] (行号: 26)
+    g.yesterday_HL_list: [] (行号: 27)
+
+策略: 54 发一个学习策略5年70倍，思路可以学习
+参数数量: 5
+  int参数:
+    g.amount: 5 (行号: 17)
+    g.choice: 500 (行号: 16)
+  str参数:
+    g.bucket: [] (行号: 19)
+    g.muster: filter_hold_stock(context, g.muster) (行号: 18)
+    g.summit: {} (行号: 20)
+
+策略: 55 ETF轮动策略-入门1.0
+参数数量: 10
+  float参数:
+    g.score_threshold: 0.7 (行号: 62)
+  int参数:
+    g.M: 600 (行号: 61)
+    g.N: 18 (行号: 60)
+    g.mean_day: 20 (行号: 64)
+    g.mean_diff_day: 3 (行号: 65)
+    g.momentum_day: 29 (行号: 57)
+    g.stock_num: 1 (行号: 56)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 59)
+    g.slope_series: initial_slope_series()[:-1] (行号: 66)
+    g.stock_pool: [ (行号: 49)
+
+策略: 55 价值投资改进版-6年9.5倍
+参数数量: 4
+  int参数:
+    g.max_hold_stocknum: 4 (行号: 38)
+    g.num: 0 (行号: 39)
+  str参数:
+    g.buy_list: get_check_stocks_sort(context,temp_list) (行号: 36)
+    g.index: thing.code.values (行号: 233)
+
+策略: 55 大市值价值投资加自定义邮箱推送 Ahfu
+参数数量: 11
+  int参数:
+    g.buy_stock_count: 5 (行号: 34)
+    g.gmail_port: 25 (行号: 41)
+  str参数:
+    g.check_out_lists: check_out_lists (行号: 35)
+    g.gmail_authcode: xxxx (行号: 43)
+    g.gmail_host: smtp.163.com (行号: 40)
+    g.gmail_receivers: ['xxxx@163.com','xxxx@qq.com'] (行号: 44)
+    g.gmail_sender: xxxx@163.com (行号: 42)
+    g.high_limit_list: [] (行号: 36)
+    g.hold_list: [] (行号: 37)
+    g.open_gmail: =False: (行号: 39)
+    send_mail.sumup:  (行号: 223)
+
+策略: 55 怎么让龟速变奔跑？以“首版突破一进二”为例
+参数数量: 3
+  int参数:
+    g.max_stock_num: 20 (行号: 26)
+  str参数:
+    g.help_stock: pick_high_limit(context, stock_list) (行号: 25)
+    g.pre_holdings: list(context.portfolio.positions) (行号: 130)
+
+策略: 56 一创PEG+EBIT+turnover_volatility
+参数数量: 1
+  int参数:
+    g.stock_num: 5 (行号: 24)
+
+策略: 56 分享券商金股组合增强
+参数数量: 6
+  int参数:
+    g.handle_num: 15 (行号: 17)
+    g.in_week: 5 (行号: 50)
+  str参数:
+    g.base_target: g.gold_stock_frame.loc[watch_date] (行号: 82)
+    g.gold_stock_frame: g.gold_stock_frame[( (行号: 134)
+    g.optimizer_mod: MaxProfit (行号: 75)
+    g.use_factor: True (行号: 64)
+
+策略: 56 双人工智能AI配合，样本外夏普3.9
+参数数量: 13
+  float参数:
+    __init__.fc1_dropout: 0.2 (行号: 105)
+    __init__.fc2_dropout: 0.2 (行号: 105)
+    __init__.fc3_dropout: 0.2 (行号: 105)
+  int参数:
+    __init__.fc1_size: 2000 (行号: 105)
+    __init__.fc2_size: 1000 (行号: 105)
+    __init__.fc3_size: 100 (行号: 105)
+    __init__.num_of_classes: 50 (行号: 105)
+    g.stock_num: 20 (行号: 36)
+  str参数:
+    g.factor_list: [ (行号: 43)
+    g.hold_list: [] (行号: 37)
+    g.model: pickle.loads(read_file('xgboost_base.pkl'), encoding='iso-8859-1') (行号: 39)
+    g.no_trading_today_signal: = True: (行号: 35)
+    g.yesterday_HL_list: [] (行号: 38)
+
+策略: 56 基于趋势、拥挤、景气的行业轮动，及行业强势个股的选择
+参数数量: 4
+  int参数:
+    filter_new_stock.days: 50 (行号: 173)
+    sorted_by_circulating_market_cap.n_limit_top: 5 (行号: 211)
+  str参数:
+    g.buyList: get_buyStock_from_industry(context, codes) (行号: 25)
+    get_shifted_date.days_type: T (行号: 269)
+
+策略: 56 大盘一路向上时，追总龙头2个月3倍
+参数数量: 10
+  int参数:
+    g.daily_buy_count: 1 (行号: 41)
+  str参数:
+    g.buy_list: [] (行号: 73)
+    g.close: history(count,'1d','close',g.stocks_exsit) (行号: 46)
+    g.high_limit: history(count,'1d','high_limit',g.stocks_exsit) (行号: 45)
+    g.index_security: 000300.XSHG (行号: 20)
+    g.low: history(count,'1d','low',g.stocks_exsit) (行号: 47)
+    g.max_zt_days: stocks_zt[key] (行号: 68)
+    g.stocks_exsit: get_stock_list(context) (行号: 45)
+    g.today_bought_stocks: set() (行号: 42)
+    g.x1: history(1,'1d','high_limit',g.stocks_exsit) (行号: 49)
+
+策略: 57 别人恐惧我贪婪3——年化20%的股债组合
+参数数量: 4
+  int参数:
+    g.buttun: 0 (行号: 42)
+    g.day: 1 (行号: 43)
+  str参数:
+    g.nationaldabt: ['511010.XSHG'] (行号: 55)
+    g.pool: ['512100.XSHG'] (行号: 39)
+
+策略: 57 股指期货套利，这段时间都没有交易分享给大家
+参数数量: 3
+  float参数:
+    g.futures_margin_rate: 0.1 (行号: 114)
+  str参数:
+    g.code1: IF"+yea1+"0"+mon1+".CCFX (行号: 56)
+    g.code2: IF"+yea2+"0"+mon2+".CCFX (行号: 57)
+
+策略: 57 韶华研究之五-ETF轮动,躺赚,夏普2
+参数数量: 14
+  int参数:
+    g.check_unit: 20 (行号: 149)
+    g.criteria: 0 (行号: 150)
+    g.day_count: 0 (行号: 160)
+    g.shiftdays: 20 (行号: 159)
+    g.stocknum: 1 (行号: 156)
+  str参数:
+    g.available_indexs: [] (行号: 181)
+    g.buylist: g.poollist[:g.stocknum] (行号: 203)
+    g.etf_list: { (行号: 58)
+    g.gz_etf: 511010.XSHG (行号: 148)
+    g.index: = 'all': (行号: 45)
+    g.index_list: [ (行号: 47)
+    g.poollist: get_increase_filter(context) (行号: 202)
+    g.poolnum: 2*g.stocknum (行号: 157)
+    g.strategy: ='Increase': (行号: 146)
+
+策略: 57 韶华研究之十八，201系列
+参数数量: 15
+  float参数:
+    g.auction_open_highlimit: 0.985 (行号: 63)
+    g.auction_open_lowlimit: 0.945 (行号: 64)
+    g.profit_line: 1.05 (行号: 65)
+    g.sell_vol_ratio: 0.9 (行号: 75)
+  int参数:
+    g.sell_mode: 0 (行号: 73)
+    g.sell_vol_period: 120 (行号: 74)
+    g.stocknum: 0 (行号: 79)
+    g.volume_control: 2 (行号: 68)
+    g.volume_period: 20 (行号: 69)
+    g.volume_ratio: 5 (行号: 70)
+  str参数:
+    g.index: = 'zz': (行号: 62)
+    g.poolist: [] (行号: 108)
+    g.poollist: get_highvolume_filter(context,g.poollist,g.volume_control,g.volume_period,g.volume_ratio) (行号: 138)
+    g.poolnum: 1*g.stocknum (行号: 80)
+    g.sell_list: get_highvolume_filter(context,stocklist,g.sell_mode,g.sell_vol_period,g.sell_vol_ratio) (行号: 109)
+
+策略: 58 Debug-输出信息-多标的版ETF策略(ETF复现之三）
+参数数量: 14
+  float参数:
+    g.max_inc: 0.2 (行号: 53)
+    g.min_inc: 0.05 (行号: 52)
+  int参数:
+    g.day: 0 (行号: 51)
+    g.etf_num: 2 (行号: 13)
+    g.longdays: 20 (行号: 55)
+    g.rank_num: 4 (行号: 15)
+    g.shortdays: 5 (行号: 56)
+  str参数:
+    g.buy_etf: list(df1.index)[:g.etf_num] (行号: 17)
+    g.change_day: = 0: (行号: 50)
+    g.etf: [ (行号: 13)
+    g.order_info_dict: {} (行号: 63)
+    g.previous_portfolio_value: context.portfolio.portfolio_value (行号: 65)
+    g.sell_etf: [] (行号: 58)
+    g.total_return_rate: (context.portfolio.portfolio_value - context.portfolio.starting_cash) / context.portfolio.starting_cash * 100 (行号: 151)
+
+策略: 58 ETF动量轮动RSRS与北上择时-股债平衡-盘中止损
+参数数量: 16
+  float参数:
+    g.score_threshold: 0.7 (行号: 42)
+  int参数:
+    g.M: 600 (行号: 41)
+    g.N: 18 (行号: 40)
+    g.momentum_day: 20 (行号: 38)
+    g.stock_num: 1 (行号: 37)
+  str参数:
+    g.base_price: df.iloc[0] (行号: 207)
+    g.checktime: 13:00 (行号: 44)
+    g.checktime2: 13:50 (行号: 45)
+    g.hold: stk (行号: 46)
+    g.north_money: total_net_in (行号: 122)
+    g.position: pd.DataFrame(data={"weight": g.weights, "wave": waves}) (行号: 211)
+    g.ref_stock: 000300.XSHG (行号: 39)
+    g.slope_series: initial_slope_series() (行号: 43)
+    g.stock_pool: [ (行号: 26)
+    g.stocks: check_out_list (行号: 205)
+    g.weights: pd.Series(stocksdata,index=g.stocks) (行号: 211)
+
+策略: 58 严格资金管理，股指期货套利
+参数数量: 3
+  float参数:
+    g.futures_margin_rate: 0.1 (行号: 114)
+  str参数:
+    g.code1: IF"+yea1+"0"+mon1+".CCFX (行号: 56)
+    g.code2: IF"+yea2+"0"+mon2+".CCFX (行号: 57)
+
+策略: 58 融券做空,3年35倍多！已模拟2年半，动态跑盘收益惊人！
+参数数量: 1
+  str参数:
+    g.buylist0: buylist[:10] (行号: 65)
+
+策略: 58 韶华研究之四-菲阿里四阶在T+1的短线策略应用
+参数数量: 9
+  int参数:
+    g.day_count: 0 (行号: 62)
+    g.stocknum: 2 (行号: 58)
+    g.trenddays: 5 (行号: 53)
+  str参数:
+    g.index: ='all': (行号: 52)
+    g.poollist: trend_filter(context,stocklist,5,-2) (行号: 84)
+    g.poolnum: 1*g.stocknum (行号: 59)
+    g.prebuy: {} (行号: 85)
+    g.presell: {} (行号: 86)
+    g.shiftdays: =0: (行号: 61)
+
+策略: 59 北向RSRS与布林带择时
+参数数量: 21
+  float参数:
+    g.buy: -0.1 (行号: 45)
+    g.sell: -0.4 (行号: 46)
+    g.up_ratio: 0.96 (行号: 37)
+  int参数:
+    g.M: 600 (行号: 54)
+    g.N: 18 (行号: 53)
+    g.back_trade_days: 80 (行号: 35)
+    g.max_stock_count: 20 (行号: 34)
+    g.quantile_M: 15 (行号: 44)
+    g.quantile_N: 15 (行号: 43)
+    g.stdev_dn: 2 (行号: 40)
+    g.stdev_up: 2 (行号: 39)
+    g.window: 90 (行号: 38)
+  str参数:
+    calc_change.stock_universe: [] (行号: 103)
+    g.ans: [] (行号: 48)
+    g.ans_rightdev: [] (行号: 50)
+    g.fund: 420002.OF (行号: 33)
+    g.init: False (行号: 42)
+    g.lower: get_boll(pre_date) (行号: 41)
+    g.security:  (行号: 51)
+    g.top_money_in: [] (行号: 36)
+    get_up_stock.fq: post (行号: 201)
+
+策略: 59 基于Gyro^.^大神的小市值策略的因子匹配研究
+参数数量: 3
+  str参数:
+    g.choice: df.index.tolist() (行号: 130)
+    g.days: g.days + 1 (行号: 23)
+    g.position_size: 1.0/nposition * context.portfolio.total_value (行号: 132)
+
+策略: 59 年化62%的动量策略
+参数数量: 5
+  int参数:
+    g.day_count: 91 (行号: 30)
+    g.stock_num: 20 (行号: 29)
+    g.stock_price: 5 (行号: 31)
+  str参数:
+    g.security1: [x for x in holding_codes if x not in next_holding_codes] (行号: 54)
+    g.security2: [y for y in next_holding_codes if y not in holding_codes] (行号: 56)
+
+策略: 59 追板策略，今年收益已翻倍，低操作低回撤高收益可实盘
+参数数量: 9
+  int参数:
+    filter_new_stock.days: 50 (行号: 336)
+  str参数:
+    g.columns: ['日期', '代码', '名称', '类型', '原因', '总市值', '流通市值', '总成交额', '总成交量', '平均成交价', (行号: 38)
+    g.excel_name: myFile/追首日涨停/实盘日志 by ' + str(datetime.now())[:-7] + '.csv (行号: 44)
+    g.is_huice: True (行号: 42)
+    g.logdf: pd.concat([g.logdf, log_data_df], sort=False) (行号: 40)
+    g.selltime1: 11:25:00 (行号: 50)
+    g.selltime2: 14:50:00 (行号: 51)
+    g.target_list: [] (行号: 52)
+    get_shifted_date.days_type: T (行号: 312)
+
+策略: 60 ETF动量轮动RSRS择时-v2
+参数数量: 12
+  float参数:
+    g.score_threshold: 0.7 (行号: 49)
+  int参数:
+    g.M: 600 (行号: 48)
+    g.N: 18 (行号: 47)
+    g.momentum_day: 20 (行号: 45)
+    g.stock_num: 1 (行号: 44)
+  str参数:
+    g.checktime: 13:00 (行号: 51)
+    g.checktime2: 13:50 (行号: 52)
+    g.hold: stk (行号: 53)
+    g.ref_stock: 000300.XSHG (行号: 46)
+    g.rsrs_score_hisitory: [] (行号: 55)
+    g.slope_series: initial_slope_series() (行号: 50)
+    g.stock_pool: [ (行号: 29)
+
+策略: 60 【深度解析 二】资产负债与ROA模型 5股
+参数数量: 2
+  int参数:
+    g.position: 1 (行号: 50)
+    g.stock_num: 5 (行号: 47)
+
+策略: 60 可能是最接近实盘的“基本面三角”
+参数数量: 12
+  int参数:
+    g.day_count: 0 (行号: 69)
+  str参数:
+    g.adjustpositions: =False: (行号: 104)
+    g.buylist: buylist (行号: 95)
+    g.get_bars: 1M (行号: 70)
+    g.index: = 'zz': (行号: 55)
+    g.ma_period: int(g.shiftdays * 0.5) (行号: 68)
+    g.poollist: g.poollist[:g.poolnum] (行号: 94)
+    g.poolnum: 5*g.stocknum (行号: 65)
+    g.selllist: [] (行号: 96)
+    g.shiftdays: =0) or len(g.selllist) !=0: (行号: 67)
+    g.stocknum: =0 or len(g.poollist) <= g.stocknum: (行号: 64)
+    g.strategy: ='D': (行号: 58)
+
+策略: 60 高股息V1.0（小程序公开股池）
+参数数量: 4
+  int参数:
+    g.stock_num: 5 (行号: 37)
+  str参数:
+    g.hold_list: [] (行号: 38)
+    g.no_trading_today_signal: = True: (行号: 36)
+    g.yesterday_HL_list: [] (行号: 39)
+
+策略: 61 BiLSTM for ETF
+参数数量: 2
+  int参数:
+    g.stock_num: 3 (行号: 33)
+  str参数:
+    g.hold_list: [] (行号: 34)
+
+策略: 61 扩散指标择时
+参数数量: 8
+  int参数:
+    g.N: 100 (行号: 45)
+    g.N1: 90 (行号: 46)
+    g.N2: 30 (行号: 47)
+  str参数:
+    g.begin_date: target_info.start_date (行号: 96)
+    g.index_symbol: 000300.XSHG (行号: 41)
+    g.singal: np.append(g.singal, roc_indicator)[1:] (行号: 52)
+    g.target: 510300.XSHG (行号: 42)
+    g.weight_method: mktcap (行号: 44)
+
+策略: 61 抄底神器2.0，低回撤，高成功率
+参数数量: 4
+  float参数:
+    security_stopprofit_1.profit1: 0.5 (行号: 104)
+  str参数:
+    g.check_out_lists: filter_paused_stock(g.check_out_lists) (行号: 59)
+    g.readytobuy_list: filter_limitup_stock(context,g.check_out_lists) (行号: 62)
+    g.tobuy_stock_BT: g.tobuy_stock_BT[-3:] (行号: 34)
+
+策略: 61 简单ETF策略，年化97%
+参数数量: 19
+  int参数:
+    g.max_number: 1 (行号: 43)
+    ma.n: 5 (行号: 181)
+    ma.ref: 0 (行号: 181)
+    min_max.n: 1 (行号: 217)
+  str参数:
+    cross.unit: 1d (行号: 202)
+    g.all_stks: ['399306.XSHE','159608.XSHE','159611.XSHE','159613.XSHE','159619.XSHE','159707.XSHE','159713.XSHE','159731.XSHE','512690.XSHG','516950.XSHG','512880.XSHG','516880.XSHG','515030.XSHG','515220.XSHG','515210.XSHG','512710.XSHG','159870.XSHE','159995.XSHE','512150.XSHG','588080.XSHG','159952.XSHE','512800.XSHG','515950.XSHG','159945.XSHE'] (行号: 40)
+    g.is_sendmail: =0: (行号: 46)
+    g.mail_msg:  (行号: 55)
+    g.mail_passwd:  (行号: 49)
+    g.mail_receiver:  (行号: 50)
+    g.mail_sender:  (行号: 48)
+    g.mail_subject: ETF3.0: (行号: 47)
+    g.money: context.portfolio.starting_cash/g.max_number (行号: 56)
+    g.security: stk (行号: 79)
+    g.stks_buy: [] (行号: 53)
+    g.stks_sell: [] (行号: 54)
+    ma.type: c (行号: 181)
+    ma.unit: 1d (行号: 181)
+    min_max.type: l (行号: 217)
+
+策略: 62 分享一个最近两年非常有效的因子
+参数数量: 3
+  int参数:
+    g.cash: 0 (行号: 65)
+  str参数:
+    g.stocks_to_buy: list(set(alpha_head)-set(current_security)) (行号: 53)
+    g.stocks_to_sell: list(set(current_security)-set(alpha_head)) (行号: 55)
+
+策略: 62 北向资金交易能力一定强吗
+参数数量: 2
+  str参数:
+    g.params: {'threshold_h': -0.4991838749623957, (行号: 42)
+    g.target_etf: 510300.XSHG (行号: 39)
+
+策略: 62 基金溢价（模拟效果好！）
+参数数量: 6
+  float参数:
+    g.least_money: 10000000.0 (行号: 50)
+    g.trade_fee_ratio: 0.00025 (行号: 51)
+  int参数:
+    g.ETFNum_hold: 2 (行号: 54)
+  str参数:
+    g.etf_df: df (行号: 56)
+    g.least_premium: max(g.least_premium-0.15,1.5) (行号: 15)
+    g.no_buy_days: 0, g.least_premium=2.5 (行号: 48)
+
+策略: 62 研究一种K线小碎步后突破的分钟级策略
+参数数量: 12
+  int参数:
+    filter_new_stock.days: 100 (行号: 389)
+    g.holdable_days: 6 (行号: 27)
+    g.max_hold_num: 5 (行号: 23)
+    get_hl_stock.watch_days: 1 (行号: 362)
+    get_no_hl_stock.watch_days: 1 (行号: 370)
+    scream_sell.down_range: 3 (行号: 78)
+  str参数:
+    g.chosen_stocks: [] (行号: 26)
+    g.hold_days: {} (行号: 29)
+    g.industry_stocks: ={} or len(g.industry_stocks)<1: (行号: 234)
+    g.need_sell: set() (行号: 31)
+    g.prepare_stocks: lst (行号: 24)
+    get_shifted_date.days_type: T (行号: 413)
+
+策略: 63 3年复合200+%收益+超低回撤11%以内，无惧大跌
+参数数量: 18
+  float参数:
+    g.emptyforthreeday: 10.6 (行号: 91)
+  int参数:
+    g.emptyforallday: 31 (行号: 92)
+    g.emptyholdday: 1 (行号: 94)
+    g.emptymaxday: 3 (行号: 93)
+    g.lag: 6 (行号: 87)
+    g.lag0: 7 (行号: 88)
+    g.lag1: 13 (行号: 89)
+    g.lag2: 13 (行号: 90)
+  str参数:
+    g.ETFList: {} (行号: 189)
+    g.ETF_targets: { (行号: 98)
+    g.buy: g.buy+[buyold[j]] (行号: 96)
+    g.emotion_rate: round((close[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 86)
+    g.empty_keep_stock: 511880.XSHG (行号: 83)
+    g.ispython3: (sys.version_info>=(3,0)) (行号: 77)
+    g.signal: BUY (行号: 85)
+    g.target_market: df_etf['对应指数'].iloc[useidx] (行号: 81)
+    g.use_dynamic_target_market: True (行号: 80)
+    get_before_after_trade_days.is_before: True (行号: 163)
+
+策略: 63 5年12倍-小市值
+参数数量: 10
+  int参数:
+    g.limit_days: 10 (行号: 39)
+    g.stock_num: 9 (行号: 34)
+    get_hot_industry_stock.count: 10 (行号: 258)
+    get_hot_industry_stock.number: 24 (行号: 258)
+  str参数:
+    g.high_limit_list: [] (行号: 131)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 37)
+    g.hold_list: [] (行号: 36)
+    g.limit_up_list: [] (行号: 35)
+    g.not_buy_again_list: list(temp_set) (行号: 38)
+    g.target_list: g.target_list[:min(g.stock_num, len(g.target_list))] (行号: 40)
+
+策略: 63 怎么让龟速变奔跑？以“首版突破一进二”为例
+参数数量: 3
+  int参数:
+    g.max_stock_num: 20 (行号: 29)
+  str参数:
+    g.help_stock: pick_high_limit(context, stock_list) (行号: 28)
+    g.pre_holdings: list(context.portfolio.positions) (行号: 133)
+
+策略: 63 生猪期货CTA策略
+参数数量: 43
+  float参数:
+    g.buy_ration: 0.7 (行号: 47)
+    g.sell_ration: 0.7 (行号: 48)
+    g.win_ratio: 0.03 (行号: 41)
+  int参数:
+    calculateMACD.longPeriod: 26 (行号: 406)
+    calculateMACD.shortPeriod: 12 (行号: 406)
+    calculateMACD.signalPeriod: 9 (行号: 406)
+    position_auto_switch.pindex: 0 (行号: 429)
+  str参数:
+    calculateEMA.emaArray: [] (行号: 393)
+    deal.frequency: tick (行号: 115)
+    g.can_close_order_time: get_close_order_time(new_close_order.add_time) (行号: 188)
+    g.d: kdlist[1] (行号: 99)
+    g.dea: calculateMACD_oneday(g.main_symbol,yestoday) (行号: 103)
+    g.firstTimeCalculateThreshold: False (行号: 56)
+    g.five_ma_down: is_ma_down(g.main_symbol, 5, 4, dt.date()) (行号: 156)
+    g.five_ma_up: is_ma_up(g.main_symbol, 5, 4, dt.date()) (行号: 155)
+    g.is_settlement_date: False (行号: 55)
+    g.iskd_deadCross: is_kd_deadCross(kdlist) (行号: 58)
+    g.k: kdlist[0] (行号: 98)
+    g.long_ma_down: is_ma_down(g.main_symbol, 60, 4, dt.date()) (行号: 153)
+    g.long_ma_up: is_ma_up(g.main_symbol, 60, 4, dt.date()) (行号: 154)
+    g.long_order: None (行号: 49)
+    g.long_threshold: int(open_price + swing * g.buy_ration) (行号: 51)
+    g.loss_limit: max(g.std,last_price*0.05) (行号: 42)
+    g.loss_ratio: round(ratio,3) (行号: 40)
+    g.ma_down_count: g.ma_down_count + 1 (行号: 53)
+    g.ma_up_count: g.ma_up_count + 1 (行号: 52)
+    g.main_symbol: get_dominant_future('LH') (行号: 46)
+    g.open_order_lock: False (行号: 54)
+    g.relative_is_close_down: is_close_down(g.relative_security,yestoday,5) (行号: 59)
+    g.relative_is_close_up: not g.relative_is_close_down (行号: 60)
+    g.relative_security: 002714.XSHE (行号: 45)
+    g.security: LH9999.XDCE (行号: 44)
+    g.short_order: None (行号: 50)
+    g.short_threshold: int(open_price - swing * g.sell_ration) (行号: 51)
+    g.std: calculate_std(g.main_symbol,20,yestoday) (行号: 43)
+    g.ten_ma_down: is_ma_down(g.main_symbol, 10, 4, dt.date()) (行号: 152)
+    g.ten_ma_up: is_ma_up(g.main_symbol, 10, 4, dt.date()) (行号: 151)
+    g.today_canBuy: False (行号: 57)
+    g.win_limit: max(2*g.std,last_price*0.05) (行号: 240)
+    get_before_close_price.unit: 1d (行号: 295)
+    get_swing.unit: 1d (行号: 274)
+    position_auto_switch.callback: None (行号: 429)
+    position_auto_switch.switch_func: None (行号: 429)
+
+策略: 64 ETF轮动策略升级-增加盘中止损
+参数数量: 20
+  int参数:
+    g.ma_period: 10 (行号: 74)
+    g.moment_period: 13 (行号: 73)
+    g.type_num: 1 (行号: 76)
+  str参数:
+    g.ETFList: {} (行号: 172)
+    g.ETF_targets: { (行号: 78)
+    g.checktime: 13:30 (行号: 46)
+    g.df_etf: g.df_etf.append({'基金代码': security, (行号: 198)
+    g.df_etf_buy: g.df_etf_buy[g.df_etf_buy['均线状态']  > 0] (行号: 264)
+    g.df_global_futures: pd.DataFrame(columns=['基金代码', '基金名称','涨幅','均线状态','股数']) (行号: 208)
+    g.df_global_stocks: pd.DataFrame(columns=['基金代码', '基金名称','涨幅','均线状态','股数']) (行号: 206)
+    g.df_local_futures: pd.DataFrame(columns=['基金代码', '基金名称','涨幅','均线状态','股数']) (行号: 207)
+    g.df_local_stocks: g.df_etf_buy.loc[g.df_etf_buy['基金代码'].isin(g.local_stocks)] (行号: 205)
+    g.df_reits: pd.DataFrame(columns=['基金代码', '基金名称','涨幅','均线状态','股数']) (行号: 209)
+    g.holdings: set(context.portfolio.positions.keys()) (行号: 271)
+    g.local_stocks: [ (行号: 114)
+    g.purchases: [i for i in g.targets if i not in (list(g.holdings))] (行号: 21)
+    g.sells: [i for i in g.holdings if i not in (g.targets)] (行号: 22)
+    g.target_market: 000300.XSHG (行号: 71)
+    g.targets: [] (行号: 272)
+    get_before_after_trade_days.is_before: True (行号: 155)
+
+策略: 64 基于XGBoost_6m滚动选股全A小市值开板止盈策略
+参数数量: 14
+  int参数:
+    g.stock_num: 10 (行号: 55)
+    g.windows: 6 (行号: 57)
+    linreg.columns: 3 (行号: 388)
+  str参数:
+    g.all_A: True (行号: 50)
+    g.alllist: [] (行号: 52)
+    g.benchmark: 399006.XSHE (行号: 30)
+    g.factor_cache: {} (行号: 58)
+    g.high_limit_list: [] (行号: 54)
+    g.hold_list: list(context.portfolio.positions) (行号: 53)
+    g.is_cv: False (行号: 70)
+    g.parameters: {'C':(0.01, 0.03, 0.1, 0.3, 1, 3, 10), (行号: 62)
+    g.params: clf.best_params_ (行号: 61)
+    g.regressor: svm.SVC (行号: 60)
+    g.signal: False (行号: 51)
+
+策略: 64 大小外择时小市值3.0
+参数数量: 11
+  int参数:
+    g.buy_stock_count: 5 (行号: 39)
+    g.highest: 50 (行号: 38)
+    g.stock_num: 3 (行号: 37)
+  str参数:
+    g.ETF_pool: fun_delNewShare(context, ['511010.XSHG'], deltaday) (行号: 302)
+    g.bought_stocks: {} (行号: 42)
+    g.foreign_ETF: [ (行号: 43)
+    g.hold_list: [] (行号: 40)
+    g.market_temperature: = "warm": (行号: 36)
+    g.no_trading_today_signal: False (行号: 35)
+    g.singal: ='etf': (行号: 289)
+    g.yesterday_HL_list: [] (行号: 41)
+
+策略: 65 低开买入小市值策略高频交易法3.0 总结
+参数数量: 3
+  int参数:
+    g.choice: 500 (行号: 21)
+    g.stock_num: 5 (行号: 22)
+  str参数:
+    g.stock_pool: filter_specials(context, g.stock_pool) (行号: 23)
+
+策略: 65 多因子指数增强
+参数数量: 1
+  str参数:
+    g.result_df: pd.read_csv(BytesIO(read_file('result_df.csv')),index_col=[0],) (行号: 30)
+
+策略: 65 搭建量化交易模型从零开始——择时，选股，仓位管理和因子分析
+参数数量: 18
+  int参数:
+    g.buytimes: 3 (行号: 51)
+    g.j: 0 (行号: 43)
+    g.momentum_day: 144 (行号: 42)
+    g.selltimes: 3 (行号: 86)
+    g.stock_num: 100 (行号: 50)
+    g.w: 12 (行号: 44)
+  str参数:
+    g.a: a (行号: 55)
+    g.benchmark: 000905.XSHG (行号: 28)
+    g.cash: b (行号: 53)
+    g.high_limit_list: df.query('close==high_limit and paused==0')['code'].tolist() (行号: 381)
+    g.index1: 399303.XSHE (行号: 34)
+    g.index2: 000852.XSHG (行号: 35)
+    g.index_pool: [ (行号: 37)
+    g.position: 1/g.buytimes (行号: 52)
+    g.position_count: c (行号: 54)
+    g.position_sell: 1/g.selltimes (行号: 87)
+    g.stock_amount: l (行号: 88)
+    g.weights: [1, 1, 1, 1, 1] (行号: 47)
+
+策略: 65 神级策略：桥水全天候策略-7年最大回撤仅3.5%
+参数数量: 16
+  float参数:
+    g.confidence_level: 2.58 (行号: 60)
+  str参数:
+    __init__._period: 1d (行号: 343)
+    g.QuantLib: QuantLib() (行号: 33)
+    g.bonds: g.QuantLib.fun_delNewShare(context, g.bonds, 60) (行号: 55)
+    g.commodities: g.QuantLib.fun_delNewShare(context, g.commodities, 60) (行号: 53)
+    g.equity: g.QuantLib.fun_delNewShare(context, g.equity, 60) (行号: 51)
+    g.hold: {} (行号: 31)
+    g.hold_cycle: 0, 30 (行号: 31)
+    g.hold_periods: g.hold_cycle (行号: 31)
+    g.message:  (行号: 81)
+    g.money_fund: g.QuantLib.fun_delNewShare(context, g.money_fund, 60) (行号: 57)
+    g.pools: g.equity + g.commodities + g.bonds + g.money_fund (行号: 68)
+    g.positions: {}, {}, {} (行号: 30)
+    g.tradeRecord:  (行号: 117)
+    g.trade_ratio: trade_ratio (行号: 30)
+    g.transactionRecord: tmpDict.copy() (行号: 30)
+
+策略: 65 韶华研究之七 不可多得的基本面三角
+参数数量: 10
+  int参数:
+    g.day_count: 0 (行号: 60)
+  str参数:
+    g.adjustpositions: =False: (行号: 95)
+    g.buylist: g.poollist[:g.stocknum] (行号: 86)
+    g.index: = 'zz': (行号: 47)
+    g.poollist: g.poollist[:g.poolnum] (行号: 85)
+    g.poolnum: 1*g.stocknum (行号: 57)
+    g.selllist: [] (行号: 87)
+    g.shiftdays: =0) or len(g.selllist) !=0: (行号: 59)
+    g.stocknum: =0 or len(g.poollist) <= g.stocknum: (行号: 56)
+    g.strategy: ='D': (行号: 50)
+
+策略: 66 ETF动量轮动MA乖离择时
+参数数量: 4
+  int参数:
+    g.momentum_day: 20 (行号: 32)
+    g.stock_num: 1 (行号: 31)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 33)
+    g.stock_pool: [ (行号: 21)
+
+策略: 66 PB-POE+双均线--加入jq以来第一个成功的交易策略
+参数数量: 3
+  int参数:
+    g.days: 1 (行号: 29)
+    g.stocknum: 5 (行号: 27)
+  str参数:
+    g.refresh_rate: = 0: (行号: 31)
+
+策略: 66 SVR机器学习上证综指择时中小板财务选股策略
+参数数量: 13
+  float参数:
+    g.score_fall_thr: -0.5 (行号: 33)
+  int参数:
+    g.K: 8 (行号: 29)
+    g.M: 600 (行号: 28)
+    g.N: 18 (行号: 27)
+    g.curstaut: 0 (行号: 24)
+    g.idex_slope_raise_thr: 10 (行号: 34)
+    g.score_thr: -1 (行号: 32)
+    g.stock_num: 10 (行号: 23)
+  str参数:
+    g.check_out_list: choice (行号: 176)
+    g.hold_stock: stock (行号: 31)
+    g.ref_stock: 000001.XSHG (行号: 25)
+    g.rsrs_score_history: initial_slope_series() (行号: 36)
+    g.timing_signal: = "SELL": (行号: 169)
+
+策略: 67 RSRS择时改进-【成交量加权-钝化-右偏】
+参数数量: 13
+  float参数:
+    g.buy: 0.7 (行号: 23)
+  int参数:
+    g.M: 1100 (行号: 22)
+  str参数:
+    g.N: 18,  j=0到17 (行号: 21)
+    g.beta_weight: [] (行号: 50)
+    g.beta_weight的长度: %s, g.r2_weight的长度=%s' % (len(prices),len(g.beta_weight),len(g.r2_weight))) (行号: 97)
+    g.days: = 1: (行号: 54)
+    g.pos: False (行号: 53)
+    g.r2_weight: [] (行号: 51)
+    g.rsrs: %s' % round(g.rsrs,3)) (行号: 55)
+    g.run_time: 9:30 (行号: 25)
+    g.security: 000300.XSHG (行号: 18)
+    g.sell: -g.buy (行号: 24)
+    g.volatility: [] (行号: 52)
+
+策略: 67 三因子策略年化21%简单多因子策略框架
+参数数量: 2
+  str参数:
+    g.securities: list(a.sort_values(ascending=True).index)[:100] (行号: 98)
+    g.stocks: stocks_l (行号: 28)
+
+策略: 67 基于动量和反转效应的沪深300成分股策略
+参数数量: 9
+  int参数:
+    g.days_dlxy: 0 (行号: 104)
+    g.days_fzxy: 0 (行号: 23)
+    g.weeks_dlxy: 0 (行号: 105)
+    g.weeks_fzxy: 0 (行号: 24)
+  str参数:
+    g.cash_ex: context.portfolio.total_value / 30 / 14 (行号: 103)
+    g.dl_list: list(stock_data.sort_values('ret')[-30:].index) (行号: 95)
+    g.flag_dlxy: True (行号: 26)
+    g.flag_dlxy_ex: = True: (行号: 27)
+    g.flag_fzxy: False (行号: 25)
+
+策略: 67 大市值价投高股息爱国者策略（爱我中华）
+参数数量: 3
+  str参数:
+    g.hold_list: [] (行号: 33)
+    g.no_trading_today_signal: = True: (行号: 32)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 68 wywy1995 首板低开策略代码优化，提快速度
+参数数量: 3
+  int参数:
+    filter_new_stock.days: 250 (行号: 168)
+  str参数:
+    g.stock_list: get_hl_stock_at_time(stock_list, date, '14:55:00') (行号: 32)
+    get_shifted_date.days_type: T (行号: 141)
+
+策略: 68 折价基金统计套利
+参数数量: 3
+  int参数:
+    g.num: 30 (行号: 38)
+  str参数:
+    g.all_lof: get_all_securities(['lof', 'etf']) (行号: 49)
+    g.buy_list: buy_list (行号: 39)
+
+策略: 68 胜率78%，6年36倍，今年行情依然50%年化
+参数数量: 3
+  float参数:
+    g.p: 0.005 (行号: 29)
+  int参数:
+    g.stock_num: 5 (行号: 30)
+  str参数:
+    g.security_universe_index: 399101.XSHE (行号: 28)
+
+策略: 68 说说对ETF轮动策略的看法
+参数数量: 13
+  int参数:
+    g.lag: 6 (行号: 56)
+    g.lag0: 7 (行号: 57)
+    g.lag1: 13 (行号: 58)
+    g.lag2: 13 (行号: 59)
+  str参数:
+    g.ETFList: {} (行号: 105)
+    g.ETF_targets: { (行号: 63)
+    g.MonitorSwitch: = False: (行号: 50)
+    g.buy: [df_etf['基金代码'].iloc[0],] (行号: 61)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 55)
+    g.signal: BUY (行号: 54)
+    g.target_market: df_etf['对应指数'].iloc[-1] (行号: 52)
+    g.use_dynamic_target_market: True (行号: 51)
+    get_before_after_trade_days.is_before: True (行号: 81)
+
+策略: 69 “稳定摸狗策略”学习笔记
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 41)
+  str参数:
+    g.etf_pool: [ (行号: 35)
+
+策略: 69 人工智能早晨十字星模型（反转形态预测）
+参数数量: 11
+  float参数:
+    __init__.fc1_dropout: 0.2 (行号: 83)
+    __init__.fc2_dropout: 0.2 (行号: 83)
+    __init__.fc3_dropout: 0.2 (行号: 83)
+  int参数:
+    __init__.fc1_size: 2000 (行号: 83)
+    __init__.fc2_size: 1000 (行号: 83)
+    __init__.fc3_size: 100 (行号: 83)
+    __init__.num_of_classes: 50 (行号: 83)
+    g.stock_num: 3 (行号: 36)
+  str参数:
+    g.hold_list: [] (行号: 37)
+    g.no_trading_today_signal: = True: (行号: 35)
+    g.yesterday_HL_list: [] (行号: 38)
+
+策略: 69 场内基金定投价值平均增强策略，年化30%+
+参数数量: 22
+  float参数:
+    g.down: 0.01 (行号: 54)
+    g.month_growth_rate: 1.005 (行号: 64)
+  int参数:
+    g.buy_avg_cost: 0 (行号: 63)
+    g.cost: 0 (行号: 51)
+    g.count: 1 (行号: 52)
+    g.high: 0 (行号: 53)
+    g.last_month_dwjz: 0 (行号: 56)
+    g.r: 1 (行号: 50)
+    g.take_profit_days: 0 (行号: 62)
+    g.take_profit_flag: 0 (行号: 55)
+  str参数:
+    g.bought_price: price (行号: 58)
+    g.index: 399324.XSHE (行号: 40)
+    g.init_status: = False : return (行号: 31)
+    g.investments: np.append(g.investments,context.portfolio.positions[g.security].value) (行号: 65)
+    g.last_month_value: context.portfolio.positions[g.security].value  * g.month_growth_rate (行号: 57)
+    g.money: g.totalmoney * 0.2 / 10 (行号: 36)
+    g.new_dwjz: value/total_amount (行号: 60)
+    g.security: 159905.XSHE (行号: 41)
+    g.sold_price: price (行号: 59)
+    g.take_profit: context.portfolio.positions[g.security].value/context.portfolio.positions[g.security].total_amount (行号: 55)
+    g.take_profit_value: get_cur_money(g.take_profit_value) (行号: 61)
+    g.totalmoney: context.portfolio.available_cash (行号: 32)
+
+策略: 69 宽基BBI动量追涨完美避开这波大跌
+参数数量: 11
+  int参数:
+    g.dapan_threshold: 0 (行号: 43)
+    g.decrease_days: 0 (行号: 46)
+    g.increase_days: 0 (行号: 47)
+    g.lag1: 5 (行号: 45)
+  str参数:
+    g.ETF_list: { (行号: 57)
+    g.available_indexs: [] (行号: 76)
+    g.not_ipo_list: g.ETF_list.copy() (行号: 75)
+    g.signal: = 'CLEAR'): (行号: 44)
+    g.unit: 30m (行号: 48)
+    g.zs_list: [ (行号: 49)
+    get_before_after_trade_days.is_before: True (行号: 158)
+
+策略: 69 神虽顶底+趋势
+参数数量: 1
+  str参数:
+    g.security: 000001.XSHG (行号: 346)
+
+策略: 70 上涨股策略2020年收益123%
+参数数量: 32
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 375)
+    g.buy_trade_days: 1 (行号: 45)
+    g.check_stocks_days: 1 (行号: 43)
+    g.check_stocks_refresh_rate: 120 (行号: 34)
+    g.max_hold_stocknum: 10 (行号: 40)
+    g.order_style_value: 100 (行号: 114)
+    g.security_max_proportion: 1 (行号: 32)
+    g.sell_refresh_rate: 10 (行号: 38)
+    g.sell_trade_days: 1 (行号: 46)
+  str参数:
+    check_stocks_sort.ascending: desc (行号: 93)
+    g.buy_refresh_rate: = 0: (行号: 36)
+    g.check_out_lists: check_stocks_sort(context,g.check_out_lists,input_dict,g.check_out_lists_ascending) (行号: 95)
+    g.check_out_lists_ascending: desc (行号: 95)
+    g.concept_list: [] (行号: 90)
+    g.daily_risk_management: True (行号: 124)
+    g.filter_delisted: True (行号: 79)
+    g.filter_holded: False (行号: 109)
+    g.filter_paused: True (行号: 77)
+    g.filter_st: True (行号: 83)
+    g.industry_list: ["801010","801020","801030","801040","801050","801080","801110","801120","801130","801140","801150","801160","801170","801180","801200","801210","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790","801880","801890"] (行号: 88)
+    g.max_buy_amount: None (行号: 128)
+    g.max_buy_value: None (行号: 127)
+    g.only_st: False (行号: 81)
+    g.open_sell_securities: [s for s in g.open_sell_securities if s in context.portfolio.positions.keys()] (行号: 48)
+    g.order_style_str: by_cap_mean (行号: 113)
+    g.risk_management_signal: True (行号: 121)
+    g.security_universe_index: ["all_a_securities"] (行号: 85)
+    g.security_universe_user_securities: [] (行号: 86)
+    g.sell_by_amount: None (行号: 103)
+    g.sell_by_percent: None (行号: 104)
+    g.sell_will_buy: True (行号: 100)
+    g.selled_security_list: {} (行号: 50)
+
+策略: 70 动态保形回归小市值策略改进
+参数数量: 37
+  float参数:
+    g.ret: -0.05 (行号: 59)
+    g.stock_pro: 0.1 (行号: 48)
+    g.stoploss_market: 0.1 (行号: 49)
+    g.stopprofit_market: 0.35 (行号: 50)
+    remove_outliers.threshold: 1.5 (行号: 411)
+  int参数:
+    __init__.beta: 0 (行号: 848)
+    g.refresh_rate: 10 (行号: 54)
+    g.stocknum_1: 5 (行号: 57)
+    g.stocknum_2: 3 (行号: 58)
+    select_best_gmm_clusters.max_clusters: 10 (行号: 505)
+    select_best_gmm_clusters.min_clusters: 1 (行号: 505)
+  str参数:
+    __init__.condition: None (行号: 848)
+    __init__.fit_params: None (行号: 848)
+    __init__.normalizer: None (行号: 848)
+    __init__.smoothing: True (行号: 848)
+    calibrate.increment: False (行号: 1362)
+    create_nc.err_func: None (行号: 1263)
+    create_nc.fit_params: None (行号: 1263)
+    create_nc.fit_params_normalizer: None (行号: 1263)
+    create_nc.normalizer_model: None (行号: 1263)
+    create_nc.oob: False (行号: 1263)
+    g.capital_unit: context.portfolio.portfolio_value/len(list_to_buy) (行号: 771)
+    g.days: g.days + 1 (行号: 67)
+    g.feasible_stocks: list(stock_list) (行号: 97)
+    g.filter_bons: True (行号: 47)
+    g.hold_list: context.portfolio.positions (行号: 739)
+    g.if_trade: False (行号: 68)
+    g.if_trade_stoploss: = False (行号: 69)
+    g.list_to_buy: stocks_to_buy(context) (行号: 51)
+    g.no_trading_today_signal: = False: (行号: 46)
+    g.pass_april: True (行号: 45)
+    g.stock_num: round(final_stock_count*g.stock_pro) (行号: 346)
+    g.stocknum: g.stocknum_1 (行号: 57)
+    g.tc: =0: (行号: 55)
+    g.tc_stoploss: = 0: (行号: 56)
+    predict.significance: None (行号: 895)
+    score.y: None (行号: 1002)
+
+策略: 70 超稳的股息率+均线选股策略
+参数数量: 4
+  int参数:
+    g.stock_num: 5 (行号: 100)
+  str参数:
+    g.bfive: [] (行号: 102)
+    g.bten: [] (行号: 101)
+    g.fin: pd.DataFrame() (行号: 144)
+
+策略: 70 （股票交易模板）小市值-EPS-成长因子选股
+参数数量: 2
+  int参数:
+    g.stock_num: 5 (行号: 47)
+  str参数:
+    g.security: stock_list (行号: 68)
+
+策略: 71 回踩均线搏反弹，21年来70%.
+参数数量: 6
+  float参数:
+    stop_loss.lose: 0.07 (行号: 343)
+    stop_loss.profit: 0.2 (行号: 343)
+  int参数:
+    g.max_hold_stocknum: 3 (行号: 290)
+    get_ma.timeperiod: 5 (行号: 44)
+    is_multiple_stocks.days: 5 (行号: 77)
+  str参数:
+    g.security: select_ticks(p_date) (行号: 303)
+
+策略: 71 多因子模板分位法策略，年化65%
+参数数量: 11
+  int参数:
+    g.limit_days: 20 (行号: 44)
+    g.stock_num: 10 (行号: 39)
+  str参数:
+    g.high_limit_list: [] (行号: 146)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 42)
+    g.hold_list: [] (行号: 41)
+    g.limit_up_list: [] (行号: 40)
+    g.not_buy_again_list: list(temp_set) (行号: 43)
+    g.sort1: net_profit_growth_rate',0.1,False (行号: 50)
+    g.sort2: EBIT',0.4, True (行号: 51)
+    g.sort3: roe_ttm',1,False (行号: 52)
+    g.target_list: g.target_list[:min(g.stock_num, len(g.target_list))] (行号: 45)
+
+策略: 71 期货日内策略三价均线结合ATR指标
+参数数量: 16
+  int参数:
+    g.atr_length: 14 (行号: 40)
+    g.ma_length: 20 (行号: 41)
+    g.ma_short_length: 5 (行号: 42)
+    position_auto_switch.pindex: 0 (行号: 190)
+  str参数:
+    g.atr: atr['atr'][-1] (行号: 40)
+    g.is_position: False (行号: 45)
+    g.ma: get_ma(g.main_symbol, g.ma_length, 4, dt_lastMinute) (行号: 39)
+    g.ma_down: is_ma_down(g.ma) (行号: 44)
+    g.ma_short: get_ma(g.main_symbol, g.ma_short_length, 4, dt_lastMinute) (行号: 42)
+    g.ma_up: is_ma_up(g.ma) (行号: 43)
+    g.main_symbol: get_dominant_future('IF') (行号: 39)
+    g.security: IF9999.CCFX (行号: 38)
+    g.signal_long: False (行号: 48)
+    g.tr: atr['tr'][-1] (行号: 89)
+    position_auto_switch.callback: None (行号: 190)
+    position_auto_switch.switch_func: None (行号: 190)
+
+策略: 71 （乱改一版）股票加“钱粮”ETF组合
+参数数量: 12
+  float参数:
+    g.qdii_rate: 0.3 (行号: 52)
+    g.risk_management: -0.0382 (行号: 53)
+    g.stock_rate: 0.4 (行号: 51)
+  int参数:
+    g.stock_num: 10 (行号: 36)
+  str参数:
+    g.commodity_etf: [ (行号: 38)
+    g.etf: set(g.qdii_etf + g.commodity_etf) (行号: 37)
+    g.high_limit_list: [] (行号: 170)
+    g.hold_list: [] (行号: 50)
+    g.limit_up_list: [] (行号: 49)
+    g.no_trading_today_signal: = True: (行号: 47)
+    g.qdii_etf: g.qdii_etf[:10] (行号: 45)
+    get_close_price.unit: 1d (行号: 76)
+
+策略: 72 【回撤二波2.0】透过一次过拟合的机器学习摸底策略的收益上限
+参数数量: 8
+  int参数:
+    g.buy_stock_num: 5 (行号: 32)
+  str参数:
+    g.model_cyb: pickle.loads(read_file(g.model_cyb_path)) (行号: 37)
+    g.model_cyb_path: ./gbm_fit_model_v1_cyb.pkl (行号: 37)
+    g.model_path: ./gbm_model_v1_unbalanced.pkl (行号: 34)
+    g.model_zb: pickle.loads(read_file(g.model_zb_path)) (行号: 36)
+    g.model_zb_path: ./gbm_fit_model_v1_zb.pkl (行号: 36)
+    g.my_security: 000300.XSHG (行号: 28)
+    g.stock_list: [] (行号: 30)
+
+策略: 72 【股指期货】收盘折溢价策略
+参数数量: 6
+  int参数:
+    g.thresh: 0 (行号: 22)
+    position_auto_switch.pindex: 0 (行号: 132)
+  str参数:
+    g.flag: long (行号: 23)
+    g.main: get_dominant_future('IF') (行号: 47)
+    position_auto_switch.callback: None (行号: 132)
+    position_auto_switch.switch_func: None (行号: 132)
+
+策略: 72 桥水 全天候策略 增加一致性度量ES 风险控制
+参数数量: 8
+  float参数:
+    g.confidencelevel: 2.58 (行号: 29)
+  int参数:
+    g.raise_rate: -1 (行号: 31)
+    g.run_count: 0 (行号: 33)
+  str参数:
+    g.period: = 0: (行号: 32)
+    g.pool: { (行号: 35)
+    g.rebalanced_asset_values: new_asset_values (行号: 30)
+    g.security: 000001.XSHE (行号: 96)
+    g.stock_map_asset: init_stock_map_asset(g.pool) (行号: 69)
+
+策略: 72 量化进阶学习笔记——打板策略
+参数数量: 2
+  int参数:
+    filter_new_stock.days: 250 (行号: 193)
+  str参数:
+    get_shifted_date.days_type: T (行号: 168)
+
+策略: 72 随机森林 - 多因子模型
+参数数量: 8
+  int参数:
+    __init__.window: 10 (行号: 175)
+    format_factor.axis: 0 (行号: 373)
+    g.stock_num: 5 (行号: 48)
+    g.timer: 0 (行号: 45)
+  str参数:
+    g.dataSource: DataSource() (行号: 50)
+    g.days_incr: = 0: (行号: 46)
+    g.days_tc: = 0: (行号: 47)
+    g.model: RandomForestClassifier(n_estimators=50, criterion='gini', (行号: 52)
+
+策略: 73 优化了一下宽基etf追涨的策略，值得深入研究
+参数数量: 14
+  int参数:
+    g.dapan_threshold: 0 (行号: 46)
+    g.decrease_days: 0 (行号: 52)
+    g.increase_days: 0 (行号: 53)
+    g.lag1: 20 (行号: 51)
+    g.niu_signal: 1 (行号: 48)
+    g.position: 1 (行号: 49)
+  str参数:
+    g.ETF_list: { (行号: 65)
+    g.available_indexs: [] (行号: 85)
+    g.bond: 511880.XSHG (行号: 56)
+    g.not_ipo_list: g.ETF_list.copy() (行号: 84)
+    g.signal: = 'CLEAR'): (行号: 47)
+    g.unit: 30m (行号: 55)
+    g.zs_list: [ (行号: 57)
+    get_before_after_trade_days.is_before: True (行号: 179)
+
+策略: 73 基于期权PCR与标的波动率价差的股指期货套利
+参数数量: 21
+  float参数:
+    g.margin: 0.15 (行号: 22)
+  int参数:
+    g.d: 20 (行号: 31)
+    g.multiplier: 300 (行号: 21)
+    position_auto_switch.pindex: 0 (行号: 262)
+  str参数:
+    g.code: 510050.XSHG (行号: 30)
+    g.corr: a.corr(b)<-0.75 (行号: 24)
+    g.corr_: a.corr(b_)<-0.75 (行号: 25)
+    g.count: = 2: (行号: 28)
+    g.hands: min(calc_hands(context),50) (行号: 62)
+    g.hold_ins:  (行号: 29)
+    g.ih: get_future_contracts('IH')[0] (行号: 61)
+    g.ind: np.nan (行号: 26)
+    g.ind_: np.nan (行号: 27)
+    g.lc: True (行号: 63)
+    g.pcr_flag: = 0: (行号: 23)
+    g.pcr_list: g.pcr_list[-20:] (行号: 19)
+    g.pcr_list_: g.pcr_list_[-20:] (行号: 20)
+    g.spread: pd.Series(etf_return)*100 - pd.Series(g.pcr_list) (行号: 155)
+    g.spread_: pd.Series(etf_return)*100 - pd.Series(g.pcr_list_) (行号: 156)
+    position_auto_switch.callback: None (行号: 262)
+    position_auto_switch.switch_func: None (行号: 262)
+
+策略: 73 实现净利润跳空策略
+参数数量: 7
+  float参数:
+    dp_stoploss.zs: 0.03 (行号: 136)
+  int参数:
+    dp_stoploss.kernel: 2 (行号: 136)
+    dp_stoploss.n: 10 (行号: 136)
+    g.days: 1 (行号: 25)
+    g.indnum: 3 (行号: 29)
+    g.stocknum: 5 (行号: 23)
+  str参数:
+    g.refresh_rate: = 0: (行号: 27)
+
+策略: 73 微盘400每日再平衡
+参数数量: 1
+  int参数:
+    g.stock_num: 400 (行号: 16)
+
+策略: 73 稳健趋势策略回测小，无未来函数
+参数数量: 3
+  int参数:
+    g.position: 1 (行号: 27)
+    g.stock_num: 10 (行号: 26)
+  str参数:
+    g.bond: 511880.XSHG (行号: 28)
+
+策略: 74 MACD多周期共振，精准打击！
+参数数量: 9
+  int参数:
+    g.t: 0 (行号: 39)
+  str参数:
+    g.D_Macd: [] (行号: 209)
+    g.Now_date: context.current_dt.strftime('%Y-%m-%d') (行号: 51)
+    g.all_stocks_list: [stock for stock in g.all_stocks_list if (current_date - get_security_info(stock).start_date).days > 60] (行号: 56)
+    g.buy: [] (行号: 74)
+    g.buy_d: [] (行号: 75)
+    g.buys: [] (行号: 74)
+    g.s: [] (行号: 40)
+    g.stocks: g.all_stocks_list (行号: 56)
+
+策略: 74 【动量应用V1】12年120倍，根据研报思路调整
+参数数量: 1
+  int参数:
+    g.stock_num: 10 (行号: 31)
+
+策略: 74 主观辅助_形态识别_单边上涨策略优化v3
+参数数量: 14
+  float参数:
+    g.arg_close_rate: 0.052 (行号: 47)
+    g.arg_rsquared_min: 0.8 (行号: 45)
+    g.buy_min_ratio: 0.4 (行号: 55)
+  int参数:
+    g.arg_buy_max: 10 (行号: 53)
+    g.arg_hold_max: 20 (行号: 57)
+    g.arg_volume_days: 5 (行号: 49)
+    g.arg_volume_multi: 2 (行号: 51)
+    g.choice: 1000 (行号: 63)
+    g.counter: 0 (行号: 42)
+    g.hold_days: 0 (行号: 59)
+  str参数:
+    g.etf: 511010.XSHG (行号: 66)
+    g.hold_list: [s for s in context.portfolio.positions] (行号: 70)
+    g.stocks: [stock for stock in stocks if yesterday - get_security_info(stock).start_date > datetime.timedelta(days=250)] (行号: 62)
+    g.yesterday_HL_list: [] (行号: 71)
+
+策略: 74 趋势筛选后相关性最小etf轮动
+参数数量: 2
+  int参数:
+    g.m_days: 25 (行号: 39)
+  str参数:
+    g.etf_pool: ['512660.XSHG', '510880.XSHG', '159915.XSHE', '513050.XSHG', '510050.XSHG', '588100.XSHG', '512100.XSHG', '518800.XSHG', '513060.XSHG', '511010.XSHG', '512980.XSHG', '512010.XSHG', '513100.XSHG', '512720.XSHG', (行号: 37)
+
+策略: 74 迪马克TD趋势反转指标
+参数数量: 19
+  int参数:
+    g.count: 0 (行号: 25)
+    g.flag: 0 (行号: 30)
+    g.n1: 8 (行号: 23)
+    g.n2: 13 (行号: 24)
+    g.p: 0 (行号: 31)
+    g.price: 0 (行号: 31)
+    g.setup: -1 (行号: 27)
+    g.setup_low: 0 (行号: 28)
+    g.stop: 0 (行号: 26)
+    g.trend: -1 (行号: 35)
+  str参数:
+    g.c: get_future_contracts('IF') (行号: 22)
+    g.code: 000300.XSHG (行号: 22)
+    g.hands: calc_hands(context) (行号: 62)
+    g.hold:  (行号: 33)
+    g.lc: True (行号: 34)
+    g.main: g.sub (行号: 65)
+    g.setup_high: high (行号: 27)
+    g.sub: g.c[1] (行号: 64)
+    g.today: context.current_dt.date() (行号: 61)
+
+策略: 75 ETF轮动策略-入门2.0
+参数数量: 13
+  float参数:
+    g.score_threshold: 0.7 (行号: 79)
+  int参数:
+    g.M: 600 (行号: 78)
+    g.N: 18 (行号: 67)
+    g.Northbound_val: 5 (行号: 69)
+    g.mean_day: 20 (行号: 81)
+    g.mean_diff_day: 5 (行号: 82)
+    g.momentum_day: 27 (行号: 74)
+    g.stock_num: 1 (行号: 73)
+  str参数:
+    g.Northbound: [] (行号: 67)
+    g.north_money: total_net_in (行号: 70)
+    g.ref_stock: 000300.XSHG (行号: 76)
+    g.slope_series: initial_slope_series()[:-1] (行号: 83)
+    g.stock_pool: [ (行号: 57)
+
+策略: 75 勾股神器2，代码40行，年化一百点。
+参数数量: 3
+  float参数:
+    bx_strategy.trade_limit: 0.3 (行号: 32)
+  int参数:
+    bx_cashflow.threshold: 0 (行号: 23)
+    bx_strategy.ratio: 3 (行号: 32)
+
+策略: 75 大市值价值投资优化一波
+参数数量: 4
+  int参数:
+    g.buy_stock_count: 1 (行号: 51)
+  str参数:
+    g.check_out_lists: check_out_lists[:g.buy_stock_count] (行号: 52)
+    g.etf: 511010.XSHG (行号: 55)
+    g.yesterday_HL_list: list(df.code) (行号: 58)
+
+策略: 75 最近2年年化100%以上回撤12%的打板策略-验证策略
+参数数量: 9
+  int参数:
+    g.buy_stock_count: 10 (行号: 40)
+    g.minute: 60 (行号: 39)
+    g.number_of_positions: 0 (行号: 24)
+  str参数:
+    g.buy_list: [] (行号: 38)
+    g.limit_lists: [] (行号: 41)
+    g.open_positions: len(context.portfolio.positions) (行号: 57)
+    g.open_time: context.current_dt (行号: 59)
+    g.position_count: len(context.portfolio.positions) (行号: 42)
+    g.zzc: round(context.portfolio.total_value,2) (行号: 129)
+
+策略: 76 ETF-控制回撤性能拉满（国债ETF增强）
+参数数量: 6
+  str参数:
+    g.bad_sign: =1: (行号: 27)
+    g.debt: ['511010.XSHG'] (行号: 49)
+    g.drawback_status: = 2: (行号: 26)
+    g.max_net: context.portfolio.total_value (行号: 25)
+    g.security: 000001.XSHE (行号: 57)
+    g.stock: ['510300.XSHG','510220.XSHG','513500.XSHG','513100.XSHG'] (行号: 48)
+
+策略: 76 ETF基金溢价高收益低回测策略 改进版
+参数数量: 6
+  float参数:
+    g.least_money: 10000000.0 (行号: 51)
+    g.trade_fee_ratio: 0.00025 (行号: 52)
+  int参数:
+    g.ETFNum_hold: 2 (行号: 55)
+  str参数:
+    g.etf_df: df (行号: 57)
+    g.least_premium: max(g.least_premium-0.15,1.5) (行号: 16)
+    g.no_buy_days: 0, g.least_premium=2.5 (行号: 49)
+
+策略: 76 小市值止损策略【年化104.11% 最大回撤30.65%】
+参数数量: 15
+  float参数:
+    g.stoploss_limit: 0.07 (行号: 52)
+    g.stoploss_market: 0.05 (行号: 53)
+  int参数:
+    g.limit_days: 5 (行号: 54)
+    g.stock_num: 5 (行号: 49)
+    g.up_price: 80 (行号: 50)
+  str参数:
+    g.etf: 511880.XSHG (行号: 55)
+    g.history_hold_list: g.history_hold_list[-g.limit_days:] (行号: 46)
+    g.hold_list: list(context.portfolio.positions) (行号: 42)
+    g.not_buy_again: [] (行号: 45)
+    g.pass_months: True (行号: 39)
+    g.reason_to_sell:  (行号: 51)
+    g.run_stoploss: True (行号: 40)
+    g.target_list: get_stock_list(context) (行号: 44)
+    g.trading_signal: = False: (行号: 38)
+    g.yesterday_HL_list: [] (行号: 43)
+
+策略: 76 日内交易策略R-breaker
+参数数量: 3
+  str参数:
+    g.break_price: break_price (行号: 40)
+    g.limits: context.portfolio.starting_cash/10 (行号: 76)
+    g.security: 300346.XSHE (行号: 41)
+
+策略: 76 机器学习策略分享
+参数数量: 4
+  int参数:
+    __init__.window: 10 (行号: 147)
+    format_factor.axis: 0 (行号: 346)
+    g.timer: 0 (行号: 37)
+  str参数:
+    g.dataSource: DataSource() (行号: 39)
+
+策略: 77 研报三因子II-新规高分红小市值-年化60回撤19
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.high_limit_list: get_price(g.hold_list, end_date=context.previous_date, count=1,fields=['close', 'high_limit', 'paused'], panel=False (行号: 41)
+    g.hold_list: list(context.portfolio.positions) (行号: 39)
+    g.no_trading_today_signal: = True: (行号: 46)
+
+策略: 77 致敬市场（2）——随机选股
+参数数量: 4
+  int参数:
+    g.position_num: 100 (行号: 13)
+  str参数:
+    g.buy_counter: g.buy_counter + 1 (行号: 22)
+    g.index: 399311.XSHE (行号: 12)
+    g.sell_tounter: g.sell_tounter + 1 (行号: 23)
+
+策略: 77 超强单因子策略（EBITEV）
+参数数量: 4
+  str参数:
+    g.Transfer_date: list(range(1,13,1)) (行号: 44)
+    g.buy_list: EBIT_to_EV_list.iloc[0:50].index.tolist() (行号: 109)
+    g.entry_dates: {code: None for code in g.security} (行号: 103)
+    g.security: get_index_stocks('000001.XSHG',date=context.previous_date)+get_index_stocks('399001.XSHE',date=context.previous_date) (行号: 100)
+
+策略: 77 龙头弱转强战法
+参数数量: 12
+  int参数:
+    g.STOCKCOUNT: 3 (行号: 47)
+  str参数:
+    g.all_securities: get_all_securities('stock', trd_days[0]) (行号: 68)
+    g.bought_stocks_o: list(context.portfolio.positions.keys()) (行号: 53)
+    g.security: 000001.XSHE (行号: 58)
+    g.securitytobuy: [] (行号: 60)
+    g.securitytobuy2: [] (行号: 61)
+    g.stockdict: dict(zip(g.stocks,stocknamelist)) (行号: 85)
+    g.stocks: [stock for stock in g.stocks if  ('退' not in current_data[stock].name) and (not current_data[stock].paused)] (行号: 71)
+    g.stocks10: [] (行号: 87)
+    g.stocks20: [] (行号: 88)
+    g.stocksST: [] (行号: 89)
+    g.stocktobuy: [] (行号: 59)
+
+策略: 78 ffscore选股加rsrs择时
+参数数量: 23
+  float参数:
+    g.maxcent: 1.4 (行号: 44)
+    g.mincent: 0.6 (行号: 43)
+    g.roa_cgh: 0.002 (行号: 41)
+    g.threshold: 0.03 (行号: 51)
+  int参数:
+    g.M: 600 (行号: 49)
+    g.N: 18 (行号: 48)
+    g.hold_num: 8 (行号: 36)
+    g.mean_day: 30 (行号: 53)
+    g.mean_diff_day: 5 (行号: 54)
+    g.score: 6 (行号: 37)
+  str参数:
+    g.buyrank: g.sellrank -1 (行号: 40)
+    g.ref_stock: 000300.XSHG (行号: 47)
+    g.score_threshold: g.score_threshold * (1 + g.threshold) (行号: 50)
+    g.sellrank: g.hold_num * 2 (行号: 39)
+    g.singl: KEEP (行号: 38)
+    g.slope_series: initial_slope_series()[:-1] (行号: 55)
+    g.stock_index: 000300.XSHG (行号: 34)
+    g.stock_list: g.stock_list (行号: 35)
+    g.stocknum: g.hold_num (行号: 45)
+    g.timing_signal: = 'BUY' or g.timing_signal == 'KEEP': (行号: 112)
+    g.tobuyhold: tobuy (行号: 153)
+    g.tobuynew: tobuy (行号: 156)
+    get_close_price.unit: 1d (行号: 529)
+
+策略: 78 【基金增强思考2.0】优秀基金的持续性与周期的关系密不可分
+参数数量: 4
+  int参数:
+    g.days: 180 (行号: 36)
+    g.monthnum: 0 (行号: 38)
+    g.num: 30 (行号: 37)
+  str参数:
+    g.adjustpositions: False (行号: 35)
+
+策略: 78 国盛多因子系列选股体系和基于Lasso的收益预测模型策略（9大类共59个因子）
+参数数量: 4
+  int参数:
+    g.sample_windows: 252 (行号: 21)
+    g.stock_num: 10 (行号: 20)
+  str参数:
+    g.benchmark: 000001.XSHG (行号: 17)
+    g.buy_list: score_df.index.tolist()[:g.stock_num] (行号: 19)
+
+策略: 78 首板低开策略-终极版 最大回撤15%，年化50%
+参数数量: 2
+  int参数:
+    filter_new_stock.days: 60 (行号: 172)
+    filter_new_stock2.days: 60 (行号: 280)
+
+策略: 79 EPS+MS因子的大盘蓝筹策略
+参数数量: 10
+  float参数:
+    g.percentile: 0.25 (行号: 39)
+    g.score_threshold: 0.7 (行号: 32)
+  int参数:
+    g.M: 600 (行号: 31)
+    g.N: 18 (行号: 30)
+    g.mean_day: 20 (行号: 35)
+    g.mean_diff_day: 3 (行号: 36)
+    g.stock_num: 5 (行号: 38)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 29)
+    g.slope_series: initial_slope_series()[:-1] (行号: 33)
+    g.stock_pool: 000300.XSHG (行号: 16)
+
+策略: 79 【多因子选股模型框架】(单因子各项指标评分细则)
+参数数量: 4
+  int参数:
+    g.num: 30 (行号: 32)
+  str参数:
+    g.buylist: list(df.sum(axis=1).sort_values(ascending=False)[:g.num].index) (行号: 75)
+    g.stocklist: stocklist (行号: 52)
+    get_stocks_filtered.indexID: 000300.XSHG (行号: 90)
+
+策略: 79 南澳 SVR选股的小市值策略
+参数数量: 5
+  int参数:
+    g.stock_num: 5 (行号: 37)
+  str参数:
+    g.hold_list: list(context.portfolio.positions.keys()) (行号: 38)
+    g.no_trading_today_signal: = True: (行号: 36)
+    g.pools: set(codes) (行号: 52)
+    g.yesterday_HL_list: [] (行号: 39)
+
+策略: 79 南澳推荐配套的随机森林选股的小市值策略
+参数数量: 5
+  int参数:
+    g.stock_num: 5 (行号: 31)
+  str参数:
+    g.hold_list: list(context.portfolio.positions.keys()) (行号: 32)
+    g.no_trading_today_signal: = True: (行号: 30)
+    g.pools: set(codes) (行号: 46)
+    g.yesterday_HL_list: [] (行号: 33)
+
+策略: 79 国九条-新的红利因子，修正「审计意见」函数
+参数数量: 22
+  float参数:
+    g.stoploss_limit: 0.09 (行号: 77)
+    g.stoploss_market: 0.05 (行号: 78)
+  int参数:
+    g.bonus_year: 1 (行号: 80)
+    g.highest: 50 (行号: 79)
+    g.min_mv: 10 (行号: 71)
+    g.stock_pool_mult: 5 (行号: 73)
+  str参数:
+    g.Expected_bonus: [5] (行号: 68)
+    g.adjust_num: True (行号: 59)
+    g.etf: 511880.XSHG (行号: 81)
+    g.filter_audit: True (行号: 57)
+    g.filter_bonus: True (行号: 58)
+    g.hold_list: [] (行号: 63)
+    g.limitup_stocks: [] (行号: 67)
+    g.max_mv: 1e8 (行号: 72)
+    g.pass_months: [1,4] (行号: 66)
+    g.reason_to_sell: stoploss (行号: 75)
+    g.run_stoploss: True (行号: 56)
+    g.stock_num: new_num (行号: 73)
+    g.stoploss_strategy: = 2 or g.stoploss_strategy == 3: (行号: 76)
+    g.target_list: get_stock_list(context)[:g.stock_num] (行号: 65)
+    g.trading_signal: = False: (行号: 55)
+    g.yesterday_HL_list: [] (行号: 64)
+
+策略: 79 实盘一周50%的妖股探测器
+参数数量: 15
+  float参数:
+    g.score_threshold: 0.7 (行号: 61)
+    g.take_profit: 0.12 (行号: 64)
+  int参数:
+    g.M: 600 (行号: 60)
+    g.N: 14 (行号: 59)
+    g.mean_day: 7 (行号: 66)
+    g.mean_diff_day: 10 (行号: 67)
+    g.momentum_day: 29 (行号: 54)
+    g.num_days: 5 (行号: 55)
+    g.run_today_day: 1 (行号: 56)
+    g.sec_data_num: 5 (行号: 63)
+    g.stock_num: 1 (行号: 52)
+    g.stock_tobuy: 1 (行号: 53)
+  str参数:
+    g.ref_stock: 000300.XSHG (行号: 58)
+    g.slope_series: initial_slope_series()[:-1] (行号: 68)
+    g.stock_df: rank_stock_change(check_out_list, context) (行号: 217)
+
+策略: 80 【深度解析 一】经典小市值深度研究模型
+参数数量: 2
+  int参数:
+    g.stocknum: 10 (行号: 22)
+  str参数:
+    g.buylist: stocklist (行号: 25)
+
+策略: 80 公募基金抱团
+参数数量: 3
+  str参数:
+    g.buy_list: buy_list (行号: 91)
+    g.judge_date: datetime.datetime.strftime(context.current_dt, "%Y%m%d") (行号: 48)
+    g.trade_day_list: [trade_day_1, trade_day_2, trade_day_3, trade_day_4] (行号: 47)
+
+策略: 80 基本面01加RSI择时
+参数数量: 3
+  int参数:
+    g.primary_num: 50 (行号: 30)
+    g.stock_num: 10 (行号: 28)
+  str参数:
+    g.hold_list: [] (行号: 29)
+
+策略: 80 短线策略-2022年两个半月收益45%-无未来函数
+参数数量: 2
+  int参数:
+    g.buy_stock_limit: 1 (行号: 35)
+  str参数:
+    g.buy_list: dx4 (行号: 38)
+
+策略: 80 过滤两个因子，12年15倍的roa选股500指数增强
+参数数量: 33
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 368)
+    g.buy_trade_days: 1 (行号: 44)
+    g.check_stocks_days: 1 (行号: 42)
+    g.check_stocks_refresh_rate: 20 (行号: 33)
+    g.max_hold_stocknum: 10 (行号: 39)
+    g.order_style_value: 100 (行号: 112)
+    g.security_max_proportion: 1 (行号: 31)
+    g.sell_refresh_rate: 1 (行号: 37)
+    g.sell_trade_days: 1 (行号: 45)
+    g.trade_allow: 1 (行号: 492)
+  str参数:
+    check_stocks_sort.ascending: desc (行号: 92)
+    g.buy_refresh_rate: = 0: (行号: 35)
+    g.check_out_lists: check_stocks_sort(context,g.check_out_lists,input_dict,g.check_out_lists_ascending) (行号: 94)
+    g.check_out_lists_ascending: desc (行号: 94)
+    g.concept_list: [] (行号: 89)
+    g.daily_risk_management: True (行号: 120)
+    g.filter_delisted: True (行号: 78)
+    g.filter_holded: False (行号: 108)
+    g.filter_paused: True (行号: 76)
+    g.filter_st: True (行号: 82)
+    g.industry_list: ["801010","801020","801030","801040","801050","801080","801110","801120","801130","801140","801150","801160","801170","801180","801200","801210","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790","801880","801890"] (行号: 87)
+    g.max_buy_amount: None (行号: 124)
+    g.max_buy_value: None (行号: 123)
+    g.only_st: False (行号: 80)
+    g.open_sell_securities: [s for s in g.open_sell_securities if s in context.portfolio.positions.keys()] (行号: 47)
+    g.order_style_str: by_cap_mean (行号: 111)
+    g.risk_management_signal: True (行号: 117)
+    g.security_universe_index: ["000905.XSHG"] (行号: 84)
+    g.security_universe_user_securities: [] (行号: 85)
+    g.sell_by_amount: None (行号: 102)
+    g.sell_by_percent: None (行号: 103)
+    g.sell_will_buy: False (行号: 99)
+    g.selled_security_list: {} (行号: 49)
+
+策略: 81 搞市场最靓的仔！指数ETF动量轮动策略-2
+参数数量: 2
+  str参数:
+    g.position: {'ETF_HOLD':'0', 'STATUS':0, 'HOLD_NUM':0} (行号: 53)
+    g.stocks: { (行号: 39)
+
+策略: 81 无杠杆，稳定盈利的etf轮动
+参数数量: 17
+  int参数:
+    g.emotion_n: 0 (行号: 52)
+    g.emotion_p: 0 (行号: 51)
+    g.lag: 6 (行号: 53)
+    g.lag0: 7 (行号: 54)
+    g.lag1: 13 (行号: 55)
+    g.lag2: 13 (行号: 56)
+  str参数:
+    g.ETFList: { (行号: 61)
+    g.IdxList: dict(zip(g.ETFList.values(),g.ETFList.keys())) (行号: 80)
+    g.buy: [] (行号: 58)
+    g.clear: [] (行号: 59)
+    g.df: g.df.drop(t) (行号: 60)
+    g.emotion_rate: round(vol[-1] * 100,2) (行号: 50)
+    g.empty_keep_stock: 601318.XSHG (行号: 47)
+    g.last: [] (行号: 57)
+    g.signal: = 'BUY': (行号: 35)
+    g.target_market: g.IdxList[str(g.df.iloc[-1,0])] (行号: 45)
+    g.use_dynamic_target_market: True (行号: 44)
+
+策略: 82 低频，带基本面优化，带风控的，实盘模拟的小盘股策略
+参数数量: 33
+  int参数:
+    filter_n_tradeday_not_buy.n: 0 (行号: 316)
+    g.buy_trade_days: 1 (行号: 74)
+    g.check_stocks_days: 1 (行号: 70)
+    g.check_stocks_refresh_rate: 1 (行号: 60)
+    g.days: 1 (行号: 72)
+    g.max_hold_stocknum: 7 (行号: 62)
+    g.order_style_value: 100 (行号: 187)
+    g.security_max_proportion: 1 (行号: 58)
+    g.sell_refresh_rate: 10 (行号: 67)
+    g.sell_trade_days: 1 (行号: 75)
+  str参数:
+    g.ZT: [] (行号: 168)
+    g.blacklist: ['300268.XSHE','600035.XSHG','300028.XSHE'] (行号: 96)
+    g.buy_refresh_rate: = 0: (行号: 65)
+    g.buy_stock_list: [] (行号: 107)
+    g.check_out_lists: [s for s in g.check_out_lists if s not in g.blacklist] (行号: 112)
+    g.concept_list: [] (行号: 94)
+    g.daily_risk_management: True (行号: 415)
+    g.filter_delisted: True (行号: 82)
+    g.filter_holded: False (行号: 183)
+    g.filter_paused: True (行号: 80)
+    g.filter_st: True (行号: 86)
+    g.industry_list: ["801010","801020","801030","801040","801050","801080","801110","801120","801130","801140","801150","801160","801170","801180","801200","801210","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790","801880","801890"] (行号: 92)
+    g.only_st: False (行号: 84)
+    g.open_sell_securities: [s for s in g.open_sell_securities if s in context.portfolio.positions.keys()] (行号: 164)
+    g.order_style_str: by_cap_mean (行号: 186)
+    g.security_universe_index: ['all_a_securities'] (行号: 88)
+    g.security_universe_user_securities: [] (行号: 90)
+    g.sell_by_amount: None (行号: 177)
+    g.sell_by_percent: None (行号: 178)
+    g.sell_stock_list: [] (行号: 106)
+    g.sell_stock_list1: list(context.portfolio.positions.keys()) (行号: 118)
+    g.sell_will_buy: True (行号: 174)
+    g.selled_security_list: {} (行号: 166)
+
+策略: 82 回报社区——基于Gyro老师策略的思考
+参数数量: 3
+  int参数:
+    g.choicenum: 100 (行号: 18)
+  str参数:
+    g.last_update_month: context.current_dt.month (行号: 17)
+    g.weight: dict(zip(stocks, generate_arithmetic_series(g.choicenum))) (行号: 19)
+
+策略: 82 无需先验知识，动态选择的etf轮动策略，更具鲁棒性
+参数数量: 21
+  int参数:
+    g.emotion_n: 0 (行号: 71)
+    g.emotion_p: 0 (行号: 70)
+    g.empty_day: 0 (行号: 72)
+    g.empty_min: 0 (行号: 73)
+    g.lag: 6 (行号: 74)
+    g.lag0: 7 (行号: 75)
+    g.lag1: 13 (行号: 76)
+    g.lag2: 13 (行号: 77)
+  str参数:
+    g.ETF: g.ETF.fillna(-100) (行号: 36)
+    g.ETFList: get_ETF() (行号: 102)
+    g.INDEXList: { (行号: 82)
+    g.IdxList: dict(zip(g.INDEXList.values(),g.INDEXList.keys())) (行号: 104)
+    g.buy: [] (行号: 79)
+    g.clear: [] (行号: 80)
+    g.df: g.df.drop(t) (行号: 81)
+    g.emotion_rate: round(vol[-1] * 100,2) (行号: 69)
+    g.empty_keep_stock: 601318.XSHG (行号: 66)
+    g.last: [] (行号: 78)
+    g.signal: = 'BUY': (行号: 68)
+    g.target_market: str(g.df.iloc[-1,0]) (行号: 64)
+    g.use_dynamic_target_market: True (行号: 63)
+
+策略: 83 回测“一创模拟盘2号”，最终改造优化，年化39%
+参数数量: 13
+  float参数:
+    g.bearpercent: 0.5 (行号: 47)
+    g.threshold: 0.003 (行号: 45)
+    g.top_withdraw_ratio: 0.03 (行号: 55)
+  int参数:
+    g.hold_interval: 5 (行号: 51)
+    g.max_stock_count: 5 (行号: 41)
+    g.selldate_interval: 5 (行号: 53)
+  str参数:
+    g.MA: ['399008.XSHE', 10] (行号: 44)
+    g.bond: 511010.XSHG (行号: 59)
+    g.isbull: True (行号: 46)
+    g.sell_history_df: pd.DataFrame(columns=['code','name','last_date_sell']) (行号: 65)
+    g.statistics_df: pd.DataFrame(columns=['code','name','date_buy','price_buy','date_sell','price_sell','ratio','result']) (行号: 62)
+    g.stocks_allnames_df: get_all_securities() (行号: 68)
+    get_close_price.unit: 1d (行号: 320)
+
+策略: 83 大小外择时小市值
+参数数量: 8
+  int参数:
+    g.highest: 50 (行号: 36)
+    g.stock_num: 3 (行号: 35)
+  str参数:
+    g.bought_stocks: {} (行号: 39)
+    g.foreign_ETF: [ (行号: 40)
+    g.hold_list: [] (行号: 37)
+    g.no_trading_today_signal: False (行号: 33)
+    g.singal: ='etf': (行号: 342)
+    g.yesterday_HL_list: [] (行号: 38)
+
+策略: 83 开盘幅度决定日内方向
+参数数量: 1
+  str参数:
+    g.security: 510180.XSHG (行号: 46)
+
+策略: 84 ETF网格交易策略
+参数数量: 7
+  float参数:
+    g.initialprice: 0.976 (行号: 29)
+  str参数:
+    g.cash: context.portfolio.cash/number (行号: 34)
+    g.current_cash: context.portfolio.available_cash (行号: 50)
+    g.initial_buy: g.initial_buy - g.unitprice (行号: 31)
+    g.initial_sell: g.initial_sell - g.unitprice (行号: 32)
+    g.security: 512900.XSHG (行号: 14)
+    g.unitprice: (uplimit-downlimit)/space (行号: 27)
+
+策略: 84 多大规模的基金收益最好？偏股基金规模研究
+参数数量: 12
+  float参数:
+    nyears_ago.nyears: 10.0 (行号: 181)
+  int参数:
+    g.funds_num: 10 (行号: 25)
+    g.min_asset: 150000000 (行号: 26)
+    g.retry_num: 0 (行号: 27)
+    get_fund_code.stock_rate_max: 100 (行号: 186)
+    get_fund_code.stock_rate_min: 0 (行号: 186)
+    get_stock_asset.min_asset: 0 (行号: 206)
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 24)
+    g.finish_trade: False (行号: 29)
+    g.first_time: True (行号: 28)
+    g.fund_targetpositions: {fund : 1 / len(check_out_lists) for fund in check_out_lists} (行号: 42)
+    g.last_month: context.current_dt.strftime("%Y-%m") (行号: 30)
+
+策略: 84 正黄旗大妈选股改进-加入涨停卖出后的买入，提高资金利用率
+参数数量: 4
+  int参数:
+    g.stock_num: 10 (行号: 35)
+  str参数:
+    g.choice: choice[:g.stock_num] (行号: 36)
+    g.high_limit_list: df[df['close'] == df['high_limit']]['code'].tolist() (行号: 159)
+    g.just_sold: [] (行号: 37)
+
+策略: 84 韶华研究之一，布林突破+均线金叉，四年五倍
+参数数量: 4
+  str参数:
+    g.bug_brain: g.bug_brain.append(dic, ignore_index=True) (行号: 31)
+    g.bug_eye: g.bug_eye.append(dic, ignore_index=True) (行号: 30)
+    g.buylist: [] (行号: 28)
+    g.selllist: [] (行号: 29)
+
+策略: 85 【深度解析 七】BBI指标-大盘涨跌-宽基轮动 模型
+参数数量: 11
+  int参数:
+    g.dapan_threshold: 0 (行号: 53)
+    g.decrease_days: 0 (行号: 59)
+    g.increase_days: 0 (行号: 60)
+    g.lag: 20 (行号: 58)
+  str参数:
+    g.ETF_list: { (行号: 78)
+    g.available_indexs: [] (行号: 101)
+    g.not_ipo_list: g.ETF_list.copy() (行号: 99)
+    g.signal: = 'CLEAR'): (行号: 54)
+    g.unit: 1d (行号: 63)
+    g.zs_list: [ (行号: 67)
+    get_N_trade_date.is_before: True (行号: 116)
+
+策略: 85 价值策略重开，再次向Jqz1226致敬
+参数数量: 16
+  float参数:
+    g.risk_incr_pct: 0.1 (行号: 105)
+  int参数:
+    g.days_count: 0 (行号: 103)
+    g.days_number: 15 (行号: 97)
+    g.mode1_stock_num: 5 (行号: 116)
+    g.mode2_flag: 0 (行号: 130)
+    g.mode2_stock_num: 2 (行号: 128)
+    g.risk_flag: 0 (行号: 107)
+  str参数:
+    g.etf_list: 511880.XSHG (行号: 94)
+    g.fin: pd.DataFrame() (行号: 120)
+    g.mode1_buy_list: list(df_pe.code[:10]) (行号: 114)
+    g.mode1_flag: = 1 and g.risk_flag == 0: (行号: 118)
+    g.mode2_buy_list: g.mode2_temp_list + [code for code in g.mode2_buy_list if code not in g.mode2_temp_list] (行号: 126)
+    g.mode2_temp_list: stock_list[:5] (行号: 125)
+    g.old_portfolio_values: [] (行号: 100)
+    g.risky_stocks: [] (行号: 102)
+    g.security: 000300.XSHG (行号: 92)
+
+策略: 85 易方达中小盘（魔改版）
+参数数量: 3
+  int参数:
+    g.day: 0 (行号: 28)
+  str参数:
+    g.BuyGold: False (行号: 29)
+    g.s: 110011.OF (行号: 32)
+
+策略: 85 稳健型ETF策略
+参数数量: 7
+  str参数:
+    g.stock_fund: stocks (行号: 50)
+    g.stock_fund_1: 511010.XSHG (行号: 50)
+    g.stock_fund_2: 511010.XSHG (行号: 61)
+    g.stock_fund_3: 518880.XSHG (行号: 66)
+    g.stock_fund_4: 511010.XSHG (行号: 73)
+    g.stock_fund_5: 511880.XSHG (行号: 75)
+    g.total_amount: amount (行号: 106)
+
+策略: 85 致敬市场(1)，探讨指数化策略投资
+参数数量: 3
+  str参数:
+    g.buy_counter: g.buy_counter + 1 (行号: 21)
+    g.index: 399317.XSHE (行号: 12)
+    g.sell_tounter: g.sell_tounter + 1 (行号: 22)
+
+策略: 86 北上詹姆斯
+参数数量: 6
+  int参数:
+    g.back_trade_days: 40 (行号: 33)
+    g.max_stock_count: 15 (行号: 32)
+    g.stdev_n: 2 (行号: 36)
+    g.window: 150 (行号: 35)
+  str参数:
+    g.lower: get_boll(pre_date) (行号: 37)
+    g.top_money_in: [] (行号: 34)
+
+策略: 86 最新解密--追涨龙头打板策略
+参数数量: 6
+  float参数:
+    g.stop_loss_per: 0.96 (行号: 31)
+    g.stop_win: 0.6 (行号: 32)
+  int参数:
+    g.count: 30 (行号: 28)
+    g.max_number_stock: 3 (行号: 30)
+  str参数:
+    g.buy_stock_list: g.buy_stock_list[0:g.max_number_stock] (行号: 29)
+    g.industry_list: list(set(industry_list1).union(set(industry_list2))) (行号: 235)
+
+策略: 86 预判st并过滤避雷代码 740（50只）
+参数数量: 5
+  int参数:
+    g.stock_num: 50 (行号: 23)
+  str参数:
+    g.black_list: predict_list1 (行号: 27)
+    g.high_limit_list: [] (行号: 24)
+    g.hold_list: [] (行号: 25)
+    g.weights: [1.0, 1.0, 1.6, 0.8, 2.0] (行号: 26)
+
+策略: 87 【基本面三角3.0】看过之前策略的就略过吧
+参数数量: 10
+  int参数:
+    g.day_count: 0 (行号: 65)
+  str参数:
+    g.adjustpositions: =False: (行号: 100)
+    g.buylist: z_list (行号: 91)
+    g.index: = 'zz': (行号: 52)
+    g.poollist: g.poollist[:g.poolnum] (行号: 90)
+    g.poolnum: 1*g.stocknum (行号: 62)
+    g.selllist: [] (行号: 92)
+    g.shiftdays: =0) or len(g.selllist) !=0: (行号: 64)
+    g.stocknum: =0 or len(g.poollist) <= g.stocknum: (行号: 61)
+    g.strategy: ='D': (行号: 55)
+
+策略: 87 北上净买入策略
+参数数量: 1
+  int参数:
+    g.N: 2 (行号: 30)
+
+策略: 87 山寨每月轮动调仓的红利策略
+参数数量: 1
+  int参数:
+    g.stocknum: 30 (行号: 22)
+
+策略: 87 山寨红利
+参数数量: 1
+  int参数:
+    g.stocknum: 30 (行号: 21)
+
+策略: 87 穿越牛熊基业长青的价值精选策略
+参数数量: 9
+  float参数:
+    g.security_max_proportion: 0.2 (行号: 59)
+  int参数:
+    g.max_hold_stocknum: 3 (行号: 61)
+    g.order_style_value: 100 (行号: 68)
+  str参数:
+    g.buy_list: get_check_stocks_sort(context,temp_list) (行号: 52)
+    g.index: thing.code.values (行号: 275)
+    g.industry_list: ["801010","801040","801050","801080","801110","801120","801130","801150","801160","801200","801230","801710","801720","801730","801740","801750","801760","801770","801780","801790"] (行号: 84)
+    g.max_buy_amount: None (行号: 65)
+    g.max_buy_value: None (行号: 64)
+    g.order_style_str: by_cap_mean (行号: 67)
+
+策略: 88 WY大神的“龙头打板”策略小改
+参数数量: 7
+  int参数:
+    filter_new_stock.days: 50 (行号: 210)
+    g.ps: 10 (行号: 26)
+  str参数:
+    g.jqfactor: VOL5 (行号: 28)
+    g.notBuylst: remove_values(g.target_list,today_buylist) (行号: 31)
+    g.sort: True (行号: 29)
+    g.target_list: stock_list[:(g.ps - len(context.portfolio.positions))] (行号: 80)
+    get_shifted_date.days_type: T (行号: 185)
+
+策略: 88 【股指期货】收盘折溢价策略
+参数数量: 6
+  int参数:
+    g.thresh: 0 (行号: 21)
+    position_auto_switch.pindex: 0 (行号: 131)
+  str参数:
+    g.flag: long (行号: 22)
+    g.main: get_dominant_future('IF') (行号: 46)
+    position_auto_switch.callback: None (行号: 131)
+    position_auto_switch.switch_func: None (行号: 131)
+
+策略: 88 基于动量因子的ETF轮动加上RSRS择时
+参数数量: 10
+  float参数:
+    g.score_threshold: 0.7 (行号: 48)
+  int参数:
+    g.M: 600 (行号: 45)
+    g.N: 18 (行号: 44)
+    g.mean_day: 20 (行号: 46)
+    g.mean_diff_day: 3 (行号: 47)
+    g.momentum_day: 15 (行号: 42)
+    g.stock_num: 2 (行号: 41)
+  str参数:
+    g.index_pool: [ (行号: 29)
+    g.slope_series: initial_slope_series()[:-1] (行号: 49)
+    g.stock: 000300.XSHG (行号: 41)
+
+策略: 88 打首板策略，今年收益达到40%，绝无未来函数
+参数数量: 2
+  str参数:
+    g.help_stock: filter_one_limit(stock_list, context) (行号: 22)
+    g.yest_df_panel: [] (行号: 64)
+
+策略: 88 韶华研究之十六，指数增强
+参数数量: 23
+  float参数:
+    g.drop_line: 0.75 (行号: 55)
+    g.poolnum: 0.3 (行号: 79)
+    g.rise_uplimit: 1.5 (行号: 57)
+  int参数:
+    g.day_count: 0 (行号: 82)
+    g.drop_days: 0 (行号: 56)
+    g.drop_ma_days: 20 (行号: 71)
+    g.drop_rsi_value: 50 (行号: 73)
+    g.drop_trend_dura: 0 (行号: 72)
+    g.short_duration: 20 (行号: 62)
+    g.trend_down: 0 (行号: 66)
+    g.trend_up: 999 (行号: 65)
+  str参数:
+    g.adjustpositions: =False: (行号: 130)
+    g.buylist: stocklist[:g.stocknum] (行号: 110)
+    g.fields_name: close (行号: 61)
+    g.index: = 'zz': (行号: 50)
+    g.indus_level: None (行号: 54)
+    g.lostcontrol: =8: (行号: 69)
+    g.pool_filter: R (行号: 53)
+    g.poollist: stocklist (行号: 109)
+    g.selllist: lost_control(context, holdlist, today_date) (行号: 111)
+    g.shiftdays: =0): (行号: 81)
+    g.stocknum: =0 or len(stocklist) <= g.stocknum: (行号: 78)
+    g.strategy: = 'T': (行号: 60)
+
+策略: 89 2020年效果很好的策略-龙回头策略v3.0
+参数数量: 2
+  int参数:
+    g.buy_stock_count: 5 (行号: 28)
+  str参数:
+    g.security_universe_index: 399101.XSHE (行号: 27)
+
+策略: 89 基于Gyro^.^大神的小市值策略的因子匹配研究
+参数数量: 3
+  str参数:
+    g.choice: df.index.tolist() (行号: 127)
+    g.days: g.days + 1 (行号: 20)
+    g.position_size: 1.0/nposition * context.portfolio.total_value (行号: 129)
+
+策略: 89 年化收益55.7%， 超高胜率 0.799！
+参数数量: 25
+  float参数:
+    __fun_getEquity_ratio.limit_low: 0.0 (行号: 471)
+    __fun_getEquity_ratio.limit_up: 1.0 (行号: 471)
+  int参数:
+    fun_get_industry_stocks.level: 2 (行号: 619)
+    fun_neutralize.level: 2 (行号: 564)
+    get_growth_rate.n: 20 (行号: 1042)
+    stock_clean_by_ma.long: 40 (行号: 408)
+    stock_clean_by_ma.short: 4 (行号: 408)
+  str参数:
+    __fun_getEquity_ratio.statsDate: None (行号: 471)
+    fun_assetAllocationSystem.statsDate: None (行号: 470)
+    fun_calPosition.statsDate: None (行号: 499)
+    fun_get_industry.cycle: None (行号: 619)
+    fun_get_industry_levelI.industry: None (行号: 635)
+    fun_get_industry_stocks.statsDate: None (行号: 619)
+    fun_get_stock_list.bad_stock_list: [] (行号: 174)
+    fun_get_stock_list.statsDate: None (行号: 174)
+    fun_neutralize.industry_type: None (行号: 564)
+    fun_neutralize.module: pe_ratio (行号: 564)
+    fun_neutralize.statsDate: None (行号: 564)
+    g.quantlib: quantlib() (行号: 39)
+    g.value_factor: value_factor_lib() (行号: 101)
+    get_close_price.unit: 1d (行号: 1053)
+    get_fundamentals_sum.search: indicator.adjusted_profit (行号: 224)
+    get_fundamentals_sum.statsDate: None (行号: 224)
+    get_fundamentals_sum.table_name: indicator (行号: 224)
+    get_portfolio_info_text.op_sfs: [0] (行号: 992)
+
+策略: 89 韶华研究之二，顺势而为，年化140
+参数数量: 4
+  str参数:
+    g.benchmark: 000300.XSHG (行号: 18)
+    g.buylist: [] (行号: 27)
+    g.indus_list: ['801010','801080','801120','801140','801150','801210','801710','801750','801760','801780','801790','801880'] (行号: 26)
+    g.selllist: [] (行号: 28)
+
+策略: 90 2019年到现在19倍的新策略
+参数数量: 2
+  int参数:
+    g.max_holding: 2 (行号: 35)
+  str参数:
+    g.pool: select(context) (行号: 34)
+
+策略: 90 国债固收+
+参数数量: 1
+  str参数:
+    g.weights: {'510880.XSHG':0.08,'513100.XSHG':0.08, '518880.XSHG':0.14, "511010.XSHG":0.7} (行号: 23)
+
+策略: 90 超稳+翻倍，贝塔值只有0.048的期指策略
+参数数量: 29
+  float参数:
+    g.margin: 0.1 (行号: 30)
+  int参数:
+    g.d: 20 (行号: 40)
+    g.hold_days: 0 (行号: 32)
+    g.leverage: 5 (行号: 24)
+    g.max_hold_days: 3 (行号: 29)
+    g.multiplier: 300 (行号: 28)
+    g.thresh: 2 (行号: 44)
+    position_auto_switch.pindex: 0 (行号: 340)
+  str参数:
+    g.code: 510050.XSHG (行号: 39)
+    g.corr: a.corr(b)<-0.65 (行号: 34)
+    g.corr_: a.corr(b_)<-0.65 (行号: 35)
+    g.hands: min(calc_hands(context),20) (行号: 73)
+    g.hold_ins:  (行号: 38)
+    g.ih: get_future_contracts('IH')[0] (行号: 71)
+    g.ind: np.nan (行号: 36)
+    g.ind_: np.nan (行号: 37)
+    g.lc: True (行号: 78)
+    g.main: get_dominant_future('IF') (行号: 72)
+    g.max_net: context.portfolio.total_value (行号: 25)
+    g.pcr_flag: = 0: (行号: 31)
+    g.pcr_list: g.pcr_list[-20:] (行号: 26)
+    g.pcr_list_: g.pcr_list_[-20:] (行号: 27)
+    g.skip: True if (nextday-today).days>5 else False (行号: 77)
+    g.spread: pd.Series(etf_return)*100 - pd.Series(g.pcr_list) (行号: 197)
+    g.spread_: pd.Series(etf_return)*100 - pd.Series(g.pcr_list_) (行号: 198)
+    g.trade_days: list(get_all_trade_days()) (行号: 43)
+    g.volume_thresh: True if sorted(vol,reverse=True).index(vol[-1])<2 else False (行号: 33)
+    position_auto_switch.callback: None (行号: 340)
+    position_auto_switch.switch_func: None (行号: 340)
+
+策略: 91 ETF-T0动量策略，年化 18%，回撤3.31%
+参数数量: 5
+  float参数:
+    g.thresholdMax: 0.5 (行号: 33)
+    g.thresholdMin: 0.003 (行号: 31)
+  str参数:
+    g.open: current_data[g.security1].day_open (行号: 29)
+    g.security1: 513030.XSHG (行号: 25)
+    g.yclose: yesterday['close'][-1] (行号: 27)
+
+策略: 91 一个月轮动股票换仓，内日做T，相对高频交易
+参数数量: 2
+  str参数:
+    g.orderid: [] (行号: 38)
+    g.sel_fields: ['DELTA_ROE', 'ROA2', 'DELTA_MARGIN', 'DELTA_CATURN', 'DELTA_ROA2','DLTA_LIQUID'] (行号: 37)
+
+策略: 91 欧奈尔 RPS选股战法回测b
+参数数量: 9
+  float参数:
+    g.filter_over_increase_percent: 0.5 (行号: 20)
+  int参数:
+    g.max_stock_num: 5 (行号: 19)
+    g.min_rps: 85 (行号: 21)
+    g.rps_period: 120 (行号: 18)
+  str参数:
+    g.check_out_list: rps_select(context,g.watch_list) (行号: 39)
+    g.cur_stock_num: len(context.portfolio.positions) (行号: 40)
+    g.rps_dict: stock_dict (行号: 78)
+    g.security_universe_index: ["000300.XSHG"] (行号: 36)
+    g.watch_list: get_security_universe(context, g.security_universe_index, []) (行号: 37)
+
+策略: 92 敢于直接实盘的—八仙过海V2
+参数数量: 12
+  int参数:
+    g.allCang: 0 (行号: 43)
+    g.lag: 60 (行号: 38)
+  str参数:
+    GetKDJ.isIncludNow: True (行号: 255)
+    GetMACD.isIncludNow: True (行号: 236)
+    g.ETFList: [] (行号: 41)
+    g.buy: [] (行号: 40)
+    g.cang: {} (行号: 42)
+    g.empty_keep_stock: 601318.XSHG (行号: 35)
+    g.signal: BUY (行号: 37)
+    g.target_market: 000300.XSHG (行号: 33)
+    g.use_dynamic_target_market: True (行号: 32)
+    get_before_after_trade_days.is_before: True (行号: 45)
+
+策略: 92 致敬市场--4 解析细节
+参数数量: 4
+  int参数:
+    g.position_num: 100 (行号: 25)
+  str参数:
+    g.file_name: iEpsilon_portfolio.csv (行号: 23)
+    g.index: 399311.XSHE (行号: 12)
+    g.stocks: choice_stocks(context) (行号: 24)
+
+策略: 92 行业宽度轮动研究
+参数数量: 4
+  int参数:
+    g.num: 1 (行号: 35)
+    g.stock_num: 5 (行号: 32)
+  str参数:
+    g.hold_list: [] (行号: 33)
+    g.yesterday_HL_list: [] (行号: 34)
+
+策略: 93 234板介入-2023年14倍-无未来
+参数数量: 13
+  float参数:
+    g.max_LB_1d: 1.875 (行号: 33)
+  int参数:
+    filter_new_stock.days: 250 (行号: 807)
+    g.max_actual_turnover_ratio: 30 (行号: 30)
+    g.max_free_market_cap: 50 (行号: 29)
+    g.max_turnover_ratio: 30 (行号: 32)
+    g.ps: 1 (行号: 39)
+    get_historical_high.N_days: 120 (行号: 195)
+    get_money.N_days_ago: 1 (行号: 175)
+  str参数:
+    g.jqfactor: VOL5 (行号: 45)
+    g.sort: True (行号: 44)
+    g.strategy: 首板低开200 (行号: 42)
+    g.target_list: [] (行号: 41)
+    get_shifted_date.days_type: T (行号: 782)
+
+策略: 93 【超跌反弹v1.0】3年2.3倍的超跌反弹小牛股
+参数数量: 3
+  int参数:
+    g.buy_stock_num: 5 (行号: 42)
+  str参数:
+    g.security_universe_index: 000300.XSHG (行号: 27)
+    g.stock_list: get_stocks(context) (行号: 41)
+
+策略: 93 北向Boll带_ETF组合宝付费策略
+参数数量: 17
+  int参数:
+    g.lag: 6 (行号: 64)
+    g.lag0: 7 (行号: 65)
+    g.lag1: 15 (行号: 66)
+    g.lag2: 15 (行号: 67)
+  str参数:
+    g.ETFList: [] (行号: 71)
+    g.boll150: [] (行号: 74)
+    g.boll20: [] (行号: 76)
+    g.boll252: [] (行号: 73)
+    g.boll80: [] (行号: 75)
+    g.buy: df_etf['基金代码'].iloc[0:index] (行号: 70)
+    g.emotion_rate: round((volume[-1] / v_ma_lag0[-1] - 1) * 100, 2) (行号: 63)
+    g.empty_keep_stock: 601318.XSHG (行号: 60)
+    g.north_money: money_north[0] (行号: 68)
+    g.signal: BUY (行号: 62)
+    g.target_market: df_etf['对应指数'].iloc[-1] (行号: 58)
+    g.use_dynamic_target_market: True (行号: 57)
+    get_before_after_trade_days.is_before: True (行号: 78)
+
+策略: 93 因子看板多因子模型---由量化课堂多因子模型修改
+参数数量: 10
+  int参数:
+    g.N: 30 (行号: 38)
+    g.t: 0 (行号: 36)
+    g.yb: 63 (行号: 37)
+  str参数:
+    g.all_stocks: set_feasible_stocks(get_index_stocks('000300.XSHG'),g.yb,context) (行号: 77)
+    g.everyStock: context.portfolio.portfolio_value/g.N (行号: 135)
+    g.factors: ['total_asset_growth_rate','np_parent_company_owners_growth_rate','financing_cash_growth_rate','net_interest_expense','goods_service_cash_to_operating_revenue_ttm','DAVOL20'] (行号: 40)
+    g.if_trade: False (行号: 50)
+    g.q: query(valuation,balance,cash_flow,income,indicator).filter(valuation.code.in_(g.all_stocks)) (行号: 79)
+    g.tc: =0: (行号: 36)
+    g.weights: [[-1],[-1],[-1],[1],[1],[1]] (行号: 42)
+
+策略: 94 别人“拿的住”的股票最赚钱
+参数数量: 1
+  str参数:
+    g.buyList: [] (行号: 21)
+
+策略: 94 小资金短线策略
+参数数量: 2
+  int参数:
+    g.max_hold_stocknum: 3 (行号: 27)
+  str参数:
+    g.security: list (factor.sort_values('sum').iloc[2:5].index) (行号: 48)
+
+策略: 94 布林线追龙头战法
+参数数量: 6
+  int参数:
+    g.buy_sell_num: 0 (行号: 41)
+    g.days: 0 (行号: 40)
+    g.period: 20 (行号: 39)
+    g.stocksnum: 8 (行号: 38)
+  str参数:
+    g.redbull: False (行号: 25)
+    g.security: 600519.XSHG (行号: 52)
+
+策略: 95 冲天炮最高板策略迭代
+参数数量: 4
+  int参数:
+    g.max_hold_nums: 1 (行号: 36)
+  str参数:
+    g.buy_list: stock_list (行号: 67)
+    g.max_zt_days: df[df.day_count == review_days].ups.max() (行号: 74)
+    g.recent_bought_stocks: temp_dict (行号: 37)
+
+策略: 95 学习贴《一个完整的-深度学习-神经网络pipeline》
+参数数量: 11
+  float参数:
+    __init__.fc1_dropout: 0.2 (行号: 62)
+    __init__.fc2_dropout: 0.2 (行号: 62)
+    __init__.fc3_dropout: 0.2 (行号: 62)
+  int参数:
+    __init__.fc1_size: 2000 (行号: 62)
+    __init__.fc2_size: 1000 (行号: 62)
+    __init__.fc3_size: 100 (行号: 62)
+    __init__.num_of_classes: 50 (行号: 62)
+    g.stock_num: 3 (行号: 35)
+  str参数:
+    g.hold_list: [] (行号: 36)
+    g.no_trading_today_signal: False (行号: 34)
+    g.yesterday_HL_list: [] (行号: 37)
+
+策略: 96 【复现】高频价量相关性，意想不到的选股因子
+参数数量: 4
+  int参数:
+    g.hold_num: 200 (行号: 31)
+  str参数:
+    g.factor_df: pd.read_csv(BytesIO(read_file('cpv.csv')), (行号: 41)
+    g.factor_name: = 'pca_pv': (行号: 35)
+    g.is_in_index: None (行号: 36)
+
+策略: 96 集合竞价量比策略V1
+参数数量: 3
+  int参数:
+    filter_new_stock.open_days: 180 (行号: 154)
+    g.buy_num: 3 (行号: 29)
+  str参数:
+    g.stock_list: [] (行号: 30)
+
+策略: 96 首版+2版龙虎榜挖掘V2.0，年化1400
+参数数量: 4
+  int参数:
+    find_stock_with_criteria.days: 18 (行号: 218)
+    g.amount: 1 (行号: 21)
+  str参数:
+    g.isbull: False (行号: 22)
+    g.muster: turnover_ratio(context,g.muster) (行号: 20)
+
+策略: 97 稳定高回报周期股策略2-RSRS择时
+参数数量: 11
+  float参数:
+    g.buy: 0.8 (行号: 59)
+    g.sell: -0.8 (行号: 43)
+  int参数:
+    g.M: 800 (行号: 57)
+    g.N: 18 (行号: 55)
+    g.stock_num: 5 (行号: 50)
+  str参数:
+    g.ans: [] (行号: 63)
+    g.ans_rightdev: [] (行号: 65)
+    g.bfive: list(df_pe.code[:g.stock_num]) (行号: 49)
+    g.bten: list(df_pe.code[:g.stock_num * 2]) (行号: 48)
+    g.fin: pd.DataFrame() (行号: 51)
+    g.security: 000300.XSHG (行号: 75)
+
+策略: 97 趋势筛选后相关性最小etf轮动-加速10倍版
+参数数量: 3
+  int参数:
+    g.m_days: 25 (行号: 40)
+  str参数:
+    g.etf_pool: ['512660.XSHG', '510880.XSHG', '159915.XSHE', '513050.XSHG', '510050.XSHG', '588100.XSHG', '512100.XSHG', '518800.XSHG', '513060.XSHG', '511010.XSHG', '512980.XSHG', '512010.XSHG', '513100.XSHG', '512720.XSHG', (行号: 38)
+    g.trend_length_ranking: get_trend_length(g.etf_pool, 3) (行号: 78)
+
+策略: 98 【漂亮50】“漂亮50”策略复现以及股息率排序函数
+参数数量: 4
+  int参数:
+    g.day_count: 0 (行号: 41)
+    g.stock_num: 10 (行号: 38)
+  str参数:
+    g.adjustpositions: False (行号: 66)
+    g.shiftdays: =0) or len(g.selllist) !=0: (行号: 40)
+
+策略: 98 追涨大师（超额142）
+参数数量: 3
+  int参数:
+    g.stocknum: 1 (行号: 26)
+  str参数:
+    g.buy_price: get_current_data()[stock_name].last_price (行号: 28)
+    g.day: {} (行号: 30)
+
+策略: 98 韶华研究之六，简单不一样的发现趋势，3年6倍
+参数数量: 19
+  float参数:
+    g.up_limit: 1.05 (行号: 53)
+  int参数:
+    g.day_count: 0 (行号: 74)
+    g.ma_duration: 20 (行号: 63)
+    g.rsi_down: 40 (行号: 65)
+    g.rsi_duration: 20 (行号: 64)
+    g.shiftdays: 1 (行号: 73)
+    g.trend_duration: 20 (行号: 62)
+    g.up_num: 3 (行号: 52)
+  str参数:
+    g.buylist: g.poollist[:g.stocknum] (行号: 133)
+    g.index: ='all': (行号: 50)
+    g.lostcontrol: =5: (行号: 60)
+    g.poollist: second_filter(context, g.poollist, today_date) (行号: 96)
+    g.poolnum: 1*g.stocknum (行号: 71)
+    g.position_balance: =0: (行号: 61)
+    g.selllist: lost_control(context, stocklist, today_date) (行号: 160)
+    g.stocknum: =0 or len(g.poollist) <= g.stocknum: (行号: 70)
+    g.sub_direction: =1: (行号: 57)
+    g.sub_filter: ='T': (行号: 56)
+    g.up_unit: 1M (行号: 51)
+
+策略: 99 欧奈尔CANSLIM策略初探三
+参数数量: 8
+  int参数:
+    filter_new_stock.N: 90 (行号: 165)
+    get_patterns.N: 10 (行号: 170)
+    get_patterns.n: 3 (行号: 170)
+    get_patterns_num.n: 6 (行号: 170)
+  str参数:
+    g.last_value: context.portfolio.total_value (行号: 37)
+    g.max_value: context.portfolio.total_value (行号: 36)
+    g.trade_time: context.current_dt (行号: 92)
+    get_patterns.unit: 1M (行号: 170)
+
+策略: 99 韶华研究之二十，竞价异动
+参数数量: 7
+  int参数:
+    g.stocknum: 0 (行号: 77)
+  str参数:
+    g.auct_list: list(df_abn.code) (行号: 146)
+    g.begin_times:  09:24:00 (行号: 70)
+    g.end_times:  09:25:10 (行号: 71)
+    g.index: = 'zz': (行号: 68)
+    g.poollist: get_up_filter_jiang(context,stocklist,lastd_date,1,0,1) (行号: 106)
+    g.sell_list: [] (行号: 107)
+
+策略: 99最新龙回头5.0速度优化版+风险控制版本
+参数数量: 6
+  str参数:
+    g.check_out_lists: list(set(g.check_out_lists).intersection(set(longhu["code"]))) (行号: 57)
+    g.dapan_yesterday_close: df.close[-1] (行号: 366)
+    g.dapan_yesterday_rise: dapan_rise (行号: 367)
+    g.preorderlist: [] (行号: 76)
+    g.selllist: {} (行号: 79)
+    g.tracklist: [] (行号: 88)
+
+================================================================================
+4. 常用参数分析
+--------------------------------------------------------------------------------
+stock_num: 在 142 个策略中使用
+hold_list: 在 75 个策略中使用
+high_limit_list: 在 43 个策略中使用
+days: 在 42 个策略中使用
+N: 在 42 个策略中使用
+yesterday_HL_list: 在 40 个策略中使用
+M: 在 35 个策略中使用
+security: 在 34 个策略中使用
+no_trading_today_signal: 在 32 个策略中使用
+stocknum: 在 28 个策略中使用
+index: 在 27 个策略中使用
+momentum_day: 在 26 个策略中使用
+ref_stock: 在 26 个策略中使用
+target_list: 在 26 个策略中使用
+stock_pool: 在 24 个策略中使用
+score_threshold: 在 24 个策略中使用
+slope_series: 在 23 个策略中使用
+buy: 在 23 个策略中使用
+unit: 在 22 个策略中使用
+n: 在 21 个策略中使用
+limit_days: 在 21 个策略中使用
+buy_list: 在 20 个策略中使用
+signal: 在 20 个策略中使用
+history_hold_list: 在 19 个策略中使用
+not_buy_again_list: 在 18 个策略中使用
+limit_up_list: 在 18 个策略中使用
+day_count: 在 17 个策略中使用
+security_universe_index: 在 17 个策略中使用
+buy_stock_count: 在 17 个策略中使用
+mean_day: 在 16 个策略中使用
+mean_diff_day: 在 16 个策略中使用
+stocks: 在 16 个策略中使用
+target_market: 在 16 个策略中使用
+lag1: 在 16 个策略中使用
+check_out_lists: 在 15 个策略中使用
+m_days: 在 15 个策略中使用
+lag: 在 15 个策略中使用
+ETFList: 在 15 个策略中使用
+position: 在 15 个策略中使用
+is_before: 在 15 个策略中使用
+days_type: 在 14 个策略中使用
+etf_pool: 在 14 个策略中使用
+max_hold_stocknum: 在 14 个策略中使用
+factor_list: 在 13 个策略中使用
+choice: 在 13 个策略中使用
+use_dynamic_target_market: 在 13 个策略中使用
+empty_keep_stock: 在 13 个策略中使用
+buylist: 在 13 个策略中使用
+lag2: 在 12 个策略中使用
+benchmark: 在 12 个策略中使用
+weights: 在 11 个策略中使用
+stoploss_market: 在 11 个策略中使用
+emotion_rate: 在 11 个策略中使用
+lag0: 在 11 个策略中使用
+selllist: 在 10 个策略中使用
+run_stoploss: 在 10 个策略中使用
+stoploss_limit: 在 10 个策略中使用
+security_max_proportion: 在 10 个策略中使用
+industry_list: 在 10 个策略中使用
+stock_list: 在 10 个策略中使用
+poolnum: 在 10 个策略中使用
+poollist: 在 10 个策略中使用
+shiftdays: 在 10 个策略中使用
+my_security: 在 9 个策略中使用
+num: 在 9 个策略中使用
+stoploss_strategy: 在 9 个策略中使用
+etf: 在 9 个策略中使用
+count: 在 9 个策略中使用
+sell: 在 9 个策略中使用
+threshold: 在 8 个策略中使用
+timing_signal: 在 8 个策略中使用
+reason_to_sell: 在 8 个策略中使用
+order_style_str: 在 8 个策略中使用
+order_style_value: 在 8 个策略中使用
+day: 在 8 个策略中使用
+adjustpositions: 在 8 个策略中使用
+trading_signal: 在 7 个策略中使用
+pass_months: 在 7 个策略中使用
+highest: 在 7 个策略中使用
+refresh_rate: 在 7 个策略中使用
+period: 在 7 个策略中使用
+help_stock: 在 7 个策略中使用
+bond: 在 7 个策略中使用
+max_buy_value: 在 7 个策略中使用
+max_buy_amount: 在 7 个策略中使用
+pindex: 在 7 个策略中使用
+switch_func: 在 7 个策略中使用
+callback: 在 7 个策略中使用
+statsDate: 在 7 个策略中使用
+sellrank: 在 6 个策略中使用
+buyrank: 在 6 个策略中使用
+if_trade: 在 6 个策略中使用
+limitup_stocks: 在 6 个策略中使用
+hold: 在 6 个策略中使用
+ans: 在 6 个策略中使用
+ans_rightdev: 在 6 个策略中使用
+K: 在 6 个策略中使用
+check_out_list: 在 6 个策略中使用
+timeperiod: 在 6 个策略中使用
+increase_days: 在 6 个策略中使用
+available_indexs: 在 6 个策略中使用
+check_stocks_refresh_rate: 在 6 个策略中使用
+buy_refresh_rate: 在 6 个策略中使用
+sell_refresh_rate: 在 6 个策略中使用
+buy_trade_days: 在 6 个策略中使用
+sell_trade_days: 在 6 个策略中使用
+open_sell_securities: 在 6 个策略中使用
+selled_security_list: 在 6 个策略中使用
+filter_paused: 在 6 个策略中使用
+filter_delisted: 在 6 个策略中使用
+only_st: 在 6 个策略中使用
+filter_st: 在 6 个策略中使用
+security_universe_user_securities: 在 6 个策略中使用
+concept_list: 在 6 个策略中使用
+sell_will_buy: 在 6 个策略中使用
+sell_by_amount: 在 6 个策略中使用
+sell_by_percent: 在 6 个策略中使用
+filter_holded: 在 6 个策略中使用
+daily_risk_management: 在 6 个策略中使用
+ETF_targets: 在 6 个策略中使用
+w: 在 6 个策略中使用
+method: 在 6 个策略中使用
+code: 在 6 个策略中使用
+north_money: 在 6 个策略中使用
+hold_days: 在 6 个策略中使用
+strategy: 在 6 个策略中使用
+MA: 在 5 个策略中使用
+isbull: 在 5 个策略中使用
+just_sold: 在 5 个策略中使用
+filter_audit: 在 5 个策略中使用
+adjust_num: 在 5 个策略中使用
+min_mv: 在 5 个策略中使用
+max_mv: 在 5 个策略中使用
+position_size: 在 5 个策略中使用
+watch_days: 在 5 个策略中使用
+dapan_threshold: 在 5 个策略中使用
+decrease_days: 在 5 个策略中使用
+zs_list: 在 5 个策略中使用
+ETF_list: 在 5 个策略中使用
+not_ipo_list: 在 5 个策略中使用
+check_out_lists_ascending: 在 5 个策略中使用
+risk_management_signal: 在 5 个策略中使用
+checktime: 在 5 个策略中使用
+check_stocks_days: 在 5 个策略中使用
+ascending: 在 5 个策略中使用
+not_buy_again: 在 5 个策略中使用
+fin: 在 5 个策略中使用
+cash: 在 5 个策略中使用
+index_pool: 在 5 个策略中使用
+window: 在 5 个策略中使用
+d: 在 5 个策略中使用
+main: 在 5 个策略中使用
+pool: 在 5 个策略中使用
+bearpercent: 在 4 个策略中使用
+tradeday: 在 4 个策略中使用
+increase1d: 在 4 个策略中使用
+choose_time_signal: 在 4 个策略中使用
+buyagain: 在 4 个策略中使用
+chosen_stock_list: 在 4 个策略中使用
+sold_stock: 在 4 个策略中使用
+n_limit_top: 在 4 个策略中使用
+ps: 在 4 个策略中使用
+jqfactor: 在 4 个策略中使用
+sort: 在 4 个策略中使用
+funds: 在 4 个策略中使用
+df: 在 4 个策略中使用
+pools: 在 4 个策略中使用
+init: 在 4 个策略中使用
+hold_stock: 在 4 个策略中使用
+score_thr: 在 4 个策略中使用
+score_fall_thr: 在 4 个策略中使用
+idex_slope_raise_thr: 在 4 个策略中使用
+rsrs_score_history: 在 4 个策略中使用
+ma_period: 在 4 个策略中使用
+checktime2: 在 4 个策略中使用
+max_stock_count: 在 4 个策略中使用
+pass_april: 在 4 个策略中使用
+up_price: 在 4 个策略中使用
+bten: 在 4 个策略中使用
+bfive: 在 4 个策略中使用
+futures_margin_rate: 在 4 个策略中使用
+op_sfs: 在 4 个策略中使用
+flag: 在 4 个策略中使用
+buy_stock_num: 在 4 个策略中使用
+stock: 在 4 个策略中使用
+max_net: 在 4 个策略中使用
+thresh: 在 4 个策略中使用
+hands: 在 4 个策略中使用
+lc: 在 4 个策略中使用
+tc: 在 4 个策略中使用
+t: 在 4 个策略中使用
+isIncludNow: 在 4 个策略中使用
+level: 在 4 个策略中使用
+bearposition: 在 3 个策略中使用
+tradevaluemin: 在 3 个策略中使用
+tradevaluemax: 在 3 个策略中使用
+pbmin: 在 3 个策略中使用
+pbmax: 在 3 个策略中使用
+nohold: 在 3 个策略中使用
+preorderlist: 在 3 个策略中使用
+tracklist: 在 3 个策略中使用
+run_count: 在 3 个策略中使用
+emotion_p: 在 3 个策略中使用
+emotion_n: 在 3 个策略中使用
+last: 在 3 个策略中使用
+clear: 在 3 个策略中使用
+IdxList: 在 3 个策略中使用
+down: 在 3 个策略中使用
+all_stocks: 在 3 个策略中使用
+foreign_ETF: 在 3 个策略中使用
+p: 在 3 个策略中使用
+niu_signal: 在 3 个策略中使用
+sells: 在 3 个策略中使用
+anchor: 在 3 个策略中使用
+normalize: 在 3 个策略中使用
+endogenous: 在 3 个策略中使用
+hold_num: 在 3 个策略中使用
+max_zt_days: 在 3 个策略中使用
+amount: 在 3 个策略中使用
+muster: 在 3 个策略中使用
+begin_date: 在 3 个策略中使用
+take_profit: 在 3 个策略中使用
+unitprice: 在 3 个策略中使用
+stop: 在 3 个策略中使用
+shortdays: 在 3 个策略中使用
+longdays: 在 3 个策略中使用
+k: 在 3 个策略中使用
+volatility: 在 3 个策略中使用
+buy_price: 在 3 个策略中使用
+columns: 在 3 个策略中使用
+everyStock: 在 3 个策略中使用
+etf_list: 在 3 个策略中使用
+lower: 在 3 个策略中使用
+factors: 在 3 个策略中使用
+model: 在 3 个策略中使用
+c: 在 3 个策略中使用
+sell_list: 在 3 个策略中使用
+leverage: 在 3 个策略中使用
+pcr_list: 在 3 个策略中使用
+pcr_list_: 在 3 个策略中使用
+multiplier: 在 3 个策略中使用
+margin: 在 3 个策略中使用
+pcr_flag: 在 3 个策略中使用
+corr: 在 3 个策略中使用
+corr_: 在 3 个策略中使用
+ind: 在 3 个策略中使用
+ind_: 在 3 个策略中使用
+hold_ins: 在 3 个策略中使用
+trade_days: 在 3 个策略中使用
+ih: 在 3 个策略中使用
+spread: 在 3 个策略中使用
+spread_: 在 3 个策略中使用
+q: 在 3 个策略中使用
+risk_control: 在 3 个策略中使用
+security1: 在 3 个策略中使用
+s: 在 3 个策略中使用
+max_stock_num: 在 3 个策略中使用
+fc1_size: 在 3 个策略中使用
+fc2_size: 在 3 个策略中使用
+fc3_size: 在 3 个策略中使用
+fc1_dropout: 在 3 个策略中使用
+fc2_dropout: 在 3 个策略中使用
+fc3_dropout: 在 3 个策略中使用
+num_of_classes: 在 3 个策略中使用
+singal: 在 3 个策略中使用
+max_hold_stock_nums: 在 2 个策略中使用
+target_lists: 在 2 个策略中使用
+day_ups_max: 在 2 个策略中使用
+month: 在 2 个策略中使用
+weight: 在 2 个策略中使用
+df_dic: 在 2 个策略中使用
+quantile: 在 2 个策略中使用
+positions: 在 2 个策略中使用
+hold_cycle: 在 2 个策略中使用
+QuantLib: 在 2 个策略中使用
+equity: 在 2 个策略中使用
+commodities: 在 2 个策略中使用
+bonds: 在 2 个策略中使用
+money_fund: 在 2 个策略中使用
+confidence_level: 在 2 个策略中使用
+message: 在 2 个策略中使用
+tradeRecord: 在 2 个策略中使用
+hold_periods: 在 2 个策略中使用
+trade_ratio: 在 2 个策略中使用
+transactionRecord: 在 2 个策略中使用
+_period: 在 2 个策略中使用
+n_days_limit_up_list: 在 2 个策略中使用
+buy_stock_limit: 在 2 个策略中使用
+stoploss_list: 在 2 个策略中使用
+other_sale: 在 2 个策略中使用
+money_etf: 在 2 个策略中使用
+trend: 在 2 个策略中使用
+yest_df_panel: 在 2 个策略中使用
+chosen_factor: 在 2 个策略中使用
+month_day: 在 2 个策略中使用
+biasN: 在 2 个策略中使用
+lossN: 在 2 个策略中使用
+lossFactor: 在 2 个策略中使用
+SwitchFactor: 在 2 个策略中使用
+Motion_1diff: 在 2 个策略中使用
+raiser_thr: 在 2 个策略中使用
+stock_motion: 在 2 个策略中使用
+volume: 在 2 个策略中使用
+open_interest: 在 2 个策略中使用
+close_price: 在 2 个策略中使用
+open_price: 在 2 个策略中使用
+fastperiod: 在 2 个策略中使用
+slowperiod: 在 2 个策略中使用
+signalperiod: 在 2 个策略中使用
+include: 在 2 个策略中使用
+build_pivot: 在 2 个策略中使用
+valid: 在 2 个策略中使用
+portfolio_value_proportion: 在 2 个策略中使用
+pool_id: 在 2 个策略中使用
+count_days: 在 2 个策略中使用
+purchases: 在 2 个策略中使用
+moment_period: 在 2 个策略中使用
+type_num: 在 2 个策略中使用
+local_stocks: 在 2 个策略中使用
+df_etf: 在 2 个策略中使用
+df_local_stocks: 在 2 个策略中使用
+df_global_stocks: 在 2 个策略中使用
+df_local_futures: 在 2 个策略中使用
+df_global_futures: 在 2 个策略中使用
+df_reits: 在 2 个策略中使用
+df_etf_buy: 在 2 个策略中使用
+holdings: 在 2 个策略中使用
+targets: 在 2 个策略中使用
+damping: 在 2 个策略中使用
+market_temperature: 在 2 个策略中使用
+factor_name: 在 2 个策略中使用
+is_in_index: 在 2 个策略中使用
+factor_df: 在 2 个策略中使用
+sel_fields: 在 2 个策略中使用
+index_symbol: 在 2 个策略中使用
+daily_buy_count: 在 2 个策略中使用
+today_bought_stocks: 在 2 个策略中使用
+bucket: 在 2 个策略中使用
+summit: 在 2 个策略中使用
+mode: 在 2 个策略中使用
+record: 在 2 个策略中使用
+times: 在 2 个策略中使用
+order_amount: 在 2 个策略中使用
+stock_security: 在 2 个策略中使用
+bond_security: 在 2 个策略中使用
+over_hot: 在 2 个策略中使用
+yearMa10: 在 2 个策略中使用
+ndays: 在 2 个策略中使用
+beta: 在 2 个策略中使用
+max_value: 在 2 个策略中使用
+last_value: 在 2 个策略中使用
+last_buy_price: 在 2 个策略中使用
+last_sell_price: 在 2 个策略中使用
+HV_control: 在 2 个策略中使用
+HV_duration: 在 2 个策略中使用
+HV_ratio: 在 2 个策略中使用
+stock_tobuy: 在 2 个策略中使用
+num_days: 在 2 个策略中使用
+sec_data_num: 在 2 个策略中使用
+dapan_yesterday_close: 在 2 个策略中使用
+dapan_yesterday_rise: 在 2 个策略中使用
+stock_share: 在 2 个策略中使用
+future_share: 在 2 个策略中使用
+future_position: 在 2 个策略中使用
+future_type: 在 2 个策略中使用
+long_days: 在 2 个策略中使用
+short_days: 在 2 个策略中使用
+ATRdays: 在 2 个策略中使用
+boundrydays: 在 2 个策略中使用
+para: 在 2 个策略中使用
+code_1: 在 2 个策略中使用
+de_day: 在 2 个策略中使用
+sign: 在 2 个策略中使用
+loss_stop: 在 2 个策略中使用
+trade_hour: 在 2 个策略中使用
+trade_minute: 在 2 个策略中使用
+pre_date: 在 2 个策略中使用
+stock_index: 在 2 个策略中使用
+blacklist: 在 2 个策略中使用
+trade_day_list: 在 2 个策略中使用
+judge_date: 在 2 个策略中使用
+boll252: 在 2 个策略中使用
+boll150: 在 2 个策略中使用
+boll80: 在 2 个策略中使用
+boll20: 在 2 个策略中使用
+stdev_n: 在 2 个策略中使用
+recent_days: 在 2 个策略中使用
+limit_num: 在 2 个策略中使用
+score: 在 2 个策略中使用
+each_stock_cash: 在 2 个策略中使用
+model_path: 在 2 个策略中使用
+model_zb_path: 在 2 个策略中使用
+model_cyb_path: 在 2 个策略中使用
+model_zb: 在 2 个策略中使用
+model_cyb: 在 2 个策略中使用
+auction_open_highlimit: 在 2 个策略中使用
+auction_open_lowlimit: 在 2 个策略中使用
+profit_line: 在 2 个策略中使用
+volume_control: 在 2 个策略中使用
+volume_period: 在 2 个策略中使用
+volume_ratio: 在 2 个策略中使用
+sell_mode: 在 2 个策略中使用
+sell_vol_period: 在 2 个策略中使用
+sell_vol_ratio: 在 2 个策略中使用
+poolist: 在 2 个策略中使用
+number: 在 2 个策略中使用
+max_hold_days: 在 2 个策略中使用
+volume_thresh: 在 2 个策略中使用
+skip: 在 2 个策略中使用
+base: 在 2 个策略中使用
+curstaut: 在 2 个策略中使用
+yb: 在 2 个策略中使用
+filter_bonus: 在 2 个策略中使用
+Expected_bonus: 在 2 个策略中使用
+ETF: 在 2 个策略中使用
+base_price: 在 2 个策略中使用
+small_stock_num: 在 2 个策略中使用
+big_stock_num: 在 2 个策略中使用
+coef_list: 在 2 个策略中使用
+weeks: 在 2 个策略中使用
+ratio: 在 2 个策略中使用
+cang: 在 2 个策略中使用
+allCang: 在 2 个策略中使用
+buttun: 在 2 个策略中使用
+stock_price: 在 2 个策略中使用
+security2: 在 2 个策略中使用
+minute: 在 2 个策略中使用
+nday: 在 2 个策略中使用
+rsrs_score_hisitory: 在 2 个策略中使用
+profit: 在 2 个策略中使用
+lose: 在 2 个策略中使用
+max_hold_num: 在 2 个策略中使用
+prepare_stocks: 在 2 个策略中使用
+chosen_stocks: 在 2 个策略中使用
+holdable_days: 在 2 个策略中使用
+need_sell: 在 2 个策略中使用
+industry_stocks: 在 2 个策略中使用
+down_range: 在 2 个策略中使用
+run_time: 在 2 个策略中使用
+security_min_proportion: 在 2 个策略中使用
+buy_dict: 在 2 个策略中使用
+pre_holdings: 在 2 个策略中使用
+buyList: 在 2 个策略中使用
+code1: 在 2 个策略中使用
+code2: 在 2 个策略中使用
+back_trade_days: 在 2 个策略中使用
+top_money_in: 在 2 个策略中使用
+money: 在 2 个策略中使用
+type: 在 2 个策略中使用
+params: 在 2 个策略中使用
+least_premium: 在 2 个策略中使用
+no_buy_days: 在 2 个策略中使用
+least_money: 在 2 个策略中使用
+trade_fee_ratio: 在 2 个策略中使用
+ETFNum_hold: 在 2 个策略中使用
+etf_df: 在 2 个策略中使用
+main_symbol: 在 2 个策略中使用
+bought_stocks: 在 2 个策略中使用
+position_count: 在 2 个策略中使用
+fit_params: 在 2 个策略中使用
+timer: 在 2 个策略中使用
+dataSource: 在 2 个策略中使用
+axis: 在 2 个策略中使用
+position_num: 在 2 个策略中使用
+buy_counter: 在 2 个策略中使用
+sell_tounter: 在 2 个策略中使用
+buy_stock_list: 在 2 个策略中使用
+min_asset: 在 2 个策略中使用
+lostcontrol: 在 2 个策略中使用
+
+================================================================================
+5. 参数范围分析
+--------------------------------------------------------------------------------
+EMA.timeperiod: 范围 [5, 5], 平均值 5.00, 样本数 2
+MACD.fastperiod: 范围 [12, 12], 平均值 12.00, 样本数 2
+MACD.signalperiod: 范围 [9, 9], 平均值 9.00, 样本数 2
+MACD.slowperiod: 范围 [26, 26], 平均值 26.00, 样本数 2
+SMA.timeperiod: 范围 [5, 5], 平均值 5.00, 样本数 2
+__init__.close_price: 范围 [0, 0], 平均值 0.00, 样本数 2
+__init__.fc1_dropout: 范围 [0.2, 0.2], 平均值 0.20, 样本数 3
+__init__.fc1_size: 范围 [2000, 2000], 平均值 2000.00, 样本数 3
+__init__.fc2_dropout: 范围 [0.2, 0.2], 平均值 0.20, 样本数 3
+__init__.fc2_size: 范围 [1000, 1000], 平均值 1000.00, 样本数 3
+__init__.fc3_dropout: 范围 [0.2, 0.2], 平均值 0.20, 样本数 3
+__init__.fc3_size: 范围 [100, 100], 平均值 100.00, 样本数 3
+__init__.num_of_classes: 范围 [50, 50], 平均值 50.00, 样本数 3
+__init__.open_interest: 范围 [0, 0], 平均值 0.00, 样本数 2
+__init__.open_price: 范围 [0, 0], 平均值 0.00, 样本数 2
+__init__.volume: 范围 [0, 0], 平均值 0.00, 样本数 2
+__init__.window: 范围 [10, 10], 平均值 10.00, 样本数 2
+filter_n_tradeday_not_buy.n: 范围 [0, 0], 平均值 0.00, 样本数 7
+filter_new_stock.days: 范围 [50, 250], 平均值 115.29, 样本数 17
+filter_new_stock2.days: 范围 [60, 250], 平均值 155.00, 样本数 2
+format_factor.axis: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.ATRdays: 范围 [20, 20], 平均值 20.00, 样本数 2
+g.ETFNum_hold: 范围 [2, 2], 平均值 2.00, 样本数 2
+g.HV_duration: 范围 [60, 120], 平均值 90.00, 样本数 2
+g.HV_ratio: 范围 [0.9, 0.9], 平均值 0.90, 样本数 2
+g.K: 范围 [8, 8], 平均值 8.00, 样本数 5
+g.M: 范围 [480, 1100], 平均值 661.18, 样本数 34
+g.Motion_1diff: 范围 [19, 19], 平均值 19.00, 样本数 2
+g.N: 范围 [2, 100], 平均值 20.45, 样本数 38
+g.SwitchFactor: 范围 [1.04, 1.04], 平均值 1.04, 样本数 2
+g.allCang: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.amount: 范围 [1, 7], 平均值 4.33, 样本数 3
+g.auction_open_highlimit: 范围 [0.985, 0.985], 平均值 0.98, 样本数 2
+g.auction_open_lowlimit: 范围 [0.945, 0.945], 平均值 0.94, 样本数 2
+g.back_trade_days: 范围 [40, 80], 平均值 60.00, 样本数 2
+g.bearpercent: 范围 [0.3, 0.5], 平均值 0.35, 样本数 4
+g.biasN: 范围 [90, 90], 平均值 90.00, 样本数 2
+g.big_stock_num: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.boundrydays: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.buttun: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.buy: 范围 [-0.1, 0.8], 平均值 0.60, 样本数 7
+g.buy_refresh_rate: 范围 [10, 10], 平均值 10.00, 样本数 1
+g.buy_stock_count: 范围 [1, 20], 平均值 5.75, 样本数 16
+g.buy_stock_limit: 范围 [1, 1], 平均值 1.00, 样本数 2
+g.buy_stock_num: 范围 [5, 5], 平均值 5.00, 样本数 4
+g.buy_trade_days: 范围 [0, 1], 平均值 0.83, 样本数 6
+g.buyagain: 范围 [5, 31], 平均值 11.50, 样本数 4
+g.buyrank: 范围 [9, 9], 平均值 9.00, 样本数 4
+g.c: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.cash: 范围 [0, 0], 平均值 0.00, 样本数 1
+g.check_stocks_days: 范围 [1, 1], 平均值 1.00, 样本数 5
+g.check_stocks_refresh_rate: 范围 [1, 240], 平均值 83.67, 样本数 6
+g.choice: 范围 [500, 1000], 平均值 625.00, 样本数 4
+g.confidence_level: 范围 [2.58, 2.58], 平均值 2.58, 样本数 2
+g.count: 范围 [0, 30], 平均值 7.75, 样本数 4
+g.count_days: 范围 [0, 100], 平均值 50.00, 样本数 2
+g.curstaut: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.d: 范围 [20, 20], 平均值 20.00, 样本数 3
+g.daily_buy_count: 范围 [1, 1], 平均值 1.00, 样本数 2
+g.dapan_threshold: 范围 [0, 0], 平均值 0.00, 样本数 5
+g.day: 范围 [0, 20], 平均值 7.00, 样本数 6
+g.day_count: 范围 [0, 91], 平均值 11.38, 样本数 16
+g.days: 范围 [0, 180], 平均值 20.25, 样本数 12
+g.decrease_days: 范围 [0, 0], 平均值 0.00, 样本数 5
+g.down: 范围 [0.01, 0.2], 平均值 0.11, 样本数 2
+g.emotion_n: 范围 [0, 0], 平均值 0.00, 样本数 3
+g.emotion_p: 范围 [0, 0], 平均值 0.00, 样本数 3
+g.flag: 范围 [0, 1], 平均值 0.50, 样本数 2
+g.future_position: 范围 [0.35, 0.35], 平均值 0.35, 样本数 2
+g.future_share: 范围 [0.3, 0.3], 平均值 0.30, 样本数 2
+g.futures_margin_rate: 范围 [0.1, 0.15], 平均值 0.12, 样本数 4
+g.highest: 范围 [50, 50], 平均值 50.00, 样本数 7
+g.hold_days: 范围 [0, 0], 平均值 0.00, 样本数 4
+g.hold_num: 范围 [8, 200], 平均值 136.00, 样本数 3
+g.holdable_days: 范围 [6, 6], 平均值 6.00, 样本数 2
+g.idex_slope_raise_thr: 范围 [10, 12], 平均值 11.00, 样本数 4
+g.increase1d: 范围 [0.06, 0.087], 平均值 0.08, 样本数 4
+g.increase_days: 范围 [0, 60], 平均值 10.00, 样本数 6
+g.lag: 范围 [5, 60], 平均值 14.57, 样本数 14
+g.lag0: 范围 [7, 7], 平均值 7.00, 样本数 11
+g.lag1: 范围 [5, 20], 平均值 14.50, 样本数 16
+g.lag2: 范围 [10, 15], 平均值 13.08, 样本数 12
+g.least_money: 范围 [10000000.0, 10000000.0], 平均值 10000000.00, 样本数 2
+g.leverage: 范围 [1.0, 5], 平均值 3.67, 样本数 3
+g.limit_days: 范围 [5, 30], 平均值 18.57, 样本数 21
+g.long_days: 范围 [5, 6], 平均值 5.50, 样本数 2
+g.longdays: 范围 [20, 50], 平均值 40.00, 样本数 3
+g.lossFactor: 范围 [1.005, 1.005], 平均值 1.00, 样本数 2
+g.lossN: 范围 [20, 20], 平均值 20.00, 样本数 2
+g.m_days: 范围 [5, 34], 平均值 21.73, 样本数 15
+g.ma_period: 范围 [5, 10], 平均值 8.33, 样本数 3
+g.margin: 范围 [0.1, 0.15], 平均值 0.12, 样本数 3
+g.max_hold_days: 范围 [3, 3], 平均值 3.00, 样本数 2
+g.max_hold_num: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.max_hold_stock_nums: 范围 [2, 2], 平均值 2.00, 样本数 2
+g.max_hold_stocknum: 范围 [1, 10], 平均值 5.79, 样本数 14
+g.max_mv: 范围 [100, 10000], 平均值 3400.00, 样本数 3
+g.max_stock_count: 范围 [5, 20], 平均值 13.75, 样本数 4
+g.max_stock_num: 范围 [5, 20], 平均值 15.00, 样本数 3
+g.mean_day: 范围 [7, 30], 平均值 22.12, 样本数 16
+g.mean_diff_day: 范围 [3, 10], 平均值 4.75, 样本数 16
+g.min_mv: 范围 [10, 10], 平均值 10.00, 样本数 5
+g.minute: 范围 [30, 60], 平均值 45.00, 样本数 2
+g.mode: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.moment_period: 范围 [13, 13], 平均值 13.00, 样本数 2
+g.momentum_day: 范围 [10, 144], 平均值 30.12, 样本数 26
+g.month_day: 范围 [1, 1], 平均值 1.00, 样本数 2
+g.multiplier: 范围 [300, 300], 平均值 300.00, 样本数 3
+g.nday: 范围 [2, 2], 平均值 2.00, 样本数 2
+g.niu_signal: 范围 [1, 1], 平均值 1.00, 样本数 3
+g.num: 范围 [0, 30], 平均值 11.00, 样本数 9
+g.num_days: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.order_amount: 范围 [0.04, 0.04], 平均值 0.04, 样本数 2
+g.order_style_value: 范围 [100, 100], 平均值 100.00, 样本数 8
+g.p: 范围 [0, 0.8], 平均值 0.27, 样本数 3
+g.para: 范围 [1, 1], 平均值 1.00, 样本数 2
+g.pbmax: 范围 [3.5, 30], 平均值 21.17, 样本数 3
+g.pbmin: 范围 [0.01, 0.5], 平均值 0.17, 样本数 3
+g.period: 范围 [20, 22], 平均值 21.00, 样本数 2
+g.poolnum: 范围 [0.3, 0.3], 平均值 0.30, 样本数 1
+g.position: 范围 [1, 1], 平均值 1.00, 样本数 9
+g.position_num: 范围 [100, 100], 平均值 100.00, 样本数 2
+g.profit_line: 范围 [1.05, 1.05], 平均值 1.05, 样本数 2
+g.ps: 范围 [1, 10], 平均值 7.75, 样本数 4
+g.raiser_thr: 范围 [4.8, 4.8], 平均值 4.80, 样本数 2
+g.refresh_rate: 范围 [10, 20], 平均值 15.00, 样本数 2
+g.run_count: 范围 [0, 0], 平均值 0.00, 样本数 3
+g.s: 范围 [3, 3], 平均值 3.00, 样本数 1
+g.score: 范围 [6, 7], 平均值 6.50, 样本数 2
+g.score_fall_thr: 范围 [-0.5, -0.43], 平均值 -0.46, 样本数 4
+g.score_thr: 范围 [-1, -0.68], 平均值 -0.84, 样本数 4
+g.score_threshold: 范围 [0.7, 0.7], 平均值 0.70, 样本数 22
+g.sec_data_num: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.security_max_proportion: 范围 [0.2, 1], 平均值 0.68, 样本数 9
+g.sell: 范围 [-0.8, -0.4], 平均值 -0.67, 样本数 6
+g.sell_mode: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.sell_refresh_rate: 范围 [1, 240], 平均值 45.33, 样本数 6
+g.sell_trade_days: 范围 [0, 1], 平均值 0.83, 样本数 6
+g.sell_vol_period: 范围 [120, 120], 平均值 120.00, 样本数 2
+g.sell_vol_ratio: 范围 [0.9, 0.9], 平均值 0.90, 样本数 2
+g.sellrank: 范围 [10, 10], 平均值 10.00, 样本数 4
+g.shiftdays: 范围 [1, 20], 平均值 10.50, 样本数 2
+g.short_days: 范围 [2, 2], 平均值 2.00, 样本数 2
+g.shortdays: 范围 [5, 20], 平均值 15.00, 样本数 3
+g.small_stock_num: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.stdev_n: 范围 [1.5, 2], 平均值 1.75, 样本数 2
+g.stock_num: 范围 [1, 400], 平均值 14.82, 样本数 135
+g.stock_price: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.stock_share: 范围 [0.7, 0.7], 平均值 0.70, 样本数 2
+g.stock_tobuy: 范围 [1, 1], 平均值 1.00, 样本数 2
+g.stocknum: 范围 [0, 30], 平均值 6.95, 样本数 20
+g.stop: 范围 [0, 5], 平均值 3.33, 样本数 3
+g.stoploss_limit: 范围 [0.07, 0.88], 平均值 0.16, 样本数 10
+g.stoploss_market: 范围 [0.05, 0.94], 平均值 0.14, 样本数 11
+g.t: 范围 [0, 0], 平均值 0.00, 样本数 4
+g.take_profit: 范围 [0.12, 0.12], 平均值 0.12, 样本数 2
+g.thresh: 范围 [0, 2], 平均值 1.00, 样本数 4
+g.threshold: 范围 [0.003, 0.03], 平均值 0.01, 样本数 6
+g.timer: 范围 [0, 0], 平均值 0.00, 样本数 2
+g.times: 范围 [-1, -1], 平均值 -1.00, 样本数 2
+g.trade_fee_ratio: 范围 [0.00025, 0.00025], 平均值 0.00, 样本数 2
+g.trade_hour: 范围 [10, 14], 平均值 12.00, 样本数 2
+g.trade_minute: 范围 [0, 30], 平均值 15.00, 样本数 2
+g.tradeday: 范围 [12, 300], 平均值 228.00, 样本数 4
+g.tradevaluemax: 范围 [1000, 1000], 平均值 1000.00, 样本数 3
+g.tradevaluemin: 范围 [0.01, 0.01], 平均值 0.01, 样本数 3
+g.trend: 范围 [-1, -1], 平均值 -1.00, 样本数 1
+g.type_num: 范围 [1, 5], 平均值 3.00, 样本数 2
+g.unitprice: 范围 [200, 200], 平均值 200.00, 样本数 2
+g.up_price: 范围 [80, 100], 平均值 85.00, 样本数 4
+g.volume_control: 范围 [2, 2], 平均值 2.00, 样本数 2
+g.volume_period: 范围 [20, 20], 平均值 20.00, 样本数 2
+g.volume_ratio: 范围 [5, 5], 平均值 5.00, 样本数 2
+g.w: 范围 [0.2, 12], 平均值 6.10, 样本数 2
+g.weeks: 范围 [48, 50], 平均值 49.00, 样本数 2
+g.window: 范围 [90, 252], 平均值 164.00, 样本数 3
+g.yb: 范围 [63, 63], 平均值 63.00, 样本数 2
+g.yearMa10: 范围 [0.0, 0.0], 平均值 0.00, 样本数 2
+get_growth_rate.n: 范围 [10, 20], 平均值 16.67, 样本数 6
+get_hl_stock.watch_days: 范围 [1, 1], 平均值 1.00, 样本数 2
+get_hot_industry_stock.count: 范围 [10, 10], 平均值 10.00, 样本数 2
+get_hot_industry_stock.number: 范围 [24, 24], 平均值 24.00, 样本数 2
+get_ma.timeperiod: 范围 [5, 5], 平均值 5.00, 样本数 2
+get_no_hl_stock.watch_days: 范围 [1, 1], 平均值 1.00, 样本数 2
+is_multiple_stocks.days: 范围 [5, 5], 平均值 5.00, 样本数 2
+kalman_filter.damping: 范围 [1, 1], 平均值 1.00, 样本数 2
+linreg.columns: 范围 [3, 3], 平均值 3.00, 样本数 2
+position_auto_switch.pindex: 范围 [0, 0], 平均值 0.00, 样本数 7
+scream_sell.down_range: 范围 [3, 3], 平均值 3.00, 样本数 2
+sorted_by_circulating_market_cap.n_limit_top: 范围 [5, 25], 平均值 10.00, 样本数 4
+stop_loss.lose: 范围 [0.07, 0.07], 平均值 0.07, 样本数 2
+stop_loss.profit: 范围 [0.2, 0.2], 平均值 0.20, 样本数 2

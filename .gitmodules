@@ -1,0 +1,3 @@
+[submodule "daily_stock_analysis"]
+	path = daily_stock_analysis
+	url = https://github.com/roapi-cloud/daily_stock_analysis.git

@@ -1,0 +1,3053 @@
+================================================================================
+策略因子分析报告
+================================================================================
+
+1. 总体统计
+   策略总数: 302
+   唯一因子数: 206
+   因子使用总次数: 1338
+
+2. 因子类别分布
+   估值因子: 629 次
+   其他因子: 124 次
+   技术指标: 161 次
+   技术指标因子: 352 次
+   排序因子: 3 次
+   权重因子: 18 次
+   自定义因子函数: 51 次
+
+3. 各策略因子详情
+--------------------------------------------------------------------------------
+
+策略: 01 7年40倍模拟超过两年年化高回撤低
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  权重因子:
+    - 5日平均成交量
+    - 60日涨幅
+    - 总市值
+    - 最新价格
+    - 流通市值
+
+策略: 01 wywy1995大侠的小市值AI因子选股 5组参数50股
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 01 一颗耀眼的星—【回顾2】小市值成长股策略更新—改
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+  自定义因子函数:
+    - get_single_factor_list
+
+策略: 01 龙回头3.0回测速度优化版
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 02 7年40倍绩优低价超跌缩量小盘 扩容到50只
+因子数量: 7
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 02 ETF动量轮动RSRS择时-魔改3小优化
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 02 连板龙头策略
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 03 5年15倍的收益，年化79.93%，可实盘，拿走不谢！
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+    - indicator.roe
+
+策略: 03 多策略融合-80倍
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.day
+    - valuation.turnover_ratio
+
+策略: 03 截止到21年12月依然有效的小市值适配因子
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 04 红利搬砖，年化29%
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+
+策略: 04 苦咖啡-默默赚钱系列-改
+因子数量: 2
+  技术指标:
+    - MA(VOL,180)
+    - MA(VOL,7)
+
+策略: 04 集合竞价摸奖策略1.0-致敬2022
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.roe
+
+策略: 04 高股息低市盈率高增长的价投策略
+因子数量: 8
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 05 8年10倍回撤小,有滑点,ETF动量简单轮动策略
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 05 价值低波（下）--十年十倍（2020拜年）
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+
+策略: 05 四大搅屎棍策略
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.roa
+    - indicator.roe
+
+策略: 05 用机器学习批量快速生产小盘策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 06 PEG+成长+小市值+RSRS择时
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  自定义因子函数:
+    - get_zscore
+
+策略: 06 国九小市值策略【年化100.5% 回撤25.6%】
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_AUDIT_OPINION
+  技术指标因子:
+    - indicator.net_assets
+
+策略: 06 高股息低杠杆稳定小市值轮动策略
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_XR_XD
+
+策略: 07 为了挣点积分自己实盘的策略分享出来
+因子数量: 1
+  技术指标:
+    - MA(volume,g.lag0)
+
+策略: 07 连板龙头策略
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 08 14个月200%，超短线实盘交易策略！无未来函数
+因子数量: 2
+  技术指标:
+    - MACD(security_list = dx1, check_date = getday(prev_trade_day,-1)
+    - MACD(security_list = dx1, check_date = prev_trade_day, SHORT = 12, LONG = 26, MID = 9, unit = '1d')
+
+策略: 08 ETF动量轮动RSRS择时-魔改3小优化
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 08 因子分析 营业利润TTM
+因子数量: 1
+  自定义因子函数:
+    - get_universe_factor
+
+策略: 08 国九条后中小板微盘小改，年化135.40%
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_AUDIT_OPINION
+
+策略: 08 科技与狠活 纯粹的数据挖掘策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 09 大容量小市值持仓95只，媲美金元顺安元启
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_operating_profit
+
+策略: 09 干积分-量化策略简易框架
+因子数量: 17
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+    - valuation.pe_ratio
+    - valuation.pe_ratio_lyr
+    - valuation.ps_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.inc_operation_profit_year_on_year
+    - indicator.inc_revenue_year_on_year
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.net_profit_margin
+    - indicator.roa
+    - indicator.roe
+  排序因子:
+    - balance.retained_profit
+
+策略: 09 持续跑赢大盘-真蓝筹v2(资金容量千万以上)
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+
+策略: 10 10倍-二板排板战法优化
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 10 10年52倍，年化59%，全新因子方法超稳定
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 10 多因子宽基ETF择时轮动改进版-高收益大资金低回撤
+因子数量: 2
+  自定义因子函数:
+    - get_zscore
+    - get_zscore_slope
+
+策略: 100 全市场选股？7年5倍不择时，回撤30%左右
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - balance.code
+  技术指标因子:
+    - indicator.code
+    - indicator.eps
+    - indicator.ocf_to_operating_profit
+    - indicator.roa
+
+策略: 11 低价小盘简单有效
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 11 低风险中等收益策略
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.inc_return
+    - indicator.ocf_to_revenue
+
+策略: 11 缠论交易策略
+因子数量: 6
+  技术指标:
+    - MA(close_price, timeperiod=fastperiod)
+    - MA(close_price, timeperiod=slowperiod)
+    - MA(close_price: np.array, timeperiod=5)
+    - MA(diff, timeperiod=signalperiod)
+    - MACD(close_price)
+    - MACD(close_price: np.array, fastperiod=12, slowperiod=26, signalperiod=9)
+
+策略: 12 全市场选股？7年5倍不择时，回撤30%左右
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - balance.code
+  技术指标因子:
+    - indicator.code
+    - indicator.eps
+    - indicator.ocf_to_operating_profit
+    - indicator.roa
+
+策略: 12 用子账户模拟多策略分仓
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.eps
+    - indicator.inc_operation_profit_year_on_year
+    - indicator.roa
+
+策略: 12 致敬聚宽： 机器学习多因子，50只持仓，14年37倍
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.inc_revenue_year_on_year
+
+策略: 13 5年15倍的收益，年化79.93%，可实盘策略，拿走不谢！
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+    - indicator.roe
+
+策略: 13 7年40倍模拟超过两年年化高回撤低
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  权重因子:
+    - 5日平均成交量
+    - 60日涨幅
+    - 总市值
+    - 最新价格
+    - 流通市值
+
+策略: 13 【涨停研究三】连板股票收益统计与回测
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 13 不含未来宽基etf轮动8年50倍年化60%
+因子数量: 3
+  技术指标:
+    - MA(index,context.current_dt, timeperiod=20, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(index,context.current_dt, timeperiod=5, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(index,context.current_dt, timeperiod=60, unit = unit, include_now =include_now, fq_ref_date = None)
+
+策略: 14 FOF养老成长基金-v2.0
+因子数量: 6
+  技术指标:
+    - MA(closeArray,60)
+    - MA(rsiArray,nRSI)
+    - MA(rsiArray,nRSIAvg)
+    - MA(trArray,nATR)
+    - RSI(closeArray,nRSI)
+    - RSI(stock)
+
+策略: 14 为实盘做的更新： 分钟级别和盘中止损
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  权重因子:
+    - 5日平均成交量
+    - 60日涨幅
+    - 总市值
+    - 最新价格
+    - 流通市值
+
+策略: 14 四年多翻9倍，年化73%，成长因子评分筛选
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 14 胜率65%之缩量分歧反包战法
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.day
+    - valuation.turnover_ratio
+
+策略: 15 10年52倍，年化59%，全新因子方法超稳定
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 15 2020年 267%年化 13%回撤 上涨趋势策略修改版
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.eps
+  自定义因子函数:
+    - get_stock_score
+
+策略: 15 小市值排除3个bug版，22年至今收益506%回撤11%
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_AUDIT_OPINION
+  技术指标因子:
+    - indicator.net_assets
+
+策略: 15 小市值策略之再优化，年化接近翻倍
+因子数量: 5
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标:
+    - MA(security, check_date=now_date, timeperiod=g.ma_period)
+    - MA(security, check_date=now_date, timeperiod=g.sell_ma_period)
+    - MA(stock, check_date=now_date, timeperiod=g.ma_period)
+
+策略: 15 高股息低杠杆小市值轮动策略
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_XR_XD
+
+策略: 16 ETF轮动策略升级-多类别-低回撤
+因子数量: 1
+  技术指标:
+    - MA(price_data.close.values, g.ma_period)
+
+策略: 16 动量ETF轮动RSRS择时-升级
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 16 大市值价值投资，从2005年至今超额稳定
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+
+策略: 17 5年多因子超额收益1055%，K线风险过滤，无未来函数
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+  自定义因子函数:
+    - get_single_factor_list
+
+策略: 17 8年13倍的ETF动量轮动策略,有滑点,无未来函数,回撤小
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 17 基金跟随策略，19年年化60%
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.FUND_PORTFOLIO_STOCK
+  技术指标因子:
+    - indicator.roe
+
+策略: 17 科技与狠活
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 18 6年17倍的etf+分级b的轮动趋势策略跟随感悟
+因子数量: 1
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 18 动量ETF轮动-RSRS择时-卡尔曼滤波
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 18 国庆节献礼：实例说明白马股攻防转换策略
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.roa
+
+策略: 18 微盘股400多角度深入研究
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+
+策略: 19 机器学习线性回归小市值
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 19 高股息低市盈率稳健增长的价投策略
+因子数量: 8
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 20 小市值高频交易法有赚就好 2年3.86%低回撤
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标:
+    - MA(his.values.flatten()
+
+策略: 21 以“网红”ETF轮动为例
+因子数量: 1
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 21 利用宏观经济数据的中长线策略深度研究
+因子数量: 1
+  其他因子:
+    - macro.MAC_MANUFACTURING_PMI
+
+策略: 21 北向资金股票轮动-优质策略可直接实盘
+因子数量: 2
+  其他因子:
+    - finance.STK_ML_QUOTA
+    - table.day
+
+策略: 21 行业ETF轮动+择时，15年至今年化收益35%，回撤16%
+因子数量: 2
+  技术指标:
+    - MA(ind,context.current_dt, timeperiod=5, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(ind,context.previous_date, timeperiod=5, unit=unit, fq_ref_date = None)
+
+策略: 22 “开弓”ETF轮动模型——改
+因子数量: 1
+  技术指标:
+    - MA(close, 12)
+
+策略: 22 截止到21年12月依然有效的小市值适配因子
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 22 菜场大妈选股法
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_XR_XD
+
+策略: 22 菜场大妈高质低价法策略
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 23 wywy1995大神机器学习策略年化提升版
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 23 低价小盘简单有效
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 23 大盘择时，逻辑简单
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  其他因子:
+    - g.beta
+  技术指标:
+    - MACD(close_list, 
+                                 fastperiod=12, 
+                                 slowperiod=26, 
+                                 signalperiod=9)
+  技术指标因子:
+    - indicator.roa
+
+策略: 24 低AH溢价选股
+因子数量: 1
+  其他因子:
+    - finance.STK_AH_PRICE_COMP
+
+策略: 24 多因子线性回归组合策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 24 宽基ETF动量轮动钝化RSRS择时-回撤小
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 24 现在便宜的300就是最好的，收益惊人
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 25 ROE-PB模型的优化
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.pb_ratio
+  其他因子:
+    - balance.code
+  技术指标因子:
+    - indicator.code
+    - indicator.roe
+
+策略: 25 冷饭热吃之三，14年至今年华99.99%
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.eps
+
+策略: 25 基本不耍六毛的ETF轮动策略
+因子数量: 1
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 25 年初至今4倍，极致的Day Trading，56.8%胜率
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标:
+    - KDJ(stock, check_date=context.current_dt,
+    #              unit='1d', N=9, M1=3, M2=3)
+    - MACD(stock, check_date=context.current_dt,
+    #                      SHORT=12, LONG=29, MID=7, unit='1d')
+  自定义因子函数:
+    - get_zscore
+
+策略: 26 【深度解析 六】高股息率-低PEG-低股价-市值序列模型
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+
+策略: 26 稳定高回报周期股策略2
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_COMPANY_INFO
+    - finance.STK_LIST
+    - income.code
+    - income.statDate
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 26 近几年一直有效的股票BOLL择时策略
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 26 这个可入得了你们法眼
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 27 中证500指增+CTA，胜率52%盈亏比1.9。不输顶尖私募
+因子数量: 17
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - balance.code
+  技术指标:
+    - ATR(ind,context.current_dt, g.ATRdays)
+    - ATR(ind,context.current_dt, g.longdays)
+    - ATR(ind,context.current_dt, g.shortdays)
+    - ATR(security_list, check_date, timeperiod=14)
+    - MA(ind,context.current_dt, timeperiod=g.long_days, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(ind,context.current_dt, timeperiod=g.short_days, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(ind,context.previous_date, timeperiod=g.long_days, unit=unit, fq_ref_date = None)
+    - MA(ind,context.previous_date, timeperiod=g.short_days, unit=unit, fq_ref_date = None)
+  技术指标因子:
+    - indicator.code
+    - indicator.eps
+    - indicator.ocf_to_operating_profit
+    - indicator.roa
+
+策略: 27 基于RSRS的趋势交易与网格交易相结合的尝试
+因子数量: 3
+  技术指标:
+    - ATR(context,security)
+    - ATR(context,stock)
+    - ATR(high,low,close, g.ATR_period)
+
+策略: 27 根据动量模型切换大小盘板块选股策略
+因子数量: 11
+  估值因子:
+    - valuation.circulating_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  其他因子:
+    - balance.total_current_assets
+  技术指标因子:
+    - indicator.code
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_operation_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_operating_profit
+
+策略: 28 XGBoost模型多因子策略分享
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.turnover_ratio
+  技术指标:
+    - MACD(stock, date, SHORT = 10, LONG = 30, MID = 15)
+    - RSI(stock, date, N1=20)
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.code
+    - indicator.roe
+
+策略: 28 正黄旗大妈策略V3.0修改版
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 28 韶华研究之十九，一致性用在微盘控制回撤
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.eps
+
+策略: 29 F_Score 选股，年化80%+
+因子数量: 2
+  其他因子:
+    - finance.STK_CAPITAL_CHANGE
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 29 北上资金（北向资金港资外资）因子分析与策略分享
+因子数量: 1
+  其他因子:
+    - finance.STK_HK_HOLD_INFO
+
+策略: 29 高增长业绩股池小市值成长型策略
+因子数量: 5
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - income.code
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 30 【超跌反弹v1.0】3年2.3倍的超跌反弹小牛股
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.roe
+
+策略: 30 价值成长轮动策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  自定义因子函数:
+    - get_zscore
+
+策略: 30 错杀反弹，掌握人性规律，开启投资新纪元
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 31 ETF核心资产轮动动量因子加RSRS择时每日策略
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 31 RSRS择时+货币基金--6年8倍行业周期股策略
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - balance.code
+    - finance.STK_COMPANY_INFO
+    - finance.STK_LIST
+    - income.statDate
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 31 《趋势永存》持续16年跑赢大盘的真正靠谱策略
+因子数量: 2
+  技术指标:
+    - ATR(data.high, data.low, data.close, timeperiod=g.ATR_day)
+  自定义因子函数:
+    - get_score
+
+策略: 31 蛇皮走位小市值策略V1.0
+因子数量: 6
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.eps
+    - indicator.roa
+    - indicator.roe
+
+策略: 31 跟着基金报团！！！174%  回撤  7.33%
+因子数量: 1
+  其他因子:
+    - finance.FUND_PORTFOLIO_STOCK
+
+策略: 32 北向Boll带_ETF组合宝付费策略
+因子数量: 2
+  其他因子:
+    - finance.STK_ML_QUOTA
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 32 北向资金A股择时策略（5年16倍）
+因子数量: 1
+  其他因子:
+    - table.day
+
+策略: 32 追高概率涨停策略, 2022年化350%
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+
+策略: 32 非线性关系市值（不是小市值）4只绩优股组合
+因子数量: 12
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_CAPITAL_CHANGE
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.code
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.roe
+  自定义因子函数:
+    - ffscore_stock
+
+策略: 33 alpha191短周期价量特征因子选股，年化46.77
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 33 最适合上班族的策略-神奇公式策略
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+
+策略: 34 【回撤二波2.0】透过一次过拟合的机器学习摸底策略的收益上限
+因子数量: 3
+  技术指标:
+    - MACD(stock, end_date, SHORT=12, LONG=26, MID=9)
+    - MACD(stock, one_day_before_pre, SHORT=12, LONG=26, MID=9)
+    - MACD(stock, two_day_before_pre, SHORT=12, LONG=26, MID=9)
+
+策略: 34 十年回测 年化103.32% 最大回撤23.89%
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 34 趋势交易5.0 无择时-2年5倍不是梦
+因子数量: 2
+  技术指标:
+    - MA(VOL,180)
+    - MA(VOL,7)
+
+策略: 35 【菜场大妈】股息率小市值策略,10年206倍,5年10.8倍
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 35 小市值市场轮动版 5年12倍
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 35 精选价值策略
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pe_ratio
+  其他因子:
+    - balance.total_current_assets
+    - cash_flow.code
+  技术指标因子:
+    - indicator.code
+    - indicator.eps
+    - indicator.inc_net_profit_to_shareholders_year_on_year
+    - indicator.inc_revenue_year_on_year
+    - indicator.roe
+
+策略: 35 自适应量化终极算法2.0 （全新升级）
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 35 超稳+翻倍，贝塔值只有0.048的期指策略
+因子数量: 3
+  其他因子:
+    - opt.OPT_CONTRACT_INFO
+  技术指标:
+    - MACD(close, 12, 26, 9)
+    - MACD(close, fastperiod, slowperiod, signalperiod)
+
+策略: 36 【菜场大妈】股息率小市值策略,10年206倍,5年10.8倍
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 36 快过年了。不想呆在小市值的，可以拿这个策略躲一躲
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_revenue
+    - indicator.roe
+
+策略: 36 最简强者恒强策略
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.turnover_ratio
+
+策略: 37 PEG+EBIT对小市值因子的优化
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 37 三阳三阴战法
+因子数量: 2
+  技术指标:
+    - MACD(security,check_date=context.previous_date, SHORT = 2, LONG = 5, MID = 9)
+    - MACD(stock_two,check_date=context.current_dt, SHORT = 2, LONG = 5, MID = 9)
+
+策略: 37 微盘股扩散指数双均线择时
+因子数量: 5
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标:
+    - MA(df['ks_index'],28)
+    - MA(df['ks_index'],6)
+  技术指标因子:
+    - indicator.eps
+
+策略: 37 择时模块加风控的实际效果
+因子数量: 6
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标:
+    - MA(base['close'],2)
+    - MA(base['close'],4)
+    - MA(base['dif'],4)
+  技术指标因子:
+    - indicator.eps
+
+策略: 38 ETF动量轮动RSRS择时-魔改3-北向资金择时-再优化
+因子数量: 2
+  其他因子:
+    - finance.STK_ML_QUOTA
+  自定义因子函数:
+    - get_zscore
+
+策略: 38 ETF动量轮动RSRS择时-魔改4-低通滤波
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 39 多因子策略（多元线性回归）
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_revenue_year_on_year
+    - indicator.roe
+
+策略: 39 大资金强基本面优质股组合策略 收益1217% 无小市值因子
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_to_shareholders_year_on_year
+    - indicator.inc_net_profit_year_on_year
+    - indicator.net_profit_margin
+    - indicator.roe
+  排序因子:
+    - cash_flow.net_operate_cash_flow
+
+策略: 39 干积分-大小盘反复横跳V2.0
+因子数量: 11
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pcf_ratio
+    - valuation.pe_ratio_lyr
+    - valuation.ps_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.inc_revenue_year_on_year
+    - indicator.net_profit_margin
+    - indicator.roa
+    - indicator.roe
+
+策略: 39 绩优小市值量化君也-模拟交易年化333.75%
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 40 RSI学习贴
+因子数量: 1
+  技术指标:
+    - RSI(prices['close'].values, timeperiod=6)
+
+策略: 40 穿越牛熊 稳健高收益 年化37
+因子数量: 1
+  估值因子:
+    - valuation.code
+
+策略: 40 高股息策略
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_operation_profit_year_on_year
+
+策略: 41 SVR机器学习上证综指择时中小板财务选股策略
+因子数量: 9
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_operating_profit
+  自定义因子函数:
+    - get_zscore
+    - get_zscore_slope
+
+策略: 41 再改进可实盘-默默赚钱系列-风险控制-增强版本-V5.0
+因子数量: 2
+  技术指标:
+    - MA(VOL,180)
+    - MA(VOL,7)
+
+策略: 41 均线黏合，突破前三十个交易日最高点选股法
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+
+策略: 42 国九条：三年分红5千万以下且占净利润30%以下将被ST
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_operation_profit_annual
+    - indicator.inc_operation_profit_year_on_year
+    - indicator.inc_total_revenue_annual
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 42 大盘ETF动量轮动 RSRS择时策略-无纳指（5年半861%）
+因子数量: 2
+  自定义因子函数:
+    - get_zscore
+    - get_zscore_slope
+
+策略: 42 市值，研发支出，roe，三因子，跑赢大盘
+因子数量: 2
+  估值因子:
+    - valuation.code
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 43 小市值再优化【年化98% 胜率69% 回撤27%】无未来函数
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 44 兼顾业绩增长和PEG指标的5因子股票策略
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - income.code
+  技术指标因子:
+    - indicator.inc_net_profit_to_shareholders_year_on_year
+  权重因子:
+    - 或者降序-大到小（false）
+    - 选择升序-小到大(默认true)
+  自定义因子函数:
+    - get_zscore
+
+策略: 44 国九条 年化130.74% 回撤11% 众神Debug版
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.day
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_AUDIT_OPINION
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.roa
+    - indicator.roe
+
+策略: 44 集合竞价摸奖策略1.0-致敬2022
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.roe
+
+策略: 45 价值投资+期货对冲V4.0,无惧市场大跌
+因子数量: 21
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标:
+    - ATR(ind,context.current_dt, g.ATRdays)
+    - ATR(ind,context.current_dt, g.longdays)
+    - ATR(ind,context.current_dt, g.shortdays)
+    - ATR(security_list, check_date, timeperiod=14)
+    - MA(ind,context.current_dt, timeperiod=g.long_days, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(ind,context.current_dt, timeperiod=g.short_days, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(ind,context.previous_date, timeperiod=g.long_days, unit=unit, fq_ref_date = None)
+    - MA(ind,context.previous_date, timeperiod=g.short_days, unit=unit, fq_ref_date = None)
+  技术指标因子:
+    - indicator.gross_profit_margin
+    - indicator.inc_net_profit_to_shareholders_year_on_year
+    - indicator.inc_revenue_year_on_year
+    - indicator.pcf_ratio
+    - indicator.roa
+    - indicator.roe
+
+策略: 45 此消彼长
+因子数量: 11
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pcf_ratio
+    - valuation.pe_ratio_lyr
+    - valuation.ps_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.inc_revenue_year_on_year
+    - indicator.net_profit_margin
+    - indicator.roe
+
+策略: 46 【深度解析 四】聚宽三因子基本面周线模型策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 46 大盘股也能穿越牛熊市
+因子数量: 6
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pe_ratio
+  技术指标:
+    - ATR(df['high'], df['low'], df['close'], timeperiod=period)
+    - MA(close_list, timeperiod=period)
+    - RSI(np.array(close_list)
+
+策略: 46 敢于直接实盘的—八仙过海V2
+因子数量: 3
+  技术指标:
+    - KDJ(stock, period, isIncludNow = True)
+    - MACD(close, fastperiod = 12, slowperiod = 26, signalperiod = 9)
+    - MACD(stock, period, isIncludNow = True)
+
+策略: 46 韶华研究之十二--还算可以的竞价研究
+因子数量: 7
+  技术指标:
+    - MA(stockcode, check_date=back10_date, timeperiod=10)
+    - MA(stockcode, check_date=lastd_date, timeperiod=10)
+    - MA(stocklist, check_date=back10_date, timeperiod=20)
+    - MA(stocklist, check_date=back10_date, timeperiod=30)
+    - MA(stocklist, check_date=lastd_date, timeperiod=20)
+    - MA(stocklist, check_date=lastd_date, timeperiod=30)
+  自定义因子函数:
+    - get_score_filter
+
+策略: 46 高增股池小市值轮动
+因子数量: 11
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pcf_ratio
+    - valuation.pe_ratio_lyr
+    - valuation.ps_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.inc_revenue_year_on_year
+    - indicator.net_profit_margin
+    - indicator.roe
+
+策略: 47 别人恐惧我贪婪——重视大盘择时
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 47 多策略整合大E小十年百倍（年化64%回撤28%）
+因子数量: 10
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标:
+    - RSI(close_30, period=20)
+    - RSI(self, prices, period=14)
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.roa
+    - indicator.roe
+
+策略: 47 年化46%的北向资金+20日涨幅的创业板策略
+因子数量: 1
+  其他因子:
+    - finance.STK_ML_QUOTA
+
+策略: 47 高收益低回撤的小市值策略
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标:
+    - MA(close_list, timeperiod=period)
+    - RSI(np.array(close)
+
+策略: 48 一种宏观数据的中长线策略，年化15%，最大回撤9%
+因子数量: 1
+  其他因子:
+    - macro.MAC_MANUFACTURING_PMI
+
+策略: 48 低代码迁移成本的实盘方案：jqtrade+one quant
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 48 动量ETF轮动-RSRS择时-卡尔曼滤波
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 48 投资回报率ROIC中等市值
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_revenue_year_on_year
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.roa
+  排序因子:
+    - balance.retained_profit
+
+策略: 49 【漂亮50 2.0止损版本】为了降低回撤，加入择时止损模块
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.code
+    - indicator.roe
+
+策略: 49 修改成一创版本
+因子数量: 8
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.turnover_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_net_profit_year_on_year
+
+策略: 49 根据北上资金买股票的最佳持股时间探讨
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  其他因子:
+    - finance.STK_EL_TOP_ACTIVATE
+
+策略: 50 ETF动量轮动RSRS择时-V2.1
+因子数量: 2
+  自定义因子函数:
+    - get_zscore
+    - get_zscore_slope
+
+策略: 50 【7日趋势】短线交易策略
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.turnover_ratio
+  技术指标:
+    - MA(close, timeperiod)
+  自定义因子函数:
+    - get_stocks_score
+
+策略: 50 分享一种K线小碎步后突破的分钟级打法
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 50 基本面策略，一种新思路，超额376%
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+  自定义因子函数:
+    - get_single_factor_list
+
+策略: 50 昨日炸板股策略
+因子数量: 1
+  技术指标:
+    - MACD(array, fastperiod=12, slowperiod=26, signalperiod=9)
+
+策略: 51 “四大搅屎棍策略”学习笔记-有魔改
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+    - indicator.roe
+
+策略: 51 北上资金持股比选股策略（北向港资外资）
+因子数量: 7
+  估值因子:
+    - valuation.capitalization
+    - valuation.circulating_cap
+    - valuation.code
+    - valuation.day
+    - valuation.drop
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_HK_HOLD_INFO
+
+策略: 51 缠论交易策略
+因子数量: 6
+  技术指标:
+    - MA(close_price, timeperiod=fastperiod)
+    - MA(close_price, timeperiod=slowperiod)
+    - MA(close_price: np.array, timeperiod=5)
+    - MA(diff, timeperiod=signalperiod)
+    - MACD(close_price)
+    - MACD(close_price: np.array, fastperiod=12, slowperiod=26, signalperiod=9)
+
+策略: 51 行业反转效应（年化32%，回撤8%）
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.roe
+
+策略: 52 机器学习滚动训练价投策略
+因子数量: 2
+  估值因子:
+    - valuation.code
+  技术指标因子:
+    - indicator.roa
+
+策略: 52 根据北上资金买A股策略Python3版（北向港资外资）
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  其他因子:
+    - finance.STK_EL_TOP_ACTIVATE
+
+策略: 52 龙头战法之单阳不破
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 53 TSmall-100, 微盘三正
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.inc_return
+    - indicator.ocf_to_revenue
+
+策略: 53 基于大盘PE标准差偏离度的聪明基金定投策略
+因子数量: 1
+  其他因子:
+    - finance.STK_EXCHANGE_TRADE_INFO
+
+策略: 53 微盘股400每日轮动再平衡
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 53 筹码选股
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_HOLDER_NUM
+    - finance.STK_SHAREHOLDER_FLOATING_TOP10
+  技术指标因子:
+    - indicator.inc_revenue_annual
+    - indicator.roa
+
+策略: 53 超跌网格交易大法V1.2：稳健跑赢大盘-年化13%回撤7%
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_CAPITAL_CHANGE
+    - finance.STK_LIST
+    - finance.STK_XR_XD
+  技术指标:
+    - KDJ(stock,check_date=cur_date,N =9, M1=3, M2=3)
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 54 sales_growth今年最优版
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.turnover_ratio
+  技术指标因子:
+    - indicator.eps
+
+策略: 54 价值投资策略-大盘择时
+因子数量: 10
+  估值因子:
+    - valuation.circulating_cap
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pe_ratio
+  其他因子:
+    - cash_flow.code
+  技术指标:
+    - MA(close_list, timeperiod=period)
+    - RSI(np.array(close)
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_revenue_year_on_year
+    - indicator.roe
+
+策略: 54 养花大哥 追市场热点策略
+因子数量: 1
+  自定义因子函数:
+    - stock_sector_score
+
+策略: 54 发一个学习策略5年70倍，思路可以学习
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标:
+    - MA(his.values.flatten()
+
+策略: 55 ETF轮动策略-入门1.0
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 55 价值投资改进版-6年9.5倍
+因子数量: 8
+  估值因子:
+    - valuation.circulating_cap
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pe_ratio
+  其他因子:
+    - cash_flow.code
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_revenue_year_on_year
+    - indicator.roe
+
+策略: 55 大市值价值投资加自定义邮箱推送 Ahfu
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+
+策略: 55 怎么让龟速变奔跑？以“首版突破一进二”为例
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  其他因子:
+    - 1.2
+
+策略: 56 一创PEG+EBIT+turnover_volatility
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pe_ratio
+    - valuation.turnover_ratio
+
+策略: 56 分享券商金股组合增强
+因子数量: 2
+  自定义因子函数:
+    - get_momentum_factor
+    - get_net_promoter_score
+
+策略: 56 双人工智能AI配合，样本外夏普3.9
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 56 基于趋势、拥挤、景气的行业轮动，及行业强势个股的选择
+因子数量: 5
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  其他因子:
+    - finance.STK_HK_HOLD_INFO
+    - finance.SW1_DAILY_PRICE
+  技术指标因子:
+    - indicator.eps
+
+策略: 58 ETF动量轮动RSRS与北上择时-股债平衡-盘中止损
+因子数量: 2
+  其他因子:
+    - finance.STK_ML_QUOTA
+  自定义因子函数:
+    - get_zscore
+
+策略: 58 韶华研究之四-菲阿里四阶在T+1的短线策略应用
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标:
+    - ATR(stockcode, check_date=lastd_date, timeperiod=5)
+
+策略: 59 北向RSRS与布林带择时
+因子数量: 2
+  其他因子:
+    - table.day
+  自定义因子函数:
+    - calc_zscore_Rdev
+
+策略: 59 基于Gyro^.^大神的小市值策略的因子匹配研究
+因子数量: 10
+  估值因子:
+    - valuation.capitalization
+    - valuation.circulating_cap
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.turnover_ratio
+  技术指标因子:
+    - indicator.roa
+    - indicator.roe
+
+策略: 60 ETF动量轮动RSRS择时-v2
+因子数量: 2
+  自定义因子函数:
+    - get_rsrs_score_mean
+    - get_zscore
+
+策略: 60 【深度解析 二】资产负债与ROA模型 5股
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - balance.code
+  技术指标因子:
+    - indicator.code
+    - indicator.roa
+
+策略: 60 可能是最接近实盘的“基本面三角”
+因子数量: 5
+  技术指标:
+    - MA(s, check_date=now_date, timeperiod=g.ma_period)
+  技术指标因子:
+    - indicator.code
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_revenue
+    - indicator.roe
+
+策略: 60 高股息V1.0（小程序公开股池）
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_XR_XD
+
+策略: 61 抄底神器2.0，低回撤，高成功率
+因子数量: 3
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+
+策略: 62 北向资金交易能力一定强吗
+因子数量: 1
+  自定义因子函数:
+    - get_north_factor
+
+策略: 62 研究一种K线小碎步后突破的分钟级策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 63 3年复合200+%收益+超低回撤11%以内，无惧大跌
+因子数量: 3
+  技术指标:
+    - MA(np.array(close)
+    - MA(np.array(volume)
+    - MA(volume, g.lag0)
+
+策略: 63 5年12倍-小市值
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 63 怎么让龟速变奔跑？以“首版突破一进二”为例
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  其他因子:
+    - 1.2
+
+策略: 63 生猪期货CTA策略
+因子数量: 7
+  技术指标:
+    - MA(closed,timeperiod = sma_length)
+    - MA(longPeriod ,closeArray,[])
+    - MA(period, closeArray, emaArray=[])
+    - MA(shortPeriod ,closeArray,[])
+    - MA(signalPeriod,diff,[])
+    - MACD(close,shortPeriod = 12 ,longPeriod = 26 ,signalPeriod =9)
+    - MACD(closeArray,shortPeriod = 12 ,longPeriod = 26 ,signalPeriod =9)
+
+策略: 64 ETF轮动策略升级-增加盘中止损
+因子数量: 1
+  技术指标:
+    - MA(price_data.close.values, g.ma_period)
+
+策略: 64 基于XGBoost_6m滚动选股全A小市值开板止盈策略
+因子数量: 16
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+    - valuation.turnover_ratio
+  技术指标:
+    - MACD(stock, date, SHORT = 10, LONG = 30, MID = 15)
+    - RSI(stock, date, N1=20)
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.code
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.roa
+    - indicator.roe
+
+策略: 64 大小外择时小市值3.0
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.net_assets
+    - indicator.roa
+    - indicator.roe
+
+策略: 65 低开买入小市值策略高频交易法3.0 总结
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 65 搭建量化交易模型从零开始——择时，选股，仓位管理和因子分析
+因子数量: 12
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.turnover_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_annual
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_annual
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_operating_profit
+
+策略: 65 韶华研究之七 不可多得的基本面三角
+因子数量: 4
+  技术指标因子:
+    - indicator.code
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_revenue
+    - indicator.roe
+
+策略: 66 ETF动量轮动MA乖离择时
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 66 PB-POE+双均线--加入jq以来第一个成功的交易策略
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.roe
+
+策略: 66 SVR机器学习上证综指择时中小板财务选股策略
+因子数量: 9
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_operating_profit
+  自定义因子函数:
+    - get_zscore
+    - get_zscore_slope
+
+策略: 67 大市值价投高股息爱国者策略（爱我中华）
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+
+策略: 68 胜率78%，6年36倍，今年行情依然50%年化
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 68 说说对ETF轮动策略的看法
+因子数量: 1
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 70 上涨股策略2020年收益123%
+因子数量: 2
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_net_profit_year_on_year
+
+策略: 70 动态保形回归小市值策略改进
+因子数量: 17
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+    - valuation.turnover_ratio
+  其他因子:
+    - finance.STK_AUDIT_OPINION
+    - finance.STK_BALANCE_SHEET
+    - finance.STK_XR_XD
+  技术指标:
+    - KDJ(dfindex,today)
+    - MA(dfindex, today, N1 = 10, unit = '1d', include_now = True)
+    - MA(dfindex, today, timeperiod=10, unit = '1d', include_now = True)
+  技术指标因子:
+    - indicator.gross_profit_margin
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.roa
+
+策略: 70 超稳的股息率+均线选股策略
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+    - income.statDate
+
+策略: 70 （股票交易模板）小市值-EPS-成长因子选股
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 71 回踩均线搏反弹，21年来70%.
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.turnover_ratio
+  技术指标:
+    - MA(close, timeperiod)
+  自定义因子函数:
+    - get_stocks_score
+
+策略: 71 多因子模板分位法策略，年化65%
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 71 期货日内策略三价均线结合ATR指标
+因子数量: 3
+  技术指标:
+    - MA(average,sma_length)
+    - MA(data['tr'],atr_length)
+    - RSI(close, timeperiod=timePeriod)
+
+策略: 71 （乱改一版）股票加“钱粮”ETF组合
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 72 【回撤二波2.0】透过一次过拟合的机器学习摸底策略的收益上限
+因子数量: 3
+  技术指标:
+    - MACD(stock, end_date, SHORT=12, LONG=26, MID=9)
+    - MACD(stock, one_day_before_pre, SHORT=12, LONG=26, MID=9)
+    - MACD(stock, two_day_before_pre, SHORT=12, LONG=26, MID=9)
+
+策略: 73 优化了一下宽基etf追涨的策略，值得深入研究
+因子数量: 3
+  技术指标:
+    - MA(index,context.current_dt, timeperiod=20, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(index,context.current_dt, timeperiod=5, unit = unit, include_now =include_now, fq_ref_date = None)
+    - MA(index,context.current_dt, timeperiod=60, unit = unit, include_now =include_now, fq_ref_date = None)
+
+策略: 73 基于期权PCR与标的波动率价差的股指期货套利
+因子数量: 1
+  其他因子:
+    - opt.OPT_CONTRACT_INFO
+
+策略: 73 实现净利润跳空策略
+因子数量: 2
+  估值因子:
+    - valuation.code
+  技术指标因子:
+    - indicator.inc_net_profit_annual
+
+策略: 73 微盘400每日再平衡
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 73 稳健趋势策略回测小，无未来函数
+因子数量: 9
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - balance.code
+  技术指标因子:
+    - indicator.code
+    - indicator.eps
+    - indicator.ocf_to_operating_profit
+    - indicator.roa
+
+策略: 74 MACD多周期共振，精准打击！
+因子数量: 3
+  估值因子:
+    - valuation.code
+  技术指标:
+    - MACD(close, 12, 26, 9)
+    - MACD(close, fastperiod, slowperiod, signalperiod)
+
+策略: 74 【动量应用V1】12年120倍，根据研报思路调整
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.eps
+
+策略: 74 主观辅助_形态识别_单边上涨策略优化v3
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 75 ETF轮动策略-入门2.0
+因子数量: 2
+  其他因子:
+    - finance.STK_ML_QUOTA
+  自定义因子函数:
+    - get_zscore
+
+策略: 75 勾股神器2，代码40行，年化一百点。
+因子数量: 2
+  其他因子:
+    - table.day
+  技术指标:
+    - RSI(numpy.array(a)
+
+策略: 75 大市值价值投资优化一波
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roa
+
+策略: 76 小市值止损策略【年化104.11% 最大回撤30.65%】
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 77 研报三因子II-新规高分红小市值-年化60回撤19
+因子数量: 6
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.eps
+
+策略: 77 超强单因子策略（EBITEV）
+因子数量: 1
+  其他因子:
+    - finance.STK_LIST
+
+策略: 78 ffscore选股加rsrs择时
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_CAPITAL_CHANGE
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.code
+    - indicator.roe
+  自定义因子函数:
+    - get_zscore
+
+策略: 78 国盛多因子系列选股体系和基于Lasso的收益预测模型策略（9大类共59个因子）
+因子数量: 1
+  自定义因子函数:
+    - get_comb_factor
+
+策略: 79 EPS+MS因子的大盘蓝筹策略
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  自定义因子函数:
+    - get_zscore
+
+策略: 79 【多因子选股模型框架】(单因子各项指标评分细则)
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+    - valuation.turnover_ratio
+  技术指标因子:
+    - indicator.gross_profit_margin
+    - indicator.roa
+
+策略: 79 南澳 SVR选股的小市值策略
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+    - valuation.turnover_ratio
+  其他因子:
+    - finance.STK_LIST
+  技术指标:
+    - MA(dataset.code,  yesterday)
+  技术指标因子:
+    - indicator.roa
+
+策略: 79 南澳推荐配套的随机森林选股的小市值策略
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+    - valuation.turnover_ratio
+  其他因子:
+    - finance.STK_LIST
+  技术指标:
+    - MA(dataset.code,  yesterday)
+  技术指标因子:
+    - indicator.roa
+
+策略: 79 国九条-新的红利因子，修正「审计意见」函数
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.day
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_AUDIT_OPINION
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.net_assets
+    - indicator.roa
+    - indicator.roe
+
+策略: 79 实盘一周50%的妖股探测器
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标:
+    - KDJ(stock, check_date=context.current_dt, unit='1d', N=9, M1=3, M2=3)
+    - MACD(stock, check_date = context.current_dt, SHORT = 12, LONG = 29, MID = 7, unit='1d')
+  自定义因子函数:
+    - get_zscore
+
+策略: 80 【深度解析 一】经典小市值深度研究模型
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+策略: 80 公募基金抱团
+因子数量: 3
+  其他因子:
+    - finance.FUND_MAIN_INFO
+    - finance.FUND_NET_VALUE
+    - finance.FUND_PORTFOLIO_STOCK
+
+策略: 80 基本面01加RSI择时
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+  技术指标:
+    - RSI(price,timeperiod=period)
+  技术指标因子:
+    - indicator.gross_profit_margin
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 80 短线策略-2022年两个半月收益45%-无未来函数
+因子数量: 1
+  技术指标:
+    - MACD(security_list = stock_pool, check_date = cur_date, SHORT = 12, LONG = 26, MID = 9)
+
+策略: 80 过滤两个因子，12年15倍的roa选股500指数增强
+因子数量: 4
+  估值因子:
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.inc_revenue_year_on_year
+    - indicator.roa
+
+策略: 81 低PB小市值低换手策略总结
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.turnover_ratio
+
+策略: 81 无杠杆，稳定盈利的etf轮动
+因子数量: 1
+  技术指标:
+    - MA(volume,g.lag0)
+
+策略: 82 低频，带基本面优化，带风控的，实盘模拟的小盘股策略
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+  技术指标因子:
+    - indicator.inc_net_profit_to_shareholders_annual
+    - indicator.inc_net_profit_to_shareholders_year_on_year
+    - indicator.inc_revenue_annual
+    - indicator.inc_revenue_year_on_year
+
+策略: 82 回报社区——基于Gyro老师策略的思考
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+    - valuation.pe_ratio
+
+策略: 82 无需先验知识，动态选择的etf轮动策略，更具鲁棒性
+因子数量: 1
+  技术指标:
+    - MA(volume,g.lag0)
+
+策略: 83 大小外择时小市值
+因子数量: 18
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pcf_ratio
+    - valuation.pe_ratio
+    - valuation.pe_ratio_lyr
+    - valuation.ps_ratio
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_operation_profit_year_on_year
+    - indicator.inc_revenue_year_on_year
+    - indicator.net_assets
+    - indicator.net_profit_margin
+    - indicator.roa
+    - indicator.roe
+
+策略: 84 多大规模的基金收益最好？偏股基金规模研究
+因子数量: 2
+  其他因子:
+    - finance.FUND_MAIN_INFO
+    - finance.FUND_PORTFOLIO
+
+策略: 84 正黄旗大妈选股改进-加入涨停卖出后的买入，提高资金利用率
+因子数量: 7
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.roe
+
+策略: 84 韶华研究之一，布林突破+均线金叉，四年五倍
+因子数量: 3
+  其他因子:
+    - finance.STK_SHAREHOLDER_FLOATING_TOP10
+  技术指标:
+    - MACD(stockcode,check_date=today_date, SHORT = 12, LONG = 26, MID = 9)
+    - MACD(stockcode,check_date=yeday_date, SHORT = 12, LONG = 26, MID = 9)
+
+策略: 85 价值策略重开，再次向Jqz1226致敬
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_COMPANY_INFO
+    - finance.STK_LIST
+    - income.code
+    - income.statDate
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 85 稳健型ETF策略
+因子数量: 1
+  技术指标:
+    - MACD(stock,check_date=check_date, SHORT = 12, LONG = 26, MID = 9,unit = '1M',include_now=False)
+
+策略: 85 致敬市场(1)，探讨指数化策略投资
+因子数量: 3
+  技术指标因子:
+    - indicator.code
+    - indicator.eps
+    - indicator.pubDate
+
+策略: 86 北上詹姆斯
+因子数量: 1
+  其他因子:
+    - table.day
+
+策略: 86 最新解密--追涨龙头打板策略
+因子数量: 4
+  技术指标:
+    - MA(stock,context.previous_date,10,'1d')
+    - MA(stock,context.previous_date,20,'1d')
+    - MA(stock,context.previous_date,5,'1d')
+    - MA(stock,context.previous_date,60,'1d')
+
+策略: 86 预判st并过滤避雷代码 740（50只）
+因子数量: 7
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+  其他因子:
+    - finance.STK_FIN_FORCAST
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 87 【基本面三角3.0】看过之前策略的就略过吧
+因子数量: 6
+  技术指标:
+    - MACD(stockcode,date,SHORT=12,LONG=26,MID=9)
+    - RSI(prices['close'].values, timeperiod=6)
+  技术指标因子:
+    - indicator.code
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.ocf_to_revenue
+    - indicator.roe
+
+策略: 87 北上净买入策略
+因子数量: 1
+  其他因子:
+    - finance.STK_EL_TOP_ACTIVATE
+
+策略: 87 山寨每月轮动调仓的红利策略
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_return
+
+策略: 87 山寨红利
+因子数量: 5
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+  其他因子:
+    - finance.STK_XR_XD
+  技术指标因子:
+    - indicator.inc_return
+
+策略: 87 穿越牛熊基业长青的价值精选策略
+因子数量: 8
+  估值因子:
+    - valuation.circulating_cap
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.pe_ratio
+  其他因子:
+    - cash_flow.code
+  技术指标因子:
+    - indicator.eps
+    - indicator.inc_revenue_year_on_year
+    - indicator.roe
+
+策略: 88 WY大神的“龙头打板”策略小改
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 88 基于动量因子的ETF轮动加上RSRS择时
+因子数量: 1
+  自定义因子函数:
+    - get_zscore
+
+策略: 88 打首板策略，今年收益达到40%，绝无未来函数
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 88 韶华研究之十六，指数增强
+因子数量: 3
+  技术指标:
+    - MA(stockcode, check_date=lastd_date, timeperiod=g.drop_ma_days)
+    - MACD(stockcode, check_date=lastd_date, SHORT = 12, LONG = 26, MID = 9, unit='1d', include_now = True, fq_ref_date = None)
+    - RSI(stockcode, check_date=lastd_date, N1=g.drop_ma_days)
+
+策略: 89 2020年效果很好的策略-龙回头策略v3.0
+因子数量: 2
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+
+策略: 89 基于Gyro^.^大神的小市值策略的因子匹配研究
+因子数量: 10
+  估值因子:
+    - valuation.capitalization
+    - valuation.circulating_cap
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.turnover_ratio
+  技术指标因子:
+    - indicator.roa
+    - indicator.roe
+
+策略: 89 年化收益55.7%， 超高胜率 0.799！
+因子数量: 12
+  估值因子:
+    - valuation.capitalization
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - balance.code
+    - cash_flow.code
+    - gta.STK_DIVIDEND
+    - income.code
+  技术指标因子:
+    - indicator.adjusted_profit
+    - indicator.code
+    - indicator.roe
+    - indicator.statDate
+
+策略: 89 韶华研究之二，顺势而为，年化140
+因子数量: 1
+  其他因子:
+    - finance.SW1_DAILY_PRICE
+
+策略: 90 大师策略——柯林·麦克连成长价值优势投资法
+因子数量: 4
+  其他因子:
+    - cash_flow.code
+  技术指标因子:
+    - indicator.code
+    - indicator.inc_revenue_year_on_year
+    - indicator.operation_profit_to_total_revenue
+
+策略: 90 超稳+翻倍，贝塔值只有0.048的期指策略
+因子数量: 3
+  其他因子:
+    - opt.OPT_CONTRACT_INFO
+  技术指标:
+    - MACD(close, 12, 26, 9)
+    - MACD(close, fastperiod, slowperiod, signalperiod)
+
+策略: 92 敢于直接实盘的—八仙过海V2
+因子数量: 3
+  技术指标:
+    - KDJ(stock, period, isIncludNow = True)
+    - MACD(close, fastperiod = 12, slowperiod = 26, signalperiod = 9)
+    - MACD(stock, period, isIncludNow = True)
+
+策略: 92 致敬市场--4 解析细节
+因子数量: 4
+  技术指标因子:
+    - indicator.code
+    - indicator.inc_return
+    - indicator.inc_total_revenue_year_on_year
+    - indicator.pubDate
+
+策略: 92 行业宽度轮动研究
+因子数量: 11
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pcf_ratio
+    - valuation.pe_ratio_lyr
+    - valuation.ps_ratio
+  技术指标因子:
+    - indicator.eps
+    - indicator.gross_profit_margin
+    - indicator.inc_revenue_year_on_year
+    - indicator.net_profit_margin
+    - indicator.roa
+    - indicator.roe
+
+策略: 93 234板介入-2023年14倍-无未来
+因子数量: 10
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_SHAREHOLDER_TOP10
+  技术指标因子:
+    - indicator.inc_net_profit_year_on_year
+    - indicator.inc_operation_profit_annual
+    - indicator.inc_operation_profit_year_on_year
+    - indicator.inc_total_revenue_annual
+    - indicator.inc_total_revenue_year_on_year
+
+策略: 93 【超跌反弹v1.0】3年2.3倍的超跌反弹小牛股
+因子数量: 3
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.roe
+
+策略: 93 北向Boll带_ETF组合宝付费策略
+因子数量: 2
+  其他因子:
+    - finance.STK_ML_QUOTA
+  技术指标:
+    - MA(volume, g.lag0)
+
+策略: 93 因子看板多因子模型---由量化课堂多因子模型修改
+因子数量: 2
+  估值因子:
+    - valuation.code
+  权重因子:
+    - //www.joinquant.com/view/factorlib/list
+
+策略: 94 布林线追龙头战法
+因子数量: 4
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  技术指标因子:
+    - indicator.gross_profit_margin
+
+策略: 95 首席质量因子-Gross Profitabilit（简化版）
+因子数量: 6
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pb_ratio
+    - valuation.pe_ratio
+    - valuation.ps_ratio
+  其他因子:
+    - income.code
+
+策略: 97 稳定高回报周期股策略2-RSRS择时
+因子数量: 8
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+    - valuation.pe_ratio
+  其他因子:
+    - finance.STK_COMPANY_INFO
+    - finance.STK_LIST
+    - income.code
+    - income.statDate
+  技术指标因子:
+    - indicator.adjusted_profit
+
+策略: 98 【漂亮50】“漂亮50”策略复现以及股息率排序函数
+因子数量: 4
+  估值因子:
+    - valuation.circulating_market_cap
+    - valuation.code
+  技术指标因子:
+    - indicator.code
+    - indicator.roe
+
+策略: 98 韶华研究之六，简单不一样的发现趋势，3年6倍
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.pe_ratio
+
+策略: 99 欧奈尔CANSLIM策略初探三
+因子数量: 2
+  其他因子:
+    - finance.STK_SHAREHOLDER_FLOATING_TOP10
+  技术指标因子:
+    - indicator.code
+
+策略: 99最新龙回头5.0速度优化版+风险控制版本
+因子数量: 2
+  估值因子:
+    - valuation.code
+    - valuation.market_cap
+
+================================================================================
+4. 常用因子列表
+--------------------------------------------------------------------------------
+valuation.code: 使用 204 次
+valuation.market_cap: 使用 114 次
+valuation.circulating_market_cap: 使用 110 次
+valuation.pe_ratio: 使用 68 次
+valuation.pb_ratio: 使用 63 次
+indicator.eps: 使用 57 次
+indicator.roe: 使用 50 次
+indicator.inc_net_profit_year_on_year: 使用 39 次
+indicator.roa: 使用 38 次
+get_zscore: 使用 29 次
+finance.STK_XR_XD: 使用 29 次
+indicator.adjusted_profit: 使用 24 次
+indicator.code: 使用 22 次
+indicator.inc_total_revenue_year_on_year: 使用 21 次
+indicator.inc_return: 使用 18 次
+valuation.turnover_ratio: 使用 18 次
+valuation.ps_ratio: 使用 18 次
+indicator.inc_revenue_year_on_year: 使用 17 次
+indicator.gross_profit_margin: 使用 12 次
+valuation.pcf_ratio: 使用 11 次
+indicator.ocf_to_operating_profit: 使用 9 次
+balance.code: 使用 8 次
+MA(volume, g.lag0): 使用 8 次
+finance.STK_LIST: 使用 8 次
+indicator.net_profit_margin: 使用 7 次
+indicator.inc_operation_profit_year_on_year: 使用 7 次
+finance.STK_ML_QUOTA: 使用 7 次
+income.code: 使用 7 次
+valuation.circulating_cap: 使用 7 次
+finance.STK_AUDIT_OPINION: 使用 6 次
+valuation.pe_ratio_lyr: 使用 6 次
+indicator.ocf_to_revenue: 使用 6 次
+cash_flow.code: 使用 6 次
+valuation.day: 使用 5 次
+indicator.net_assets: 使用 5 次
+get_zscore_slope: 使用 5 次
+table.day: 使用 5 次
+income.statDate: 使用 5 次
+indicator.inc_net_profit_to_shareholders_year_on_year: 使用 5 次
+finance.STK_COMPANY_INFO: 使用 4 次
+finance.STK_CAPITAL_CHANGE: 使用 4 次
+valuation.capitalization: 使用 4 次
+总市值: 使用 3 次
+流通市值: 使用 3 次
+最新价格: 使用 3 次
+5日平均成交量: 使用 3 次
+60日涨幅: 使用 3 次
+get_single_factor_list: 使用 3 次
+MA(VOL,7): 使用 3 次
+MA(VOL,180): 使用 3 次
+MA(volume,g.lag0): 使用 3 次
+finance.FUND_PORTFOLIO_STOCK: 使用 3 次
+finance.STK_HK_HOLD_INFO: 使用 3 次
+opt.OPT_CONTRACT_INFO: 使用 3 次
+MACD(close, fastperiod, slowperiod, signalperiod): 使用 3 次
+MACD(close, 12, 26, 9): 使用 3 次
+indicator.inc_total_revenue_annual: 使用 3 次
+MA(close_list, timeperiod=period): 使用 3 次
+finance.STK_EL_TOP_ACTIVATE: 使用 3 次
+finance.STK_SHAREHOLDER_FLOATING_TOP10: 使用 3 次
+balance.retained_profit: 使用 2 次
+MA(close_price: np.array, timeperiod=5): 使用 2 次
+MA(close_price, timeperiod=fastperiod): 使用 2 次
+MA(close_price, timeperiod=slowperiod): 使用 2 次
+MA(diff, timeperiod=signalperiod): 使用 2 次
+MACD(close_price: np.array, fastperiod=12, slowperiod=26, signalperiod=9): 使用 2 次
+MACD(close_price): 使用 2 次
+MA(index,context.current_dt, timeperiod=5, unit = unit, include_now =include_now, fq_ref_date = None): 使用 2 次
+MA(index,context.current_dt, timeperiod=20, unit = unit, include_now =include_now, fq_ref_date = None): 使用 2 次
+MA(index,context.current_dt, timeperiod=60, unit = unit, include_now =include_now, fq_ref_date = None): 使用 2 次
+MA(price_data.close.values, g.ma_period): 使用 2 次
+MA(his.values.flatten(): 使用 2 次
+macro.MAC_MANUFACTURING_PMI: 使用 2 次
+MA(ind,context.current_dt, timeperiod=g.long_days, unit = unit, include_now =include_now, fq_ref_date = None): 使用 2 次
+MA(ind,context.previous_date, timeperiod=g.long_days, unit=unit, fq_ref_date = None): 使用 2 次
+MA(ind,context.current_dt, timeperiod=g.short_days, unit = unit, include_now =include_now, fq_ref_date = None): 使用 2 次
+MA(ind,context.previous_date, timeperiod=g.short_days, unit=unit, fq_ref_date = None): 使用 2 次
+ATR(security_list, check_date, timeperiod=14): 使用 2 次
+ATR(ind,context.current_dt, g.shortdays): 使用 2 次
+ATR(ind,context.current_dt, g.longdays): 使用 2 次
+ATR(ind,context.current_dt, g.ATRdays): 使用 2 次
+balance.total_current_assets: 使用 2 次
+RSI(stock, date, N1=20): 使用 2 次
+MACD(stock, date, SHORT = 10, LONG = 30, MID = 15): 使用 2 次
+MACD(stock, end_date, SHORT=12, LONG=26, MID=9): 使用 2 次
+MACD(stock, one_day_before_pre, SHORT=12, LONG=26, MID=9): 使用 2 次
+MACD(stock, two_day_before_pre, SHORT=12, LONG=26, MID=9): 使用 2 次
+RSI(prices['close'].values, timeperiod=6): 使用 2 次
+indicator.inc_operation_profit_annual: 使用 2 次
+MACD(stock, period, isIncludNow = True): 使用 2 次
+MACD(close, fastperiod = 12, slowperiod = 26, signalperiod = 9): 使用 2 次
+KDJ(stock, period, isIncludNow = True): 使用 2 次
+RSI(np.array(close): 使用 2 次
+MA(close, timeperiod): 使用 2 次
+get_stocks_score: 使用 2 次
+indicator.inc_revenue_annual: 使用 2 次
+1.2: 使用 2 次
+finance.SW1_DAILY_PRICE: 使用 2 次
+indicator.inc_net_profit_annual: 使用 2 次
+MA(dataset.code,  yesterday): 使用 2 次
+finance.FUND_MAIN_INFO: 使用 2 次
+indicator.pubDate: 使用 2 次
+MACD(security_list = dx1, check_date = prev_trade_day, SHORT = 12, LONG = 26, MID = 9, unit = '1d'): 使用 1 次
+MACD(security_list = dx1, check_date = getday(prev_trade_day,-1): 使用 1 次
+get_universe_factor: 使用 1 次
+MA(rsiArray,nRSIAvg): 使用 1 次
+MA(rsiArray,nRSI): 使用 1 次
+MA(closeArray,60): 使用 1 次
+MA(trArray,nATR): 使用 1 次
+RSI(closeArray,nRSI): 使用 1 次
+RSI(stock): 使用 1 次
+get_stock_score: 使用 1 次
+MA(security, check_date=now_date, timeperiod=g.ma_period): 使用 1 次
+MA(security, check_date=now_date, timeperiod=g.sell_ma_period): 使用 1 次
+MA(stock, check_date=now_date, timeperiod=g.ma_period): 使用 1 次
+MA(ind,context.current_dt, timeperiod=5, unit = unit, include_now =include_now, fq_ref_date = None): 使用 1 次
+MA(ind,context.previous_date, timeperiod=5, unit=unit, fq_ref_date = None): 使用 1 次
+MA(close, 12): 使用 1 次
+g.beta: 使用 1 次
+MACD(close_list, 
+                                 fastperiod=12, 
+                                 slowperiod=26, 
+                                 signalperiod=9): 使用 1 次
+finance.STK_AH_PRICE_COMP: 使用 1 次
+MACD(stock, check_date=context.current_dt,
+    #                      SHORT=12, LONG=29, MID=7, unit='1d'): 使用 1 次
+KDJ(stock, check_date=context.current_dt,
+    #              unit='1d', N=9, M1=3, M2=3): 使用 1 次
+ATR(context,security): 使用 1 次
+ATR(context,stock): 使用 1 次
+ATR(high,low,close, g.ATR_period): 使用 1 次
+ATR(data.high, data.low, data.close, timeperiod=g.ATR_day): 使用 1 次
+get_score: 使用 1 次
+ffscore_stock: 使用 1 次
+MACD(security,check_date=context.previous_date, SHORT = 2, LONG = 5, MID = 9): 使用 1 次
+MACD(stock_two,check_date=context.current_dt, SHORT = 2, LONG = 5, MID = 9): 使用 1 次
+MA(df['ks_index'],6): 使用 1 次
+MA(df['ks_index'],28): 使用 1 次
+MA(base['close'],2): 使用 1 次
+MA(base['close'],4): 使用 1 次
+MA(base['dif'],4): 使用 1 次
+cash_flow.net_operate_cash_flow: 使用 1 次
+选择升序-小到大(默认true): 使用 1 次
+或者降序-大到小（false）: 使用 1 次
+indicator.pcf_ratio: 使用 1 次
+RSI(np.array(close_list): 使用 1 次
+ATR(df['high'], df['low'], df['close'], timeperiod=period): 使用 1 次
+MA(stockcode, check_date=lastd_date, timeperiod=10): 使用 1 次
+MA(stocklist, check_date=lastd_date, timeperiod=20): 使用 1 次
+MA(stocklist, check_date=lastd_date, timeperiod=30): 使用 1 次
+MA(stockcode, check_date=back10_date, timeperiod=10): 使用 1 次
+MA(stocklist, check_date=back10_date, timeperiod=20): 使用 1 次
+MA(stocklist, check_date=back10_date, timeperiod=30): 使用 1 次
+get_score_filter: 使用 1 次
+RSI(close_30, period=20): 使用 1 次
+RSI(self, prices, period=14): 使用 1 次
+MACD(array, fastperiod=12, slowperiod=26, signalperiod=9): 使用 1 次
+valuation.drop: 使用 1 次
+finance.STK_EXCHANGE_TRADE_INFO: 使用 1 次
+finance.STK_HOLDER_NUM: 使用 1 次
+KDJ(stock,check_date=cur_date,N =9, M1=3, M2=3): 使用 1 次
+stock_sector_score: 使用 1 次
+get_momentum_factor: 使用 1 次
+get_net_promoter_score: 使用 1 次
+ATR(stockcode, check_date=lastd_date, timeperiod=5): 使用 1 次
+calc_zscore_Rdev: 使用 1 次
+get_rsrs_score_mean: 使用 1 次
+MA(s, check_date=now_date, timeperiod=g.ma_period): 使用 1 次
+get_north_factor: 使用 1 次
+MA(np.array(volume): 使用 1 次
+MA(np.array(close): 使用 1 次
+MA(closed,timeperiod = sma_length): 使用 1 次
+MA(period, closeArray, emaArray=[]): 使用 1 次
+MA(shortPeriod ,closeArray,[]): 使用 1 次
+MA(longPeriod ,closeArray,[]): 使用 1 次
+MA(signalPeriod,diff,[]): 使用 1 次
+MACD(closeArray,shortPeriod = 12 ,longPeriod = 26 ,signalPeriod =9): 使用 1 次
+MACD(close,shortPeriod = 12 ,longPeriod = 26 ,signalPeriod =9): 使用 1 次
+finance.STK_BALANCE_SHEET: 使用 1 次
+MA(dfindex, today, N1 = 10, unit = '1d', include_now = True): 使用 1 次
+MA(dfindex, today, timeperiod=10, unit = '1d', include_now = True): 使用 1 次
+KDJ(dfindex,today): 使用 1 次
+MA(average,sma_length): 使用 1 次
+MA(data['tr'],atr_length): 使用 1 次
+RSI(close, timeperiod=timePeriod): 使用 1 次
+RSI(numpy.array(a): 使用 1 次
+get_comb_factor: 使用 1 次
+MACD(stock, check_date = context.current_dt, SHORT = 12, LONG = 29, MID = 7, unit='1d'): 使用 1 次
+KDJ(stock, check_date=context.current_dt, unit='1d', N=9, M1=3, M2=3): 使用 1 次
+finance.FUND_NET_VALUE: 使用 1 次
+RSI(price,timeperiod=period): 使用 1 次
+MACD(security_list = stock_pool, check_date = cur_date, SHORT = 12, LONG = 26, MID = 9): 使用 1 次
+indicator.inc_net_profit_to_shareholders_annual: 使用 1 次
+finance.FUND_PORTFOLIO: 使用 1 次
+MACD(stockcode,check_date=today_date, SHORT = 12, LONG = 26, MID = 9): 使用 1 次
+MACD(stockcode,check_date=yeday_date, SHORT = 12, LONG = 26, MID = 9): 使用 1 次
+MACD(stock,check_date=check_date, SHORT = 12, LONG = 26, MID = 9,unit = '1M',include_now=False): 使用 1 次
+MA(stock,context.previous_date,5,'1d'): 使用 1 次
+MA(stock,context.previous_date,10,'1d'): 使用 1 次
+MA(stock,context.previous_date,20,'1d'): 使用 1 次
+MA(stock,context.previous_date,60,'1d'): 使用 1 次
+finance.STK_FIN_FORCAST: 使用 1 次
+MACD(stockcode,date,SHORT=12,LONG=26,MID=9): 使用 1 次
+MA(stockcode, check_date=lastd_date, timeperiod=g.drop_ma_days): 使用 1 次
+RSI(stockcode, check_date=lastd_date, N1=g.drop_ma_days): 使用 1 次
+MACD(stockcode, check_date=lastd_date, SHORT = 12, LONG = 26, MID = 9, unit='1d', include_now = True, fq_ref_date = None): 使用 1 次
+indicator.statDate: 使用 1 次
+gta.STK_DIVIDEND: 使用 1 次
+indicator.operation_profit_to_total_revenue: 使用 1 次
+finance.STK_SHAREHOLDER_TOP10: 使用 1 次
+//www.joinquant.com/view/factorlib/list: 使用 1 次

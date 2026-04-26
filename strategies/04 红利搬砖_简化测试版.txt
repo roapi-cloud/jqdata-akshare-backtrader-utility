@@ -1,0 +1,32 @@
+# 红利搬砖策略 - 简化测试版
+# 直接在initialize中买入，验证基础功能
+
+import numpy as np
+import pandas as pd
+from jqdata import *
+
+def initialize(context):
+    set_option('use_real_price', True)
+    log.set_level('order', 'error')
+    
+    log.info('策略初始化开始')
+    
+    # 直接买入贵州茅台
+    order_value('600519.XSHG', 50000)
+    log.info('已下单买入600519.XSHG')
+    
+    # 设置每日任务
+    run_daily(daily_check, 'open')
+    
+    g.buy_count = 0
+
+def daily_check(context):
+    """每日检查"""
+    g.buy_count += 1
+    
+    # 打印持仓
+    positions = context.portfolio.positions
+    log.info(f'第{g.buy_count}天检查，持仓数量: {len(positions)}')
+    
+    for stock, position in positions.items():
+        log.info(f'  持仓: {stock} 数量: {position.total_amount} 价值: {position.value}')

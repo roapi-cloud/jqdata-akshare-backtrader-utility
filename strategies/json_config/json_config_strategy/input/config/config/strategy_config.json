@@ -1,0 +1,1 @@
+{"strategy_name": "json_config_test", "backtest_start": "2020-01-01", "backtest_end": "2023-12-31", "initial_capital": 1000000, "rebalance_freq": "monthly"}

@@ -1,0 +1,59 @@
+# V4: 双均线择时策略
+# 简单技术指标策略，不依赖基本面数据
+# 用于验收测试：验证 get_price, history, run_daily 等API
+
+from jqdata import *
+
+def initialize(context):
+    # 设置参数
+    g.stocks = ['600519.XSHG', '000858.XSHE', '000333.XSHE', '600036.XSHG', '601318.XSHG']
+    g.short_window = 5  # 短期均线天数
+    g.long_window = 20  # 长期均线天数
+
+    log.info('双均线择时策略初始化')
+    log.info(f'股票池: {g.stocks}')
+    log.info(f'均线参数: 短期{g.short_window}天, 长期{g.long_window}天')
+
+    # 设置定时器：每日开盘运行
+    run_daily(rebalance, 'open')
+
+def rebalance(context):
+    """每日调仓：根据均线判断买卖信号"""
+
+    current_data = get_current_data()
+
+    for stock in g.stocks:
+        if current_data[stock].paused:
+            continue
+
+        # 获取历史数据
+        prices = history(g.long_window + 1, '1d', 'close', [stock])
+        if prices is None or len(prices) < g.long_window + 1:
+            continue
+
+        # 计算均线
+        close_prices = prices[stock]
+        short_ma = close_prices[-g.short_window:].mean()
+        long_ma = close_prices[-g.long_window:].mean()
+        prev_short_ma = close_prices[-(g.short_window+1):-1].mean()
+        prev_long_ma = close_prices[-(g.long_window+1):-1].mean()
+
+        # 判断信号：短期均线从下向上穿越长期均线（金叉）
+        # 或从上向下穿越（死叉）
+        current_position = context.portfolio.positions.get(stock, None)
+
+        if short_ma > long_ma and prev_short_ma <= prev_long_ma:
+            # 金叉买入信号
+            if current_position is None or current_position.total_amount == 0:
+                log.info(f'买入信号: {stock} {current_data[stock].name}, '
+                        f'短均线{short_ma:.2f} > 长均线{long_ma:.2f}')
+                order_target_percent(stock, 0.2)  # 每只股票20%仓位
+
+        elif short_ma < long_ma and prev_short_ma >= prev_long_ma:
+            # 死叉卖出信号
+            if current_position and current_position.total_amount > 0:
+                log.info(f'卖出信号: {stock} {current_data[stock].name}, '
+                        f'短均线{short_ma:.2f} < 长均线{long_ma:.2f}')
+                order_target(stock, 0)  # 清仓
+
+# end

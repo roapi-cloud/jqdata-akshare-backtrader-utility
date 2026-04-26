@@ -1,0 +1,94 @@
+# V6: 指数成分股跟踪策略
+# 跟踪指数成分股变化，按权重配置
+# 用于验收测试：验证 get_index_stocks, get_index_weights 等API
+
+from jqdata import *
+import pandas as pd
+
+def initialize(context):
+    # 设置参数：跟踪两个指数
+    g.indexes = ['000300.XSHG', '000905.XSHG']  # 沪深300 + 中证500
+    g.tracking_index = '000300.XSHG'  # 主跟踪指数
+    g.max_stocks = 20  # 最大持仓数量
+    g.stocks = []
+
+    log.info('指数成分股跟踪策略初始化')
+    log.info(f'跟踪指数: {g.tracking_index}')
+    log.info(f'最大持仓: {g.max_stocks}')
+
+    # 设置定时器：每月首日开盘调仓
+    run_monthly(rebalance, 1, 'open')
+
+def rebalance(context):
+    """月度调仓：根据指数成分股和权重配置持仓"""
+
+    log.info(f'月度调仓: {context.current_dt}')
+
+    # 1. 获取指数成分股
+    stocks = get_index_stocks(g.tracking_index)
+    log.info(f'指数成分股: {len(stocks)}只')
+
+    # 2. 获取指数权重
+    weights_df = get_index_weights(g.tracking_index)
+    if weights_df is None or len(weights_df) == 0:
+        log.warning('无法获取指数权重数据')
+        return
+
+    # weights_df 包含: index (股票代码), weight (权重比例)
+    # 按权重排序，取前N只
+    weights_df = weights_df.sort_values('weight', ascending=False)
+    top_stocks = weights_df.head(g.max_stocks)
+
+    g.stocks = list(top_stocks.index)
+    target_weights = top_stocks['weight'].to_dict()
+
+    log.info(f'前{g.max_stocks}大权重股:')
+    log.info(f'\n{top_stocks}')
+
+    # 3. 过滤不可交易股票
+    current_data = get_current_data()
+    tradable_stocks = []
+    tradable_weights = {}
+
+    for stock in g.stocks:
+        if not current_data[stock].paused:
+            tradable_stocks.append(stock)
+            tradable_weights[stock] = target_weights[stock]
+        else:
+            log.info(f'过滤停牌股票: {stock}')
+
+    if len(tradable_stocks) == 0:
+        log.warning('没有可交易股票')
+        return
+
+    # 4. 计算目标持仓金额（按权重分配）
+    total_value = context.portfolio.total_value
+
+    # 5. 调仓：卖出不在持仓的股票
+    for stock in context.portfolio.positions:
+        if stock not in tradable_stocks:
+            log.info(f'卖出: {stock} {current_data[stock].name}')
+            order_target(stock, 0)
+
+    # 6. 调整持仓到目标权重
+    for stock in tradable_stocks:
+        target_value = total_value * tradable_weights[stock] / sum(tradable_weights.values())
+
+        current_position = context.portfolio.positions.get(stock)
+
+        if current_position:
+            current_value = current_position.value
+            diff_value = target_value - current_value
+
+            if abs(diff_value) > total_value * 0.01:  # 差异>1%才调整
+                log.info(f'调整: {stock} {current_data[stock].name}, '
+                        f'当前{current_value:.0f} -> 目标{target_value:.0f}')
+                order_target_value(stock, target_value)
+
+        else:
+            # 新买入
+            if context.portfolio.available_cash > target_value:
+                log.info(f'买入: {stock} {current_data[stock].name}, 金额{target_value:.0f}')
+                order_value(stock, target_value)
+
+# end

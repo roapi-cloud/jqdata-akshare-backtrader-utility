@@ -1,0 +1,75 @@
+# 统一量化策略流水线 - 默认配置
+
+data:
+  source: "akshare"
+  index: "000300"
+  start_date: "2023-01-01"
+  end_date: ""
+  frequency: "daily"
+  cache_dir: "./data_cache"
+  force_update: false
+
+factors:
+  factors:
+    - "momentum_20"
+    - "volatility"
+    - "pe"
+    - "roe"
+  params:
+    momentum_20:
+      period: 20
+    volatility:
+      period: 20
+
+preprocess:
+  winsorize_method: "mad"
+  winsorize_n: 3.0
+  fill_na_method: "median"
+  standardize_method: "zscore"
+  neutralize_by: null
+
+label:
+  method: "classification"
+  top_pct: 0.3
+  holding_period: 5
+  benchmark: "000300"
+
+model:
+  name: "random_forest"
+  params:
+    n_estimators: 200
+    max_depth: 5
+  train_window: 252
+  retrain_freq: "monthly"
+  cv_folds: 5
+
+timing:
+  enabled: false
+  models:
+    - "ma_cross"
+    - "momentum"
+  fusion_method: "weighted"
+  position_method: "strength"
+
+portfolio:
+  n_stocks: 10
+  weight_method: "equal"
+  max_single_weight: 0.15
+  max_turnover: 0.5
+  min_stocks: 5
+
+backtest:
+  initial_capital: 1000000
+  commission: 0.0003
+  slippage: 0.002
+  benchmark: "000300"
+  rebalance_freq: "weekly"
+
+risk:
+  max_drawdown_limit: 0.20
+  stop_loss_pct: 0.08
+  max_position_pct: 0.15
+  volatility_target: null
+
+random_seed: 42
+log_level: "INFO"

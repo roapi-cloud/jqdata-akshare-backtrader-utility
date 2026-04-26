@@ -1,0 +1,63 @@
+# XGBoost因子选股策略
+
+data:
+  source: "jqdata"
+  index: "000985.XSHG"        # 中证全指
+  start_date: "2012-01-01"
+  end_date: "2023-12-31"
+  frequency: "monthly"
+  list_days: 90
+
+preprocess:
+  winsorize_method: "mad"
+  winsorize_scale: 5.0
+  fill_method: "industry_mean"
+  neutralize_by: ["industry", "market_cap"]
+  standardize: true
+
+label:
+  method: "top_bottom"
+  top_pct: 0.3
+  bottom_pct: 0.3
+  holding_period: 20
+
+model:
+  name: "xgboost"
+  params:
+    max_depth: 7
+    learning_rate: 0.01
+    n_estimators: 200
+    min_child_weight: 3
+    subsample: 0.8
+    colsample_bytree: 0.8
+    gamma: 0.1
+    reg_alpha: 0.1
+    reg_lambda: 1.0
+  train_window: 72
+  retrain_frequency: "monthly"
+
+portfolio:
+  n_stocks: 10
+  weighting: "probability"
+  max_turnover: 0.8
+
+backtest:
+  initial_capital: 1000000
+  commission: 0.0003
+  slippage: 0.001
+  stamp_tax: 0.001
+  benchmark: "000985.XSHG"
+
+factors:
+  - "EP"
+  - "BP"
+  - "ROE"
+  - "ROA"
+  - "GPM"
+  - "Revenue_Growth"
+  - "RSI"
+  - "MACD_DIF"
+  - "BIAS"
+  - "Momentum"
+  - "Volatility"
+  - "Market_Cap"
